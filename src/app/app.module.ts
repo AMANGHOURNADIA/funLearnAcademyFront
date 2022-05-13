@@ -140,6 +140,28 @@ import {PhotoService} from './demo/service/photoservice';
 import {ProductService} from './demo/service/productservice';
 import {IconService} from './demo/service/iconservice';
 import { HomeComponent } from './view/shared/home/home.component';
+import { AdminComponent } from './controller/model/admin/admin.component';
+import { UserComponent } from './view/admin/user/user.component';
+import { FormateurComponent } from './view/admin/formateur/formateur.component';
+import { RoleComponent } from './view/dmin/role/role.component';
+import { ApprenantComponent } from './view/admin/apprenant/apprenant.component';
+import { CoursComponent } from './view/admin/cours/cours.component';
+import { ChapitreComponent } from './view/admin/chapitre/chapitre.component';
+import { SectionComponent } from './view/admin/section/section.component';
+import { SujetComponent } from './view/admin/sujet/sujet.component';
+import { InscriptionComponent } from './view/admin/inscription/inscription.component';
+import { CategorieComponent } from './view/admin/categorie/categorie.component';
+import { CategorieItemComponent } from './view/admin/categorie-item/categorie-item.component';
+import { UserListComponent } from './view/user-list/user-list.component';
+import { LoginAdminComponent } from './view/admin/login-admin/login-admin.component';
+import { RegisterAdminComponent } from './view/admin/register-admin/register-admin.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { AccessDeniedComponent } from './auth/access-denied/access-denied.component';
+import { LoginFormateurComponent } from './view/formateur/login-formateur/login-formateur.component';
+import { RegisterFormateurComponent } from './view/formateur/register-formateur/register-formateur.component';
+import { LoginApprenantComponent } from './view/apprenant/login-apprenant/login-apprenant.component';
+import { RegisterApprenantComponent } from './view/apprenant/register-apprenant/register-apprenant.component';
 
 @NgModule({
     imports: [
@@ -274,7 +296,29 @@ import { HomeComponent } from './view/shared/home/home.component';
         AppErrorComponent,
         AppAccessdeniedComponent,
         AppLoginComponent,
-        HomeComponent
+        HomeComponent,
+        AdminComponent,
+        UserComponent,
+        FormateurComponent,
+        RoleComponent,
+        ApprenantComponent,
+        CoursComponent,
+        ChapitreComponent,
+        SectionComponent,
+        SujetComponent,
+        InscriptionComponent,
+        CategorieComponent,
+        CategorieItemComponent,
+        UserListComponent,
+        LoginAdminComponent,
+        RegisterAdminComponent,
+        LoginComponent,
+        SignUpComponent,
+        AccessDeniedComponent,
+        LoginFormateurComponent,
+        RegisterFormateurComponent,
+        LoginApprenantComponent,
+        RegisterApprenantComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
