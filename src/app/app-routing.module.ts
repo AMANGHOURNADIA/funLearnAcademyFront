@@ -38,6 +38,7 @@ import {AppErrorComponent} from './pages/app.error.component';
 import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
 import {AppLoginComponent} from './pages/app.login.component';
 import {HomeComponent} from './view/shared/home/home.component';
+import {HomeAdminComponent} from './view/admin/home-admin/home-admin.component';
 
 @NgModule({
     imports: [
@@ -46,6 +47,7 @@ import {HomeComponent} from './view/shared/home/home.component';
                 path: '', component: AppMainComponent,
                 children: [
                     {path: '', component: HomeComponent},
+                    {path: 'admin/home', component: HomeAdminComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
                     {path: 'uikit/invalidstate', component: InvalidStateDemoComponent},
@@ -82,6 +84,7 @@ import {HomeComponent} from './view/shared/home/home.component';
             {path: 'accessdenied', component: AppAccessdeniedComponent},
             {path: '404', component: AppNotfoundComponent},
             {path: 'login', component: AppLoginComponent},
+            {path: 'dash', component: AppLoginComponent},
             {path: '**', redirectTo: '/404'},
         ], {scrollPositionRestoration: 'enabled'})
     ],

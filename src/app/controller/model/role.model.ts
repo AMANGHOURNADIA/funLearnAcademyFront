@@ -1,4 +1,5 @@
 export class Role {
-    private id: number;
-    private authority: string;
+      id: number;
+      authority: string;
+
 }

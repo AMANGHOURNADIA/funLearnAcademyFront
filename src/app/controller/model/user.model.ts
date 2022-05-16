@@ -1,17 +1,16 @@
 import {Role} from './role.model';
 
 export class User {
-    protected id: number;
-    protected email: string;
-    protected fullname: string;
-    protected username: string;
-    protected password: string;
-    protected role: string;
-    protected accountNonExpired: string ;
-    protected credentialsNonExpired: string;
-    protected accountNonLocked: string;
-    protected enabled: string;
-    protected image: string;
-    protected  authorities: Role ;
-
+    id: number;
+    email: string;
+    fullname: string;
+    username: string;
+    password: string;
+    authorities: Array<Role>;
+    role: string;
+    accountNonExpired: boolean;
+    credentialsNonExpired: boolean;
+    accountNonLocked: boolean;
+    enabled: boolean;
+    image: string;
 }

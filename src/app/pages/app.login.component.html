@@ -10,7 +10,7 @@
                         <!-- <h:panelGroup> -->
                             <label>Username</label>
                             <div class="login-input">
-                                <input id="input" type="text" pInputText> 
+                                <input id="input" type="text" [(ngModel)]="user.username" pInputText>
                             </div>
                         <!-- </h:panelGroup> -->
                     </div>
@@ -18,7 +18,7 @@
                         <!-- <h:panelGroup> -->
                             <label>Password</label>
                             <div class="login-input">
-                                <input pPassword type="password" />
+                                <input pPassword  [(ngModel)]="user.password" type="password" />
                             </div>
                         <!-- </h:panelGroup> -->
                     </div>
@@ -32,7 +32,7 @@
                     </div>
     
                     <div class="p-col-12 p-sm-6 p-md-6">
-                            <button [routerLink]="['/']"  pButton type="button" icon="pi pi-check" label="Sign In"></button>
+                            <button (click)="onLogin(user)"  pButton type="button" icon="pi pi-check" label="Sign In"></button>
                     </div>
                 </div>
             </div>
