@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 import {FormLayoutDemoComponent} from './demo/view/formlayoutdemo.component';
 import {FloatLabelDemoComponent} from './demo/view/floatlabeldemo.component';
 import {InvalidStateDemoComponent} from './demo/view/invalidstatedemo.component';
-import {DashboardDemoComponent} from './demo/view/dashboarddemo.component';
 import {InputDemoComponent} from './demo/view/inputdemo.component';
 import {TableDemoComponent} from './demo/view/tabledemo.component';
 import {ListDemoComponent} from './demo/view/listdemo.component';
@@ -33,10 +32,10 @@ import {AppCrudComponent} from './pages/app.crud.component';
 import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppTimelineDemoComponent} from './pages/app.timelinedemo.component';
 import {AppMainComponent} from './app.main.component';
-import {AppNotfoundComponent} from './pages/app.notfound.component';
-import {AppErrorComponent} from './pages/app.error.component';
-import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
-import {AppLoginComponent} from './pages/app.login.component';
+import {AppNotfoundComponent} from './view/shared/page-note-found/app.notfound.component';
+import {AppErrorComponent} from './view/shared/error/app.error.component';
+import {AppAccessdeniedComponent} from './view/shared/accessDenied/app.accessdenied.component';
+import {AppLoginComponent} from './view/shared/login/app.login.component';
 import {HomeComponent} from './view/shared/home/home.component';
 
 @NgModule({
