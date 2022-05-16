@@ -82,6 +82,7 @@ import {HomeComponent} from './view/shared/home/home.component';
             {path: 'accessdenied', component: AppAccessdeniedComponent},
             {path: '404', component: AppNotfoundComponent},
             {path: 'login', component: AppLoginComponent},
+            {path: 'dash', component: AppLoginComponent},
             {path: '**', redirectTo: '/404'},
         ], {scrollPositionRestoration: 'enabled'})
     ],
