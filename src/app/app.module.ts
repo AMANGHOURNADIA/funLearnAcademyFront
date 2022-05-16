@@ -139,11 +139,8 @@ import {ProductService} from './demo/service/productservice';
 import {IconService} from './demo/service/iconservice';
 import { HomeComponent } from './view/shared/home/home.component';
 import { UserListComponent } from './view/user-list/user-list.component';
-import { LoginFormateurComponent } from './view/formateur/login-formateur/login-formateur.component';
 import { RegisterFormateurComponent } from './view/formateur/register-formateur/register-formateur.component';
-import { LoginApprenantComponent } from './view/apprenant/login-apprenant/login-apprenant.component';
 import { RegisterApprenantComponent } from './view/apprenant/register-apprenant/register-apprenant.component';
-import {LoginComponent} from './view/admin/login-admin/login-admin.component';
 
 @NgModule({
     imports: [
@@ -280,10 +277,7 @@ import {LoginComponent} from './view/admin/login-admin/login-admin.component';
         AppLoginComponent,
         HomeComponent,
         UserListComponent,
-        LoginComponent,
-        LoginFormateurComponent,
         RegisterFormateurComponent,
-        LoginApprenantComponent,
         RegisterApprenantComponent
     ],
     providers: [
