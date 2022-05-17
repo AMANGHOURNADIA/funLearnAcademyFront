@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthenticationService} from '../../../controller/service/authentication.service';
 import {User} from '../../../controller/model/user.model';
 import {Role} from '../../../enum/role.enum';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-home',
@@ -9,21 +10,27 @@ import {Role} from '../../../enum/role.enum';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-    user: User = new User();
+    user: User;
 
-    constructor(private authenticationService: AuthenticationService) {
+    constructor(private authenticationService: AuthenticationService, private router: Router) {
     }
 
     ngOnInit(): void {
         this.user = this.authenticationService.getUserFromLocalCache();
         console.log(this.user);
-        if (this.user.role === Role.ADMIN ){
-            console.log('admin');
-        } else if (this.user.role === Role.FROMATEUR){
-            console.log('fourmateur');
-        }
-    }
+        if (this.user === null) {
+            this.router.navigate(['login']);
+        } else {
+            if (this.user?.role === Role.ADMIN) {
+                console.log('admin');
+            } else if (this.user?.role === Role.FORMATEUR) {
+                console.log('fourmateur');
+            } else if (this.user?.role === Role.APPRENANT) {
 
+            }
+        }
+
+    }
 
 
 }
