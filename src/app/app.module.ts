@@ -143,6 +143,7 @@ import { RegisterFormateurComponent } from './view/formateur/register-formateur/
 import { RegisterApprenantComponent } from './view/apprenant/register-apprenant/register-apprenant.component';
 import { HomeFourmateurComponent } from './view/formateur/home-fourmateur/home-fourmateur.component';
 import { HomeAdminComponent } from './view/admin/home-admin/home-admin.component';
+import { HomeApprenantComponent } from './view/apprenant/home-apprenant/home-apprenant.component';
 
 @NgModule({
     imports: [
@@ -282,7 +283,8 @@ import { HomeAdminComponent } from './view/admin/home-admin/home-admin.component
         RegisterFormateurComponent,
         RegisterApprenantComponent,
         HomeFourmateurComponent,
-        HomeAdminComponent
+        HomeAdminComponent,
+        HomeApprenantComponent
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
