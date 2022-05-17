@@ -33,10 +33,7 @@ export class AppLoginComponent implements OnInit, OnDestroy {
         this.subscriptions.push(
             this.authenticationService.login(user).subscribe(
                 (response: HttpResponse<User>) => {
-                    console.log(response);
-                    console.log(response.headers);
                     const token = response.body.token;
-                    console.log(token);
                     this.authenticationService.saveToken(token);
                     this.authenticationService.addUserToLocalCache(response.body);
                     this.router.navigateByUrl('');

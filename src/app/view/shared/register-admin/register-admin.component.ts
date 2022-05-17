@@ -45,24 +45,4 @@ export class RegisterAdminComponent implements OnInit {
         );
     }
 
-
-    public login(user: User): void {
-        this.subscriptions.push(
-            this.authService.login(user).subscribe(
-                (response: HttpResponse<User>) => {
-                    console.log(response);
-                    const token = response.headers.get(HeaderType.JWT_TOKEN);
-                    console.log(token);
-                    // @ts-ignore
-                    this.authenticationService.saveToken(token);
-                    // @ts-ignore
-                    this.authenticationService.addUserToLocalCache(response.body);
-                    this.router.navigateByUrl('');
-                },
-                (errorResponse: HttpErrorResponse) => {
-                    console.log(errorResponse);
-                }
-            )
-        );
-    }
 }
