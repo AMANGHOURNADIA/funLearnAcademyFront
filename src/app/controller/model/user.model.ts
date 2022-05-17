@@ -13,4 +13,5 @@ export class User {
     accountNonLocked: boolean;
     enabled: boolean;
     image: string;
+    token: string;
 }

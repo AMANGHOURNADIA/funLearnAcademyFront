@@ -3,7 +3,6 @@ import {NgModule} from '@angular/core';
 import {FormLayoutDemoComponent} from './demo/view/formlayoutdemo.component';
 import {FloatLabelDemoComponent} from './demo/view/floatlabeldemo.component';
 import {InvalidStateDemoComponent} from './demo/view/invalidstatedemo.component';
-import {DashboardDemoComponent} from './demo/view/dashboarddemo.component';
 import {InputDemoComponent} from './demo/view/inputdemo.component';
 import {TableDemoComponent} from './demo/view/tabledemo.component';
 import {ListDemoComponent} from './demo/view/listdemo.component';
@@ -32,13 +31,18 @@ import {TextComponent} from './utilities/text.component';
 import {AppCrudComponent} from './pages/app.crud.component';
 import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppTimelineDemoComponent} from './pages/app.timelinedemo.component';
-import {AppMainComponent} from './app.main.component';
-import {AppNotfoundComponent} from './pages/app.notfound.component';
-import {AppErrorComponent} from './pages/app.error.component';
-import {AppAccessdeniedComponent} from './pages/app.accessdenied.component';
-import {AppLoginComponent} from './pages/app.login.component';
+import {AppMainComponent} from './main/app.main.component';
+import {AppNotfoundComponent} from './view/shared/page-note-found/app.notfound.component';
+import {AppErrorComponent} from './view/shared/error/app.error.component';
+import {AppAccessdeniedComponent} from './view/shared/accessDenied/app.accessdenied.component';
+import {AppLoginComponent} from './view/shared/login/app.login.component';
 import {HomeComponent} from './view/shared/home/home.component';
-import {HomeAdminComponent} from './view/admin/home-admin/home-admin.component';
+import {RegisterAdminComponent} from './view/shared/register-admin/register-admin.component';
+import {AdminComponent} from './view/admin/admin.component';
+import {FormateurComponent} from './view/formateur/formateur.component';
+import {RegisterFormateurComponent} from './view/shared/register-formateur/register-formateur.component';
+import {ApprenantComponent} from './view/apprenant/apprenant.component';
+import {RegisterApprenantComponent} from './view/shared/register-apprenant/register-apprenant.component';
 
 @NgModule({
     imports: [
@@ -46,8 +50,25 @@ import {HomeAdminComponent} from './view/admin/home-admin/home-admin.component';
             {
                 path: '', component: AppMainComponent,
                 children: [
+                    {
+                        path: 'admin', component: AdminComponent,
+                        children: [
+                            {path: 'register', component: RegisterAdminComponent},
+                        ]
+                    },
+                    {
+                        path: 'formateur', component: FormateurComponent,
+                        children: [
+                            {path: 'register', component: RegisterFormateurComponent},
+                        ]
+                    },
+                    {
+                        path: 'apprenant', component: ApprenantComponent,
+                        children: [
+                            {path: 'register', component: RegisterApprenantComponent},
+                        ]
+                    },
                     {path: '', component: HomeComponent},
-                    {path: 'admin/home', component: HomeAdminComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
                     {path: 'uikit/invalidstate', component: InvalidStateDemoComponent},
@@ -80,10 +101,34 @@ import {HomeAdminComponent} from './view/admin/home-admin/home-admin.component';
                     {path: 'documentation', component: DocumentationComponent}
                 ]
             },
+            {
+                path: 'admin', component: AdminComponent,
+                children: [
+                    {path: 'register', component: RegisterAdminComponent},
+                ]
+            },
+            {
+                path: 'formateur', component: FormateurComponent,
+                children: [
+                    {path: 'register', component: RegisterFormateurComponent},
+                ]
+            },
+            {
+                path: 'apprenant', component: ApprenantComponent,
+                children: [
+                    {path: 'register', component: RegisterApprenantComponent},
+                ]
+            }
+
+
+            ,
             {path: 'error', component: AppErrorComponent},
             {path: 'accessdenied', component: AppAccessdeniedComponent},
             {path: '404', component: AppNotfoundComponent},
             {path: 'login', component: AppLoginComponent},
+            {path: 'register/admin', component: RegisterAdminComponent},
+            {path: 'register/apprenant', component: RegisterApprenantComponent},
+            {path: 'register/formateur', component: RegisterFormateurComponent},
             {path: 'dash', component: AppLoginComponent},
             {path: '**', redirectTo: '/404'},
         ], {scrollPositionRestoration: 'enabled'})

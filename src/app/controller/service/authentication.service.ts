@@ -24,7 +24,7 @@ export class AuthenticationService {
     }
 
     public register(user: User): Observable<User> {
-        return this.http.post<User>(`${this.host}/admin/user/`, user);
+        return this.http.post<User>(`${this.host}admin/user/`, user);
     }
 
     public logOut(): void {
