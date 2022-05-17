@@ -86,8 +86,8 @@ import {TreeTableModule} from 'primeng/treetable';
 import {VirtualScrollerModule} from 'primeng/virtualscroller';
 import {AppComponent} from './app.component';
 import {AppCodeModule} from './app.code.component';
-import {AppMainComponent} from './app.main.component';
-import {AppConfigComponent} from './app.config.component';
+import {AppMainComponent} from './main/app.main.component';
+import {AppConfigComponent} from './main/app.config.component';
 import {AppCrudComponent} from './pages/app.crud.component';
 import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppTimelineDemoComponent} from './pages/app.timelinedemo.component';
@@ -95,11 +95,11 @@ import {AppNotfoundComponent} from './view/shared/page-note-found/app.notfound.c
 import {AppErrorComponent} from './view/shared/error/app.error.component';
 import {AppAccessdeniedComponent} from './view/shared/accessDenied/app.accessdenied.component';
 import {AppLoginComponent} from './view/shared/login/app.login.component';
-import {AppMenuComponent} from './app.menu.component';
-import {AppMenuitemComponent} from './app.menuitem.component';
-import {AppRightMenuComponent} from './app.right-menu.component';
-import {AppTopBarComponent} from './app.topbar.component';
-import {AppFooterComponent} from './app.footer.component';
+import {AppMenuComponent} from './main/app.menu.component';
+import {AppMenuitemComponent} from './menu/app.menuitem.component';
+import {AppRightMenuComponent} from './right-menu/app.right-menu.component';
+import {AppTopBarComponent} from './top-bar/app.topbar.component';
+import {AppFooterComponent} from './footer/app.footer.component';
 import {FormLayoutDemoComponent} from './demo/view/formlayoutdemo.component';
 import {FloatLabelDemoComponent} from './demo/view/floatlabeldemo.component';
 import {InvalidStateDemoComponent} from './demo/view/invalidstatedemo.component';
@@ -131,12 +131,20 @@ import {WidgetsComponent} from './utilities/widgets.component';
 import {CountryService} from './demo/service/countryservice';
 import {EventService} from './demo/service/eventservice';
 import {NodeService} from './demo/service/nodeservice';
-import {MenuService} from './app.menu.service';
+import {MenuService} from './menu/app.menu.service';
 import {CustomerService} from './demo/service/customerservice';
 import {PhotoService} from './demo/service/photoservice';
 import {ProductService} from './demo/service/productservice';
 import {IconService} from './demo/service/iconservice';
 import {HomeComponent} from './view/shared/home/home.component';
+import {AdminComponent} from './view/admin/admin.component';
+import {RegisterAdminComponent} from './view/shared/register-admin/register-admin.component';
+import {FormateurComponent} from './view/formateur/formateur.component';
+import {RegisterFormateurComponent} from './view/shared/register-formateur/register-formateur.component';
+import {ApprenantComponent} from './view/apprenant/apprenant.component';
+import {RegisterApprenantComponent} from './view/shared/register-apprenant/register-apprenant.component';
+import {MessageService} from 'primeng/api';
+
 
 @NgModule({
     imports: [
@@ -271,12 +279,19 @@ import {HomeComponent} from './view/shared/home/home.component';
         AppErrorComponent,
         AppAccessdeniedComponent,
         AppLoginComponent,
-        HomeComponent
+        HomeComponent,
+        RegisterAdminComponent,
+        AdminComponent,
+        FormateurComponent,
+        RegisterFormateurComponent,
+        ApprenantComponent,
+        RegisterApprenantComponent
 
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
+        AppMainComponent, MessageService,
         PhotoService, ProductService, MenuService
     ],
     bootstrap: [AppComponent]

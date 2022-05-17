@@ -1,0 +1,49 @@
+<div class="login-body">
+    <div [style]="{width: '700px'}" class="card login-panel p-fluid">
+        <div class="login-panel-content">
+            <div class="p-grid">
+                <div class="p-col-12  logo-container">
+                    <img src="assets/layout/images/logo-roma.svg"/>
+                    <span class="guest-sign-in">Welcome, please use the form to sign-up the community</span>
+                </div>
+                <div class="p-col-6 username-container">
+                    <label>Full name</label>
+                    <div class="login-input">
+                        <input id="input" [(ngModel)]="user.fullname" type="text" pInputText>
+                    </div>
+                </div>
+
+
+                <div class="p-col-6 username-container">
+                    <label>Email</label>
+                    <div class="login-input">
+                        <input id="input" [(ngModel)]="user.email" type="email" pInputText>
+                    </div>
+                </div>
+
+
+                <div class="p-col-6 username-container">
+                    <label>Username</label>
+                    <div class="login-input">
+                        <input id="input" [(ngModel)]="user.username" type="text" pInputText>
+                    </div>
+                </div>
+
+
+                <div class="p-col-6 password-container">
+                    <!-- <h:panelGroup> -->
+                    <label>Password</label>
+                    <div class="login-input">
+                        <input pPassword [(ngModel)]="user.password" type="password"/>
+                    </div>
+                    <!-- </h:panelGroup> -->
+                </div>
+
+
+                <div class="p-col-12 p-sm-6 p-md-6">
+                    <button pButton type="button" (click)="signUp()" icon="pi pi-check" label="Sign Up"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

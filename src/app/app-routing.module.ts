@@ -31,12 +31,18 @@ import {TextComponent} from './utilities/text.component';
 import {AppCrudComponent} from './pages/app.crud.component';
 import {AppCalendarComponent} from './pages/app.calendar.component';
 import {AppTimelineDemoComponent} from './pages/app.timelinedemo.component';
-import {AppMainComponent} from './app.main.component';
+import {AppMainComponent} from './main/app.main.component';
 import {AppNotfoundComponent} from './view/shared/page-note-found/app.notfound.component';
 import {AppErrorComponent} from './view/shared/error/app.error.component';
 import {AppAccessdeniedComponent} from './view/shared/accessDenied/app.accessdenied.component';
 import {AppLoginComponent} from './view/shared/login/app.login.component';
 import {HomeComponent} from './view/shared/home/home.component';
+import {RegisterAdminComponent} from './view/shared/register-admin/register-admin.component';
+import {AdminComponent} from './view/admin/admin.component';
+import {FormateurComponent} from './view/formateur/formateur.component';
+import {RegisterFormateurComponent} from './view/shared/register-formateur/register-formateur.component';
+import {ApprenantComponent} from './view/apprenant/apprenant.component';
+import {RegisterApprenantComponent} from './view/shared/register-apprenant/register-apprenant.component';
 
 @NgModule({
     imports: [
@@ -44,6 +50,24 @@ import {HomeComponent} from './view/shared/home/home.component';
             {
                 path: '', component: AppMainComponent,
                 children: [
+                    {
+                        path: 'admin', component: AdminComponent,
+                        children: [
+                            {path: 'register', component: RegisterAdminComponent},
+                        ]
+                    },
+                    {
+                        path: 'formateur', component: FormateurComponent,
+                        children: [
+                            {path: 'register', component: RegisterFormateurComponent},
+                        ]
+                    },
+                    {
+                        path: 'apprenant', component: ApprenantComponent,
+                        children: [
+                            {path: 'register', component: RegisterApprenantComponent},
+                        ]
+                    },
                     {path: '', component: HomeComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
@@ -77,10 +101,34 @@ import {HomeComponent} from './view/shared/home/home.component';
                     {path: 'documentation', component: DocumentationComponent}
                 ]
             },
+            {
+                path: 'admin', component: AdminComponent,
+                children: [
+                    {path: 'register', component: RegisterAdminComponent},
+                ]
+            },
+            {
+                path: 'formateur', component: FormateurComponent,
+                children: [
+                    {path: 'register', component: RegisterFormateurComponent},
+                ]
+            },
+            {
+                path: 'apprenant', component: ApprenantComponent,
+                children: [
+                    {path: 'register', component: RegisterApprenantComponent},
+                ]
+            }
+
+
+            ,
             {path: 'error', component: AppErrorComponent},
             {path: 'accessdenied', component: AppAccessdeniedComponent},
             {path: '404', component: AppNotfoundComponent},
             {path: 'login', component: AppLoginComponent},
+            {path: 'register/admin', component: RegisterAdminComponent},
+            {path: 'register/apprenant', component: RegisterApprenantComponent},
+            {path: 'register/formateur', component: RegisterFormateurComponent},
             {path: 'dash', component: AppLoginComponent},
             {path: '**', redirectTo: '/404'},
         ], {scrollPositionRestoration: 'enabled'})
