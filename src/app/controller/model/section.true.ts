@@ -1,7 +1,7 @@
 import {Cours} from './cours.model';
 
 export class Section {
-    private id: number;
-    private section_name: string;
-    private cours: Cours;
+    public id: number;
+    public section_name: string;
+    public cours: Cours;
 }

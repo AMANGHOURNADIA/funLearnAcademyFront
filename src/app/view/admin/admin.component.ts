@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MenuService} from '../../menu/app.menu.service';
 import {PrimeNGConfig} from 'primeng/api';
 import {AppComponent} from '../../app.component';
+import {Categorie} from '../../controller/model/categorie.model';
 
 @Component({
     selector: 'app-admin',

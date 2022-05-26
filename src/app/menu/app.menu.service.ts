@@ -15,6 +15,6 @@ export class MenuService {
     }
 
     reset() {
-        this.resetSource.next(); // att ansifto lik f whtsp abb ok bb hzih abb w h f src ndir lih copy kima dart
+        this.resetSource.next();
     }
 }

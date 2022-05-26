@@ -1,15 +1,10 @@
 <div class="layout-topbar">
 
     <a class="layout-right-panel-button layout-topbar-icon" (click)="appMain.onRightMenuClick($event)" href="#">
-            <i class="pi pi-ellipsis-v"></i>
+        <i class="pi pi-ellipsis-v"></i>
     </a>
-
     <a href="#" class="layout-menu-button layout-topbar-icon" (click)="appMain.onMenuButtonClick($event)">
         <i class="pi pi-bars"></i>
-    </a>
-
-    <a href="#" class="layout-topbar-logo">
-        <img id="topbar-logo" src="../../assets/layout/images/logo-roma-white.svg">
     </a>
 
     <span class="layout-topbar-search">
@@ -17,13 +12,15 @@
         <input type="text" placeholder="Enter your search term">
     </span>
 
-    <ul  class="topbar-menu" >
+    <ul *ngIf="isUserLoggedIn"  class="topbar-menu" >
         <li class="user-profile" [ngClass]="{'active-topmenuitem fadeInDown': appMain.topbarUserMenuActive}">
             <a href="#" (click)="appMain.onTopbarUserMenuButtonClick($event)" *ngIf="!app.inlineUser">
-                <img src="../../assets/layout/images/avatar.png" alt="roma-layout" />
+                <img [src]="user?.image" alt="roma-layout" />
                 <div class="layout-profile-userinfo">
-                    <span class="layout-profile-name">Arlene Welch</span>
-                    <span class="layout-profile-role">Design Ops</span>
+                    <span class="layout-profile-name">{{user?.fullname}}</span>
+                    <span *ngIf="user?.role === role.ADMIN" class="layout-profile-role">Admin</span>
+                    <span *ngIf="user?.role === role.FORMATEUR" class="layout-profile-role">Formateur</span>
+                    <span *ngIf="user?.role === role.APPRENANT" class="layout-profile-role">Apprenant</span>
                 </div>
             </a>
             <ul class="fadeInDown">
@@ -49,6 +46,12 @@
                         <a href="#">
                             <i class="pi pi-fw pi-bell"></i>
                             <span>Notifications</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)="logOut()">
+                            <i class="pi pi-fw pi-bell"></i>
+                            <span>Log out</span>
                         </a>
                     </li>
             </ul>
@@ -101,4 +104,16 @@
                 </ul>
         </li>
     </ul>
+
+    <ul *ngIf="!isUserLoggedIn"  class="topbar-menu" >
+
+        <p-splitButton label="Sign up" [model]="this.items" styleClass="p-button-text p-button-help mr-2 mb-2"></p-splitButton>
+    </ul>
+    <ul *ngIf="!isUserLoggedIn"  class="topbar-menu" >
+
+        <p-splitButton label="Sign in" [model]="this.items" styleClass="p-button-text p-button-help mr-2 mb-2"></p-splitButton>
+    </ul>
+
+
+
 </div>

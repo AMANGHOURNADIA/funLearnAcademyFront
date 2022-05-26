@@ -1,6 +1,6 @@
 export class Categorie {
-    private id: number;
-    private Cat_name: string;
-    private Cat_code: string;
-    private description: string;
+    public id = 0;
+    public cat_name: string;
+    public cat_code: string;
+    public description: string;
 }
