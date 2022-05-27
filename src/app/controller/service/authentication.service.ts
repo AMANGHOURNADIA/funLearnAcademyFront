@@ -47,12 +47,10 @@ export class AuthenticationService {
     }
 
     public getUserFromLocalCache(): User {
-        // @ts-ignore
         return JSON.parse(localStorage.getItem('user'));
     }
 
     public loadToken(): void {
-        // @ts-ignore
         this.token = localStorage.getItem('token');
     }
 
