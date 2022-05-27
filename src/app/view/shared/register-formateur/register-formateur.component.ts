@@ -5,6 +5,8 @@ import {Subscription} from 'rxjs';
 import {AuthenticationService} from '../../../controller/service/authentication.service';
 import {Router} from '@angular/router';
 import {MessageService} from 'primeng/api';
+import {FormateurService} from '../../../controller/service/formateur.service';
+import {Formateur} from '../../../controller/model/formateur.model';
 
 @Component({
   selector: 'app-register-formateur',
@@ -12,19 +14,22 @@ import {MessageService} from 'primeng/api';
   styleUrls: ['./register-formateur.component.scss']
 })
 export class RegisterFormateurComponent implements OnInit {
-  user: User = new User();
+  formateur: Formateur = new Formateur();
   private subscriptions: Subscription[] = [];
-  constructor(private authService: AuthenticationService, private router: Router, private messageService: MessageService) { }
+  constructor(private authService: AuthenticationService,
+              private router: Router,
+              private fourmateurService: FormateurService,
+              private messageService: MessageService) { }
 
   ngOnInit(): void {
   }
   signUp() {
-    this.authService.register(this.user).subscribe(
+    this.fourmateurService.register(this.formateur).subscribe(
         data => {
           this.messageService.add({
             severity: 'success',
             summary: 'Successful',
-            detail: 'Registration added, welcome ' + this.user.fullname + ' in our community',
+            detail: 'Registration added, welcome ' + this.formateur.fullname + ' in our community',
             life: 3000
           });
           this.router.navigateByUrl('login');
