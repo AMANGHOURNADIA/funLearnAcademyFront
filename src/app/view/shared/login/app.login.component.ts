@@ -7,6 +7,7 @@ import {User} from '../../../controller/model/user.model';
 import {HttpErrorResponse, HttpResponse} from '@angular/common/http';
 import {HeaderType} from '../../../enum/header-type.enum';
 import {MessageService} from 'primeng/api';
+import {Role} from '../../../enum/role.enum';
 
 @Component({
     selector: 'app-login',
@@ -21,8 +22,16 @@ export class AppLoginComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
+        this.user = this.authenticationService.getUserFromLocalCache();
         if (this.authenticationService.isUserLoggedIn()) {
-            this.router.navigateByUrl('');
+            if (this.user.role === Role.FORMATEUR) {
+                this.router.navigateByUrl('/formateur/courses');
+            } else if (this.user.role === Role.ADMIN) {
+                this.router.navigateByUrl('/admin/manage/categories');
+            } else {
+                this.router.navigateByUrl('');
+            }
+
         } else {
             this.router.navigateByUrl('/login');
         }

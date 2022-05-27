@@ -46,6 +46,7 @@ import {RegisterApprenantComponent} from './view/shared/register-apprenant/regis
 import {register} from 'ts-node';
 import {ManageCategorieComponent} from './view/admin/manage-categorie/manage-categorie.component';
 import {AppTopBarComponent} from './top-bar/app.topbar.component';
+import {ManageCoursesComponent} from './view/formateur/manage-courses/manage-courses.component';
 
 @NgModule({
     imports: [
@@ -65,6 +66,7 @@ import {AppTopBarComponent} from './top-bar/app.topbar.component';
                         path: 'formateur', component: FormateurComponent,
                         children: [
                             {path: 'register', component: RegisterFormateurComponent},
+                            {path: 'courses', component: ManageCoursesComponent},
                         ]
                     },
                     {
