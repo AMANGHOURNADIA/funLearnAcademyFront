@@ -143,7 +143,13 @@ import {FormateurComponent} from './view/formateur/formateur.component';
 import {RegisterFormateurComponent} from './view/shared/register-formateur/register-formateur.component';
 import {ApprenantComponent} from './view/apprenant/apprenant.component';
 import {RegisterApprenantComponent} from './view/shared/register-apprenant/register-apprenant.component';
-import {MessageService} from 'primeng/api';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {UserListComponent} from './view/user-list/user-list.component';
+import {HomeApprenantComponent} from './view/apprenant/home-apprenant/home-apprenant.component';
+import {HomeAdminComponent} from './view/admin/home-admin/home-admin.component';
+import { ManageCategorieComponent } from './view/admin/manage-categorie/manage-categorie.component';
+import { ManageCoursesComponent } from './view/formateur/manage-courses/manage-courses.component';
+import {HomeFourmateurComponent} from './view/formateur/home-fourmateur/home-fourmateur.component';
 
 
 @NgModule({
@@ -229,6 +235,7 @@ import {MessageService} from 'primeng/api';
         ToastModule,
         ToggleButtonModule,
         ToolbarModule,
+        ConfirmDialogModule,
         TooltipModule,
         TreeModule,
         TreeTableModule,
@@ -285,13 +292,20 @@ import {MessageService} from 'primeng/api';
         FormateurComponent,
         RegisterFormateurComponent,
         ApprenantComponent,
-        RegisterApprenantComponent
+        RegisterApprenantComponent,
+        UserListComponent,
+        HomeApprenantComponent,
+        HomeAdminComponent,
+        ManageCategorieComponent,
+        ManageCoursesComponent,
+        HomeFourmateurComponent
+
 
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
         CountryService, CustomerService, EventService, IconService, NodeService,
-        AppMainComponent, MessageService,
+        AppMainComponent, MessageService, ConfirmationService,
         PhotoService, ProductService, MenuService
     ],
     bootstrap: [AppComponent]

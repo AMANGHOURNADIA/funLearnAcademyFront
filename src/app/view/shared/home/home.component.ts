@@ -17,18 +17,7 @@ export class HomeComponent implements OnInit {
 
     ngOnInit(): void {
         this.user = this.authenticationService.getUserFromLocalCache();
-        console.log(this.user);
-        if (this.user === null) {
-            this.router.navigate(['login']);
-        } else {
-            if (this.user?.role === Role.ADMIN) {
-                console.log('admin');
-            } else if (this.user?.role === Role.FORMATEUR) {
-                console.log('fourmateur');
-            } else if (this.user?.role === Role.APPRENANT) {
 
-            }
-        }
 
     }
 

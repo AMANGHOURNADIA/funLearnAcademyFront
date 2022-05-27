@@ -43,6 +43,9 @@ import {FormateurComponent} from './view/formateur/formateur.component';
 import {RegisterFormateurComponent} from './view/shared/register-formateur/register-formateur.component';
 import {ApprenantComponent} from './view/apprenant/apprenant.component';
 import {RegisterApprenantComponent} from './view/shared/register-apprenant/register-apprenant.component';
+import {register} from 'ts-node';
+import {ManageCategorieComponent} from './view/admin/manage-categorie/manage-categorie.component';
+import {AppTopBarComponent} from './top-bar/app.topbar.component';
 
 @NgModule({
     imports: [
@@ -54,6 +57,8 @@ import {RegisterApprenantComponent} from './view/shared/register-apprenant/regis
                         path: 'admin', component: AdminComponent,
                         children: [
                             {path: 'register', component: RegisterAdminComponent},
+                            {path: 'manage/categories', component: ManageCategorieComponent},
+                            {path: 'signup', component: AppTopBarComponent},
                         ]
                     },
                     {
@@ -68,7 +73,7 @@ import {RegisterApprenantComponent} from './view/shared/register-apprenant/regis
                             {path: 'register', component: RegisterApprenantComponent},
                         ]
                     },
-                    {path: '', component: HomeComponent},
+                    {path: 'home', component: HomeComponent},
                     {path: 'uikit/formlayout', component: FormLayoutDemoComponent},
                     {path: 'uikit/floatlabel', component: FloatLabelDemoComponent},
                     {path: 'uikit/invalidstate', component: InvalidStateDemoComponent},
@@ -98,29 +103,9 @@ import {RegisterApprenantComponent} from './view/shared/register-apprenant/regis
                     {path: 'pages/calendar', component: AppCalendarComponent},
                     {path: 'pages/timeline', component: AppTimelineDemoComponent},
                     {path: 'pages/empty', component: EmptyDemoComponent},
-                    {path: 'documentation', component: DocumentationComponent}
-                ]
-            },
-            {
-                path: 'admin', component: AdminComponent,
-                children: [
-                    {path: 'register', component: RegisterAdminComponent},
-                ]
-            },
-            {
-                path: 'formateur', component: FormateurComponent,
-                children: [
-                    {path: 'register', component: RegisterFormateurComponent},
-                ]
-            },
-            {
-                path: 'apprenant', component: ApprenantComponent,
-                children: [
-                    {path: 'register', component: RegisterApprenantComponent},
+                    {path: 'documentation', component: DocumentationComponent},
                 ]
             }
-
-
             ,
             {path: 'error', component: AppErrorComponent},
             {path: 'accessdenied', component: AppAccessdeniedComponent},
