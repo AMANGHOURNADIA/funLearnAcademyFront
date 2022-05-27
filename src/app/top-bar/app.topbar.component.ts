@@ -25,9 +25,9 @@ export class AppTopBarComponent implements OnInit {
         this.user = this.authService.getUserFromLocalCache();
         this.isUserLoggedIn = this.authService.isUserLoggedIn();
         this.items = [
-            {label: 'As admin', icon: 'pi pi-cog', routerLink: ['/admin/register']},
-            {label: 'As fourmateur', icon: 'pi pi-cog', routerLink: ['/formateur/register']},
-            {label: 'As apprenant', icon: 'pi pi-cog', routerLink: ['/apprenant/register']},
+            {label: 'As admin', icon: 'pi pi-cog', routerLink: ['/register/admin']},
+            {label: 'As fourmateur', icon: 'pi pi-cog', routerLink: ['/register/formateur']},
+            {label: 'As apprenant', icon: 'pi pi-cog', routerLink: ['/register/apprenant']},
         ];
         this.categories = [
 
