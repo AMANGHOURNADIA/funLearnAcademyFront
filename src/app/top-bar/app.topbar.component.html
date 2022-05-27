@@ -110,7 +110,7 @@
         <p-splitButton label="Sign up" [model]="this.items" styleClass="p-button-text p-button-help mr-2 mb-2"></p-splitButton>
     </ul>
     <ul *ngIf="!isUserLoggedIn"  class="topbar-menu" style=" margin: 0 50px" >
-        <button pButton pRipple type="button" label="Sign in" class="p-button-help"></button>
+        <button pButton pRipple routerLink="/login" type="button" label="Sign in" class="p-button-help"></button>
 <!--        <p-splitButton label="Sign in" [model]="this.items" styleClass="p-button-text p-button-help mr-2 mb-2"></p-splitButton>-->
     </ul>
 

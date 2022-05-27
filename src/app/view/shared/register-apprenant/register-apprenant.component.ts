@@ -5,6 +5,8 @@ import {AuthenticationService} from '../../../controller/service/authentication.
 import {Router} from '@angular/router';
 import {MessageService} from 'primeng/api';
 import {HttpErrorResponse} from '@angular/common/http';
+import {ApprenantService} from '../../../controller/service/apprenant.service';
+import {Apprenant} from '../../../controller/model/apprenant.model';
 
 @Component({
   selector: 'app-register-apprenant',
@@ -12,20 +14,22 @@ import {HttpErrorResponse} from '@angular/common/http';
   styleUrls: ['./register-apprenant.component.scss']
 })
 export class RegisterApprenantComponent implements OnInit {
-  user: User = new User();
+  apprenant: Apprenant = new Apprenant();
   private subscriptions: Subscription[] = [];
 
-  constructor(private authService: AuthenticationService, private router: Router, private messageService: MessageService) { }
+  constructor(private authService: AuthenticationService,
+              private apprenantService: ApprenantService,
+              private router: Router, private messageService: MessageService) { }
 
   ngOnInit(): void {
   }
   signUp() {
-    this.authService.register(this.user).subscribe(
+    this.apprenantService.register(this.apprenant).subscribe(
         data => {
           this.messageService.add({
             severity: 'success',
             summary: 'Successful',
-            detail: 'Registration added, welcome ' + this.user.fullname + ' in our community',
+            detail: 'Registration added, welcome ' + this.apprenant.fullname + ' in our community',
             life: 3000
           });
           this.router.navigateByUrl('login');
