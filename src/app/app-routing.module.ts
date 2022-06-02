@@ -36,7 +36,6 @@ import {AppNotfoundComponent} from './view/shared/page-note-found/app.notfound.c
 import {AppErrorComponent} from './view/shared/error/app.error.component';
 import {AppAccessdeniedComponent} from './view/shared/accessDenied/app.accessdenied.component';
 import {AppLoginComponent} from './view/shared/login/app.login.component';
-import {HomeComponent} from './view/shared/home/home.component';
 import {RegisterAdminComponent} from './view/shared/register-admin/register-admin.component';
 import {AdminComponent} from './view/admin/admin.component';
 import {FormateurComponent} from './view/formateur/formateur.component';
@@ -47,10 +46,114 @@ import {register} from 'ts-node';
 import {ManageCategorieComponent} from './view/admin/manage-categorie/manage-categorie.component';
 import {AppTopBarComponent} from './top-bar/app.topbar.component';
 import {ManageCoursesComponent} from './view/formateur/manage-courses/manage-courses.component';
+import {ErrorPageComponent} from './view/apprenant/educal/error-page/error-page.component';
+import {SignUpMainComponent} from './view/apprenant/educal/sign-up/sign-up-main/sign-up-main.component';
+import {ContactMainComponent} from './view/apprenant/educal/contact/contact-main/contact-main.component';
+import {SignInMainComponent} from './view/apprenant/educal/sign-in/sign-in-main/sign-in-main.component';
+import {CheckoutMainComponent} from './view/apprenant/educal/checkout/checkout-main/checkout-main.component';
+import {WishlistMainComponent} from './view/apprenant/educal/wishlist/wishlist-main/wishlist-main.component';
+import {CartComponent} from './view/apprenant/educal/cart/cart-main/cart.component';
+import {EventDetailsMainComponent} from './view/apprenant/educal/event-details/event-details-main/event-details-main.component';
+import {InstructorDetailsComponent} from './view/apprenant/educal/instructor-details/instructor-details-main/instructor-details.component';
+import {InstructorMainComponent} from './view/apprenant/educal/instructor/instructor-main/instructor-main.component';
+import {AboutMainComponent} from './view/apprenant/educal/about/about-main/about-main.component';
+import {BlogDetailsMainComponent} from './view/apprenant/educal/blog-details/blog-details-main/blog-details-main.component';
+import {BlogComponent} from './view/apprenant/educal/blog/blog-main/blog.component';
+import {CourseDetailsComponent} from './view/apprenant/educal/course-details/course-details-main/course-details.component';
+import {CourseSidebarMainComponent} from './view/apprenant/educal/course-sidebar/course-sidebar-main/course-sidebar-main.component';
+import {CoursesListPageComponent} from './view/apprenant/educal/courses-list-page/courses-list-main/courses-list-page.component';
+import {CoursesPageComponent} from './view/apprenant/educal/courses/courses-page/courses-page.component';
+import {HomeThreeComponent} from './view/apprenant/educal/home-three/home-three-main/home-three.component';
+import {HomeTwoComponent} from './view/apprenant/educal/home-two/home-two-main/home-two.component';
+import {HomeComponent} from './view/apprenant/educal/Home/Home/home.component';
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
+            { path: '', component: HomeComponent },
+            { path: 'home', component: HomeComponent },
+            {
+                path: 'home-two',
+                component: HomeTwoComponent
+            },
+            {
+                path: 'home-three',
+                component: HomeThreeComponent
+            },
+            {
+                path: 'courses',
+                component: CoursesPageComponent
+            },
+            {
+                path: 'courses-list',
+                component: CoursesListPageComponent
+            },
+            {
+                path: 'courses-sidebar',
+                component: CourseSidebarMainComponent
+            },
+            {
+                path: 'course-details',
+                component: CourseDetailsComponent
+            },
+            {
+                path: 'blog',
+                component: BlogComponent
+            },
+            {
+                path: 'blog-details',
+                component: BlogDetailsMainComponent
+            },
+            {
+                path: 'about',
+                component: AboutMainComponent
+            },
+            {
+                path: 'instructor',
+                component: InstructorMainComponent
+            },
+            {
+                path: 'instructor-details',
+                component: InstructorDetailsComponent
+            },
+            {
+                path: 'event-details',
+                component: EventDetailsMainComponent
+            },
+            {
+                path: 'cart',
+                component: CartComponent
+            },
+            {
+                path: 'wishlist',
+                component: WishlistMainComponent
+            },
+            {
+                path: 'checkout',
+                component: CheckoutMainComponent
+            },
+            {
+                path: 'sign-in',
+                component: SignInMainComponent
+            },
+            {
+                path: 'sign-up',
+                component: SignUpMainComponent
+            },
+            {
+                path: 'error',
+                component: ErrorPageComponent
+            },
+            {
+                path: 'contact',
+                component: ContactMainComponent
+            },
+            {
+                path: '', component: ApprenantComponent,
+                children: [
+                    {path: '', component: RegisterApprenantComponent},
+                ]
+            },
             {
                 path: '', component: AppMainComponent,
                 children: [
@@ -67,12 +170,6 @@ import {ManageCoursesComponent} from './view/formateur/manage-courses/manage-cou
                         children: [
                             {path: 'register', component: RegisterFormateurComponent},
                             {path: 'courses', component: ManageCoursesComponent},
-                        ]
-                    },
-                    {
-                        path: 'apprenant', component: ApprenantComponent,
-                        children: [
-                            {path: 'register', component: RegisterApprenantComponent},
                         ]
                     },
                     {path: 'home', component: HomeComponent},
