@@ -22,8 +22,8 @@ export class AppLoginComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.user = this.authenticationService.getUserFromLocalCache();
         if (this.authenticationService.isUserLoggedIn()) {
+            this.user = this.authenticationService.getUserFromLocalCache();
             if (this.user.role === Role.FORMATEUR) {
                 this.router.navigateByUrl('/formateur/courses');
             } else if (this.user.role === Role.ADMIN) {

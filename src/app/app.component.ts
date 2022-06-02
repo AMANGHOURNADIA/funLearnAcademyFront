@@ -1,11 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuItem, PrimeNGConfig} from 'primeng/api';
+import {NavigationEnd, Router} from '@angular/router';
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
     layoutMode = 'static';
 
@@ -23,9 +24,19 @@ export class AppComponent implements OnInit{
 
     items: MenuItem[];
 
-    constructor(private primengConfig: PrimeNGConfig) { }
+    constructor(private primengConfig: PrimeNGConfig, private router: Router) {
+    }
+
+    title = 'educal';
+
 
     ngOnInit() {
+        this.router.events.subscribe((evt) => {
+            if (!(evt instanceof NavigationEnd)) {
+                return;
+            }
+            window.scrollTo(0, 0);
+        });
         this.primengConfig.ripple = true;
         this.items = [
             {
