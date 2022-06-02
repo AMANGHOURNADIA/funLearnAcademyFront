@@ -41,39 +41,36 @@ export class AppMenuComponent implements OnInit {
         if (user.role === Role.ADMIN) {
             this.model = [
                 {
-                    label: 'Favorites', icon: 'pi pi-fw pi-home',
+                    label: 'Admin profile', icon: 'pi pi-fw pi-home',
                     items: [
                         {label: 'Manage categories', icon: 'pi pi-fw pi-cog', routerLink: ['/admin/manage/categories']}
                     ]
                 },
                 {
-                    label: 'UI Kit', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
+                    label: 'consultation', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
                     items: [
-                        {label: 'Form Layout', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout']},
-                        {label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input']},
-                        {label: 'Float Label', icon: 'pi pi-bookmark', routerLink: ['/uikit/floatlabel']},
-                        {label: 'Invalid State', icon: 'pi pi-exclamation-circle', routerLink: ['/uikit/invalidstate']},
-                        {label: 'Button', icon: 'pi pi-fw pi-mobile', routerLink: ['/uikit/button'], class: 'rotated-icon'},
-                        {label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table']},
-                        {label: 'List', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/list']},
-                        {label: 'Tree', icon: 'pi pi-fw pi-share-alt', routerLink: ['/uikit/tree']},
-                        {label: 'Panel', icon: 'pi pi-fw pi-tablet', routerLink: ['/uikit/panel']},
-                        {label: 'Overlay', icon: 'pi pi-fw pi-clone', routerLink: ['/uikit/overlay']},
-                        {label: 'Media', icon: 'pi pi-fw pi-image', routerLink: ['/uikit/media']},
-                        {label: 'Menu', icon: 'pi pi-fw pi-bars', routerLink: ['/uikit/menu']},
-                        {label: 'Message', icon: 'pi pi-fw pi-comment', routerLink: ['/uikit/message']},
-                        {label: 'File', icon: 'pi pi-fw pi-file', routerLink: ['/uikit/file']},
-                        {label: 'Chart', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts']},
-                        {label: 'Misc', icon: 'pi pi-fw pi-circle-off', routerLink: ['/uikit/misc']}
+                        {label: 'instructors', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/instructors']},
+                        {label: 'Learners', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/Learners']},
+                        {label: 'Formations', icon: 'pi pi-list', routerLink: ['/uikit/Formations']},
+                        {label: 'Reclamation', icon: 'pi pi-comment', routerLink: ['/uikit/Reclamation']}
                     ]
                 },
             ];
         } else if (user.role === Role.FORMATEUR) {
             this.model = [
                 {
-                    label: 'Favorites', icon: 'pi pi-fw pi-home',
+                    label: 'Formateur profile', icon: 'pi pi-fw pi-home',
                     items: [
                         {label: 'Manage courses', icon: 'pi pi-fw pi-home', routerLink: ['/formateur/courses']}
+                    ]
+                },
+                {
+                    label: 'consultation', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
+                    items: [
+                        {label: 'instructors', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/instructors']},
+                        {label: 'Learners', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/Learners']},
+                        {label: 'Formations', icon: 'pi pi-list', routerLink: ['/uikit/Formations']},
+                        {label: 'Reclamation', icon: 'pi pi-comment', routerLink: ['/uikit/Reclamation']}
                     ]
                 },
 
