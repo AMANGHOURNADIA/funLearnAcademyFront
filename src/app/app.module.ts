@@ -150,6 +150,7 @@ import {HomeAdminComponent} from './view/admin/home-admin/home-admin.component';
 import { ManageCategorieComponent } from './view/admin/manage-categorie/manage-categorie.component';
 import { ManageCoursesComponent } from './view/formateur/manage-courses/manage-courses.component';
 import {HomeFourmateurComponent} from './view/formateur/home-fourmateur/home-fourmateur.component';
+import {EducalModule} from './view/apprenant/educal/educal.module';
 
 
 @NgModule({
@@ -160,6 +161,7 @@ import {HomeFourmateurComponent} from './view/formateur/home-fourmateur/home-fou
         AppCodeModule,
         HttpClientModule,
         BrowserAnimationsModule,
+        EducalModule,
         AccordionModule,
         AutoCompleteModule,
         AvatarModule,
