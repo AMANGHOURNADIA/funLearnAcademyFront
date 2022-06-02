@@ -2,7 +2,6 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
-import { SwiperModule } from 'swiper/angular';
 import { HomeComponent } from './Home/Home/home.component';
 import { HeaderOneComponent } from './common/header-one/header-one.component';
 import { HeroComponent } from './Home/hero/hero.component';
@@ -156,7 +155,6 @@ import { BlogTwoComponent } from './home-two/blog-two/blog-two.component';
     CommonModule,
     RouterModule,
     MatTabsModule,
-    SwiperModule,
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
