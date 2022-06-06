@@ -20,6 +20,7 @@ export class AppLoginComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
+
         if (this.authenticationService.isUserLoggedIn()) {
             this.user = this.authenticationService.getUserFromLocalCache();
             if (this.user.role === Role.FORMATEUR) {
@@ -43,7 +44,13 @@ export class AppLoginComponent implements OnInit, OnDestroy {
                     const token = response.body.token;
                     this.authenticationService.saveToken(token);
                     this.authenticationService.addUserToLocalCache(response.body);
-                    this.router.navigateByUrl('');
+                    if (response.body.role === Role.FORMATEUR) {
+                        this.router.navigateByUrl('/formateur/courses');
+                    } else if (response.body.role === Role.ADMIN) {
+                        this.router.navigateByUrl('/admin/manage/categories');
+                    } else {
+                        this.router.navigateByUrl('');
+                    }
                     this.showLoading = false;
                 },
                 (errorResponse: HttpErrorResponse) => {
