@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CourseSidebarAreaComponent } from './course-sidebar-area.component';
+import {CourseSidebarAreaComponent} from './course-sidebar-area.component';
 
 describe('CourseSidebarAreaComponent', () => {
   let component: CourseSidebarAreaComponent;

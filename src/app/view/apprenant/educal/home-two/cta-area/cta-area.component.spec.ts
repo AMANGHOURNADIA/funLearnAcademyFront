@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CtaAreaComponent } from './cta-area.component';
+import {CtaAreaComponent} from './cta-area.component';
 
 describe('CtaAreaComponent', () => {
   let component: CtaAreaComponent;

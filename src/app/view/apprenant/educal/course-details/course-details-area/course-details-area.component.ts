@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import SwiperCore, {Autoplay, Pagination} from 'swiper';
 // import Swiper core and required modules
-import SwiperCore, { Pagination, Autoplay } from "swiper";
 
 // install Swiper modules
-SwiperCore.use([ Pagination, Autoplay])
+SwiperCore.use([ Pagination, Autoplay]);
 
 @Component({
   selector: 'app-course-details-area',

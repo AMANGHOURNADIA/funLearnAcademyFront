@@ -4,7 +4,6 @@ import {Categorie} from '../../../controller/model/categorie.model';
 import {ConfirmationService, MessageService} from 'primeng/api';
 import {CategorieItem} from '../../../controller/model/categorie-item.true';
 import {CategorieItemService} from '../../../controller/service/categorie-item.service';
-import {Observable} from 'rxjs';
 import {SujetService} from '../../../controller/service/sujet.service';
 import {Sujet} from '../../../controller/model/sujet.true';
 

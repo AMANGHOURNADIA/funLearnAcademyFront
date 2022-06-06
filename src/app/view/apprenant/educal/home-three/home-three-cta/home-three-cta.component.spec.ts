@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HomeThreeCtaComponent } from './home-three-cta.component';
+import {HomeThreeCtaComponent} from './home-three-cta.component';
 
 describe('HomeThreeCtaComponent', () => {
   let component: HomeThreeCtaComponent;

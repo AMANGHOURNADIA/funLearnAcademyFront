@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { WishlistAreaComponent } from './wishlist-area.component';
+import {WishlistAreaComponent} from './wishlist-area.component';
 
 describe('WishlistAreaComponent', () => {
   let component: WishlistAreaComponent;

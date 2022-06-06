@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BannerAreaComponent } from './banner-area.component';
+import {BannerAreaComponent} from './banner-area.component';
 
 describe('BannerAreaComponent', () => {
   let component: BannerAreaComponent;

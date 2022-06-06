@@ -151,6 +151,7 @@ import { ManageCategorieComponent } from './view/admin/manage-categorie/manage-c
 import { ManageCoursesComponent } from './view/formateur/manage-courses/manage-courses.component';
 import {HomeFourmateurComponent} from './view/formateur/home-fourmateur/home-fourmateur.component';
 import {EducalModule} from './view/apprenant/educal/educal.module';
+import {SwiperModule} from 'ngx-swiper-wrapper';
 
 
 @NgModule({
@@ -241,7 +242,7 @@ import {EducalModule} from './view/apprenant/educal/educal.module';
         TooltipModule,
         TreeModule,
         TreeTableModule,
-        VirtualScrollerModule,
+        VirtualScrollerModule
     ],
     declarations: [
         AppComponent,
@@ -301,7 +302,6 @@ import {EducalModule} from './view/apprenant/educal/educal.module';
         ManageCategorieComponent,
         ManageCoursesComponent,
         HomeFourmateurComponent
-
 
     ],
     providers: [

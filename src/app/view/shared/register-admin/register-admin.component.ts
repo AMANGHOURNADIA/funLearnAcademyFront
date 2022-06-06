@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from '../../../controller/service/user.service';
 import {User} from '../../../controller/model/user.model';
 import {MessageService} from 'primeng/api';
 import {AuthenticationService} from '../../../controller/service/authentication.service';
-import {HttpErrorResponse, HttpResponse} from '@angular/common/http';
-import {HeaderType} from '../../../enum/header-type.enum';
+import {HttpErrorResponse} from '@angular/common/http';
 import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
 

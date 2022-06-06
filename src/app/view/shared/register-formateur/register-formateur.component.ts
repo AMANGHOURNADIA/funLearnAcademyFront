@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpErrorResponse} from '@angular/common/http';
-import {User} from '../../../controller/model/user.model';
 import {Subscription} from 'rxjs';
 import {AuthenticationService} from '../../../controller/service/authentication.service';
 import {Router} from '@angular/router';

@@ -70,8 +70,8 @@ import {HomeComponent} from './view/apprenant/educal/Home/Home/home.component';
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            { path: '', component: HomeComponent },
-            { path: 'home', component: HomeComponent },
+            { path: '', component: HomeTwoComponent },
+            { path: 'home', component: HomeTwoComponent },
             {
                 path: 'home-two',
                 component: HomeTwoComponent

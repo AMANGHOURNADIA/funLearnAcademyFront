@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HeaderOneComponent } from './header-one.component';
+import {HeaderOneComponent} from './header-one.component';
 
 describe('HeaderOneComponent', () => {
   let component: HeaderOneComponent;

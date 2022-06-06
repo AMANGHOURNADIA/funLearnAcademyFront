@@ -2,10 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../../../controller/service/authentication.service';
-import {AppMenuComponent} from '../../../main/app.menu.component';
 import {User} from '../../../controller/model/user.model';
 import {HttpErrorResponse, HttpResponse} from '@angular/common/http';
-import {HeaderType} from '../../../enum/header-type.enum';
 import {MessageService} from 'primeng/api';
 import {Role} from '../../../enum/role.enum';
 

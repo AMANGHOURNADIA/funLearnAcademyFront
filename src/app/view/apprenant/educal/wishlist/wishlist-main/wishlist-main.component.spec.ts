@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { WishlistMainComponent } from './wishlist-main.component';
+import {WishlistMainComponent} from './wishlist-main.component';
 
 describe('WishlistMainComponent', () => {
   let component: WishlistMainComponent;

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import SwiperCore, { Autoplay, Navigation } from "swiper";
+import {Component, OnInit} from '@angular/core';
+import SwiperCore, {Autoplay, Navigation} from 'swiper';
 
 
-SwiperCore.use([Navigation,Autoplay]);
+SwiperCore.use([Navigation, Autoplay]);
 
 @Component({
   selector: 'app-testimonial-area',

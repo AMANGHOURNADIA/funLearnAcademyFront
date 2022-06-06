@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { SignInAreaComponent } from './sign-in-area.component';
+import {SignInAreaComponent} from './sign-in-area.component';
 
 describe('SignInAreaComponent', () => {
   let component: SignInAreaComponent;

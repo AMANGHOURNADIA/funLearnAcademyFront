@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CouponAreaComponent } from './coupon-area.component';
+import {CouponAreaComponent} from './coupon-area.component';
 
 describe('CouponAreaComponent', () => {
   let component: CouponAreaComponent;

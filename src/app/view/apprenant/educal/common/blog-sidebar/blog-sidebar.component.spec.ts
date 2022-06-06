@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { BlogSidebarComponent } from './blog-sidebar.component';
+import {BlogSidebarComponent} from './blog-sidebar.component';
 
 describe('BlogSidebarComponent', () => {
   let component: BlogSidebarComponent;

@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit,Input } from '@angular/core';
+import {Component, HostListener, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header-two',

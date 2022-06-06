@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import SwiperCore, { Autoplay,EffectFade } from "swiper";
+import {Component, OnInit} from '@angular/core';
+import SwiperCore, {Autoplay, EffectFade} from 'swiper';
 
 SwiperCore.use([Autoplay,EffectFade]);
 

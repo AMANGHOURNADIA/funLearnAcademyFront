@@ -1,11 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Categorie} from '../../../controller/model/categorie.model';
-import {CategorieService} from '../../../controller/service/categorie.service';
+import {Component, OnInit} from '@angular/core';
 import {ConfirmationService, MessageService} from 'primeng/api';
-import {CategorieItemService} from '../../../controller/service/categorie-item.service';
-import {SujetService} from '../../../controller/service/sujet.service';
-import {CategorieItem} from '../../../controller/model/categorie-item.true';
-import {Sujet} from '../../../controller/model/sujet.true';
 import {Cours} from '../../../controller/model/cours.model';
 import {CoursService} from '../../../controller/service/cours.service';
 import {SectionService} from '../../../controller/service/section.service';

@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ContactAreaComponent } from './contact-area.component';
+import {ContactAreaComponent} from './contact-area.component';
 
 describe('ContactAreaComponent', () => {
   let component: ContactAreaComponent;

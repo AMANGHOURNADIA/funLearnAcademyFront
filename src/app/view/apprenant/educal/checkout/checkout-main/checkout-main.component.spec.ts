@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CheckoutMainComponent } from './checkout-main.component';
+import {CheckoutMainComponent} from './checkout-main.component';
 
 describe('CheckoutMainComponent', () => {
   let component: CheckoutMainComponent;
