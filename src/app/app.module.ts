@@ -16,7 +16,6 @@ import {CalendarModule} from 'primeng/calendar';
 import {CardModule} from 'primeng/card';
 import {CarouselModule} from 'primeng/carousel';
 import {CascadeSelectModule} from 'primeng/cascadeselect';
-import {ChartModule} from 'primeng/chart';
 import {CheckboxModule} from 'primeng/checkbox';
 import {ChipModule} from 'primeng/chip';
 import {ChipsModule} from 'primeng/chips';
@@ -174,7 +173,6 @@ import {SwiperModule} from 'ngx-swiper-wrapper';
         CardModule,
         CarouselModule,
         CascadeSelectModule,
-        ChartModule,
         CheckboxModule,
         ChipModule,
         ChipsModule,

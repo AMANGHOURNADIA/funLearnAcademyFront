@@ -75,6 +75,7 @@ import {ContactAreaComponent} from './contact/contact-area/contact-area.componen
 import {ContactInfoComponent} from './contact/contact-info/contact-info.component';
 import {BlogTwoComponent} from './home-two/blog-two/blog-two.component';
 import {SwiperModule} from 'swiper/angular';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -152,12 +153,13 @@ import {SwiperModule} from 'swiper/angular';
     ContactInfoComponent,
     BlogTwoComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    MatTabsModule,
-    SwiperModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        MatTabsModule,
+        SwiperModule,
+        FormsModule
+    ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class EducalModule { }

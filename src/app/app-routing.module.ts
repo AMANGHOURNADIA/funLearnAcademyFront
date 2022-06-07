@@ -209,7 +209,7 @@ import {HomeComponent} from './view/apprenant/educal/Home/Home/home.component';
             {path: 'error', component: AppErrorComponent},
             {path: 'accessdenied', component: AppAccessdeniedComponent},
             {path: '404', component: AppNotfoundComponent},
-            {path: 'login', component: AppLoginComponent},
+            {path: 'login', component: SignInMainComponent},
             {path: 'register/admin', component: RegisterAdminComponent},
             {path: 'register/apprenant', component: RegisterApprenantComponent},
             {path: 'register/formateur', component: RegisterFormateurComponent},
