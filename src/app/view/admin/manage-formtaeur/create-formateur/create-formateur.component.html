@@ -1,0 +1,60 @@
+<p-dialog [(visible)]="createDialog" [modal]="true" [style]="{width: '700px'}" header="Formateur Create"
+          styleClass="p-fluid">
+    <ng-template pTemplate="content">
+        <div class="p-grid">
+            <div class="p-col-6">
+                <label>Full Name</label>
+                <input [style]="{width: '100%'}" [(ngModel)]="selectedFormateur.fullname" name="fullname" autofocus
+                       id="fullname" pInputText required type="text"/>
+            </div>
+
+            <div class="p-col-6">
+                <label>userName</label>
+                <input [style]="{width: '100%'}" [disabled]="selectedFormateur.id !== 0"
+                       [(ngModel)]="selectedFormateur.username" name="username" autofocus id="lastName" pInputText
+                       required type="text"/>
+            </div>
+            <div class="p-col-6">
+                <label for="login">Email</label>
+                <input [style]="{width: '100%'}" [disabled]="selectedFormateur.id !== 0"
+                       [(ngModel)]="selectedFormateur.email" name="email" autofocus id="login" pInputText required
+                       type="text"/>
+            </div>
+            <div *ngif="selectedFormateur.id === 0" class="p-col-6">
+                <label for="pass">Password</label>
+                <input [style]="{width: '100%'}" [(ngModel)]="selectedFormateur.password" name="password" autofocus
+                       id="pass" pInputText required type="text"/>
+            </div>
+            <div class="p-col-6">
+                <label for="phoneNumber">Phone Number</label>
+                <input [style]="{width: '100%'}" [(ngModel)]="selectedFormateur.phone" name="phone" autofocus
+                       id="phoneNumber" pInputText required type="text"/>
+            </div>
+
+
+            <div class="p-col-6">
+                <label for="phoneNumber">Is enable</label>
+                <p-inputSwitch [(ngModel)]="selectedFormateur.enabled"></p-inputSwitch>
+            </div>
+
+
+            <div class="p-col-6">
+                <label for="phoneNumber">Is non locked</label>
+                <p-inputSwitch [(ngModel)]="selectedFormateur.accountNonLocked"></p-inputSwitch>
+            </div>
+
+
+            <div class="p-col-6">
+                <label for="phoneNumber">Is non expired</label>
+                <p-inputSwitch [(ngModel)]="selectedFormateur.accountNonExpired"></p-inputSwitch>
+            </div>
+        </div>
+
+    </ng-template>
+
+    <ng-template pTemplate="footer">
+        <button (click)="createDialog = false" class="p-button-text" icon="pi pi-times" label="Cancel" pButton
+                pRipple></button>
+        <button (click)="save()" class="p-button-text" icon="pi pi-check" label="Save" pButton pRipple></button>
+    </ng-template>
+</p-dialog>

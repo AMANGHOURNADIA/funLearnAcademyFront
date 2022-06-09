@@ -66,6 +66,8 @@ import {CoursesPageComponent} from './view/apprenant/educal/courses/courses-page
 import {HomeThreeComponent} from './view/apprenant/educal/home-three/home-three-main/home-three.component';
 import {HomeTwoComponent} from './view/apprenant/educal/home-two/home-two-main/home-two.component';
 import {HomeComponent} from './view/apprenant/educal/Home/Home/home.component';
+import {ManageFormtaeurComponent} from './view/admin/manage-formtaeur/manage-formtaeur.component';
+import {ManageApprenantComponent} from './view/admin/manage-apprenant/manage-apprenant.component';
 
 @NgModule({
     imports: [
@@ -162,6 +164,8 @@ import {HomeComponent} from './view/apprenant/educal/Home/Home/home.component';
                         children: [
                             {path: 'register', component: RegisterAdminComponent},
                             {path: 'manage/categories', component: ManageCategorieComponent},
+                            {path: 'manage/formateur', component: ManageFormtaeurComponent},
+                            {path: 'manage/apprenant', component: ManageApprenantComponent},
                             {path: 'signup', component: AppTopBarComponent},
                         ]
                     },

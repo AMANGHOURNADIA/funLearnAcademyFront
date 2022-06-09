@@ -1,0 +1,115 @@
+<div class="p-field">
+    <div class="p-col-12" >
+
+        <div class="card" style="background-color: gainsboro">
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button (click)="createFormateur()" class="p-button-success p-mr-2 p-mb-2" icon="pi pi-plus" label="New"
+                            pButton
+                            pRipple style="width: 90px"></button>
+                    <button (click)="deleteMultiple()" [disabled]="!selectes || !selectes.length"
+                            class="p-button-danger p-mb-2" icon="pi pi-trash" label="Delete"
+                            pButton pRipple></button>
+                </ng-template>
+
+                <ng-template pTemplate="right">
+                    <p-fileUpload [maxFileSize]="1000000" accept="image/*" chooseLabel="Import"
+                                  class="p-mr-2 p-mb-2 p-d-inline-block"
+                                  label="Import" mode="basic"></p-fileUpload>
+                    <button (click)="dt.exportCSV()" class="p-button-info p-mb-2" icon="pi pi-upload" label="Export"
+                            pButton
+                            pRipple></button>
+                </ng-template>
+            </p-toolbar>
+
+            <p-table #dt  [columns]="cols"
+                     [globalFilterFields]="['fullname','username','phone','email']"
+                     [paginator]="true"
+                     [rowHover]="true"
+                     [rows]="10" [showCurrentPageReport]="true" [value]="formateurs"
+                     currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                     dataKey="id"
+                     styleClass="p-datatable-customers">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                        <div class="p-col"><h5 class="p-m-0">Manage Professors</h5><br>
+                            <span>
+                        <input [(ngModel)]="formateur.username  " pInputText placeholder="Search by userName"
+                               style="margin-right: 10px;width: 200px"
+                               type="text"/>
+                        <input [(ngModel)]="formateur.fullname  " pInputText placeholder="Search by Full name"
+                               style="margin-right: 10px;width: 200px"
+                               type="text"/>
+                        <input [(ngModel)]="formateur.email  " pInputText placeholder="Search by email"
+                               style="margin-right: 10px;width: 200px"
+                               type="text"/>
+
+              <button pButton pRipple type="button" icon="pi pi-search" (click)="findByCriteria()"
+                      style="margin-left: 25px"
+                      class="p-button-rounded p-button-success"></button>
+
+                        </span></div>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+                        <th pSortableColumn="fullname"> Name
+                            <p-sortIcon field="fullname"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="username"> Username
+                            <p-sortIcon field="username"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="phone">Phone
+                            <p-sortIcon field="phone"></p-sortIcon>
+                        </th>
+                        <th pSortableColumn="email">Email
+                            <p-sortIcon field="email"></p-sortIcon>
+                        </th>
+
+                        <th >Action
+                        </th>
+
+                    </tr>
+                </ng-template>
+                <ng-template let-formateur pTemplate="body">
+                    <tr>
+                        <td>
+                            <p-tableCheckbox [value]="formateur"></p-tableCheckbox>
+                        </td>
+                        <td>{{formateur?.fullname}}</td>
+                        <td>{{formateur?.username}}</td>
+                        <td>{{formateur?.phone}}</td>
+                        <td>{{formateur?.email}}</td>
+                        <td>
+                            <button (click)="edit(formateur)"
+                                    class="p-button-rounded p-button-success p-mr-2" icon="pi pi-pencil" pButton
+                                    pRipple></button>
+                            <button (click)="delete(formateur)" class="p-button-rounded p-button-danger p-mr-2"
+                                    icon="pi pi-trash" pButton
+                                    pRipple></button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        In total there are {{formateurs ? formateurs.length : 0 }} items.
+                    </div>
+                </ng-template>
+            </p-table>
+        </div>
+
+    </div>
+</div>
+
+
+<app-create-formateur></app-create-formateur>
+<app-formateur-details></app-formateur-details>
+
+
+
+
+
+

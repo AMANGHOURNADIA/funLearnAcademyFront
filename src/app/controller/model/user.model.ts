@@ -1,11 +1,12 @@
 import {Role} from './role.model';
 
 export class User {
-    id: number;
+    id = 0;
     email: string;
     fullname: string;
     username: string;
     password: string;
+    phone: string;
     authorities: Array<Role>;
     role: string;
     accountNonExpired: boolean;

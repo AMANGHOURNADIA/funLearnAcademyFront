@@ -151,6 +151,10 @@ import { ManageCoursesComponent } from './view/formateur/manage-courses/manage-c
 import {HomeFourmateurComponent} from './view/formateur/home-fourmateur/home-fourmateur.component';
 import {EducalModule} from './view/apprenant/educal/educal.module';
 import {SwiperModule} from 'ngx-swiper-wrapper';
+import { ManageFormtaeurComponent } from './view/admin/manage-formtaeur/manage-formtaeur.component';
+import { ManageApprenantComponent } from './view/admin/manage-apprenant/manage-apprenant.component';
+import { CreateFormateurComponent } from './view/admin/manage-formtaeur/create-formateur/create-formateur.component';
+import { FormateurDetailsComponent } from './view/admin/manage-formtaeur/formateur-details/formateur-details.component';
 
 
 @NgModule({
@@ -299,7 +303,11 @@ import {SwiperModule} from 'ngx-swiper-wrapper';
         HomeAdminComponent,
         ManageCategorieComponent,
         ManageCoursesComponent,
-        HomeFourmateurComponent
+        HomeFourmateurComponent,
+        ManageFormtaeurComponent,
+        ManageApprenantComponent,
+        CreateFormateurComponent,
+        FormateurDetailsComponent
 
     ],
     providers: [
