@@ -155,6 +155,7 @@ import { ManageFormtaeurComponent } from './view/admin/manage-formtaeur/manage-f
 import { ManageApprenantComponent } from './view/admin/manage-apprenant/manage-apprenant.component';
 import { CreateFormateurComponent } from './view/admin/manage-formtaeur/create-formateur/create-formateur.component';
 import { FormateurDetailsComponent } from './view/admin/manage-formtaeur/formateur-details/formateur-details.component';
+import { CreateApprenantComponent } from './view/admin/manage-apprenant/create-apprenant/create-apprenant.component';
 
 
 @NgModule({
@@ -307,7 +308,8 @@ import { FormateurDetailsComponent } from './view/admin/manage-formtaeur/formate
         ManageFormtaeurComponent,
         ManageApprenantComponent,
         CreateFormateurComponent,
-        FormateurDetailsComponent
+        FormateurDetailsComponent,
+        CreateApprenantComponent,
 
     ],
     providers: [

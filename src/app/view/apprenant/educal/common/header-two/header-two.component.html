@@ -7,7 +7,7 @@
                 <div class="header__left d-flex">
                    <div class="logo">
                       <a [routerLink]="['/']" >
-                         <img src="assets/img/logo/logo.png" alt="logo">
+                          <p> <img class="logo-white" src="assets/img/logo/logo-icon-fun.png" alt="logo"><b style="color:Blue; font-size:22px">Fun</b><b style="color:black; font-size:22px">Learn</b></p>
                       </a>
                    </div>
                    <div class="header__category d-none d-lg-block">
@@ -35,11 +35,11 @@
                                   <span>Category</span>
                                </a>
                                <ul class="cat-submenu">
-                                  <li><a [routerLink]="['/course-details']">English Learning</a></li>
-                                  <li><a [routerLink]="['/course-details']">Web Development</a></li>
-                                  <li><a [routerLink]="['/course-details']">Logo Design</a></li>
-                                  <li><a [routerLink]="['/course-details']">Motion Graphics</a></li>
-                                  <li><a [routerLink]="['/course-details']">Video Edition</a></li>
+                                  <li><a [routerLink]="['/course-details']">Health and Fitness</a></li>
+                                  <li><a [routerLink]="['/course-details']">Data Science</a></li>
+                                  <li><a [routerLink]="['/course-details']">Finance</a></li>
+                                  <li><a [routerLink]="['/course-details']">Design</a></li>
+                                  <li><a [routerLink]="['/course-details']">Developpement</a></li>
                                </ul>
                             </li>
                          </ul>
@@ -52,13 +52,8 @@
                    <div class="main-menu main-menu-2">
                       <nav id="mobile-menu">
                          <ul>
-                            <li class="has-dropdown">
-                              <a [routerLink]="['/']">Home</a>
-                              <ul class="submenu">
-                                 <li><a [routerLink]="['/home']">Home Style 1</a></li>
-                                 <li><a [routerLink]="['/home-two']"  >Home Style 2</a></li>
-                                 <li><a [routerLink]="['/home-three']">Home Style 3</a></li>
-                              </ul>
+                            <li>
+                                <a [routerLink]="['/home-two']"  >Home</a>
                             </li>
                             <li class="has-dropdown">
                               <a [routerLink]="['/courses']">Courses</a>
