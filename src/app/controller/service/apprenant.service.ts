@@ -19,7 +19,7 @@ export class ApprenantService {
   constructor(private http: HttpClient ) { }
 
   public register(apprenant: Apprenant): Observable<Apprenant> {
-    return this.http.post<Apprenant>(`${this.host}+'/'`, apprenant);
+    return this.http.post<Apprenant>(`${this.host}` + '/', apprenant);
   }
 
 
