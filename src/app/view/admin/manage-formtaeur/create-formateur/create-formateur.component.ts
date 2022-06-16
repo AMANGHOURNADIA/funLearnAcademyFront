@@ -71,7 +71,7 @@ export class CreateFormateurComponent implements OnInit {
                     this.messageService.add({
                         severity: 'info',
                         summary: 'Successful',
-                        detail: 'Formateur updated',
+                        detail: 'instructor updated',
                         life: 3000
                     });
                     for (let i = 0; i < this.formateurs.length; i++) {

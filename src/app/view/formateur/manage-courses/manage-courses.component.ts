@@ -6,6 +6,11 @@ import {SectionService} from '../../../controller/service/section.service';
 import {Chapitre} from '../../../controller/model/chapitre.model';
 import {ChapitreService} from '../../../controller/service/chapitre.service';
 import {Section} from '../../../controller/model/section.true';
+import { SujetService } from 'src/app/controller/service/sujet.service';
+import { FormateurService } from 'src/app/controller/service/formateur.service';
+import { Formateur } from 'src/app/controller/model/formateur.model';
+import { Sujet } from 'src/app/controller/model/sujet.true';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-courses',
@@ -20,13 +25,34 @@ export class ManageCoursesComponent implements OnInit {
   showCreatecoursDialog: boolean;
   showCreatesectionDialog: boolean;
   showCreatechapitreDialog: boolean;
+  sujetId : number;
+  formateurId : number;
 
 
   constructor(private coursService: CoursService,
               private confirmationService: ConfirmationService,
               private sectionService: SectionService,
               private chapitreService: ChapitreService,
-              private messageService: MessageService) {
+              private messageService: MessageService,
+              private formateurService : FormateurService,
+              private sujetService : SujetService,
+              private router : Router) {
+  }
+
+
+
+  get allFormateur() :Array<Formateur>{
+    return this.formateurService.formateurs;
+  }
+  set allFormateur(value :Array<Formateur>) {
+    this.formateurService.formateurs = value;
+  }
+
+  get allSujet() :Array<Sujet>{
+    return this.sujetService.sujets;
+  }
+  set allSujet(value :Array<Sujet>) {
+    this.sujetService.sujets = value;
   }
 
   get cours(): Cours {
@@ -59,16 +85,26 @@ export class ManageCoursesComponent implements OnInit {
   set sections(value: Array<Section>) {
     this.sectionService.sections = value;
   }
+
   ngOnInit(): void {
     this.coursService.findAll().subscribe((data) => {
       this.courses = data;
-      console.log(data);
     });
+    this.sujetService.findAll().subscribe((data) => {
+      this.allSujet = data;
+    });
+    this.formateurService.findAll().subscribe((data) => {
+      this.allFormateur = data;
+    });
+
     this.cols = [
       {field: 'id', header: 'Id'},
       {field: 'cat_name', header: 'Name'},
       {field: 'cat_code', header: 'Code'}
     ];
+
+    console.log(this.sujetId);
+    
   }
   get chapitre(): Chapitre {
     return this.chapitreService.chapitre;
@@ -86,8 +122,29 @@ export class ManageCoursesComponent implements OnInit {
     this.chapitreService.chapitres = value;
   }
 
+  onSelectCour(cours) {
+    this.router.navigate(['/formateur/course',cours.id]);
+  }
+
   save() {
-    console.log(this.cours);
+
+
+    console.log(this.formateurId + ' ' + this.sujetId);
+    this.formateurService.findById(this.formateurId).subscribe((data) => {
+      console.log(this.cours.formateur);
+      this.cours.formateur = data
+      
+      
+    })
+
+    this.sujetService.findById(this.sujetId).subscribe((data) => {
+      console.log(this.cours.sujet);
+      this.cours.sujet = data;
+      console.log( JSON.stringify(this.cours) );
+    })
+
+
+
     if (this.cours.id === 0) {
       this.showCreatecoursDialog = false;
       this.coursService.save(this.cours).subscribe((data) => {
@@ -131,7 +188,10 @@ export class ManageCoursesComponent implements OnInit {
         });
       });
     }
-
+    this.coursService.findAll().subscribe((data) => {
+      this.courses = data;
+    });
+    window.location.reload();
   }
   public deleteCours(id: number) {
     this.confirmationService.confirm({
@@ -160,6 +220,9 @@ export class ManageCoursesComponent implements OnInit {
           });
         });
       }
+    });
+    this.coursService.findAll().subscribe((data) => {
+      this.courses = data;
     });
   }
   public findByCoursId(id: number) {
@@ -381,5 +444,10 @@ export class ManageCoursesComponent implements OnInit {
     this.chapitre = chapitre;
   }
 
+
+  setNewCours(){
+    this.showCreatecoursDialog = true;
+    this.cours = new Cours();
+  }
 
 }

@@ -46,4 +46,8 @@ export class SujetService {
 
   }
 
+  findById(sujetId: number): Observable<Sujet> {
+    return this.http.get<Sujet>(this.adminUrl + 'sujet/categorieItem/id/' + sujetId);
+
+  }
 }

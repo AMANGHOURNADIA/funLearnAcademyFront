@@ -3,15 +3,12 @@ import {RouterModule} from '@angular/router';
 import {CommonModule} from '@angular/common';
 import {MatTabsModule} from '@angular/material/tabs';
 import {HomeComponent} from './Home/Home/home.component';
-import {HeaderOneComponent} from './common/header-one/header-one.component';
 import {HeroComponent} from './Home/hero/hero.component';
 import {CategoryComponent} from './Home/category/category.component';
 import {BannerAreaComponent} from './Home/banner-area/banner-area.component';
 import {CoursesComponent} from './Home/courses/courses.component';
 import {EventsComponent} from './Home/events/events.component';
 import {PricingComponent} from './Home/pricing/pricing.component';
-import {CtaComponent} from './Home/cta/cta.component';
-import {FooterComponent} from './common/footer/footer.component';
 import {HomeTwoComponent} from './home-two/home-two-main/home-two.component';
 import {HeaderTwoComponent} from './common/header-two/header-two.component';
 import {HeroAreaComponent} from './home-two/hero-area/hero-area.component';
@@ -21,16 +18,7 @@ import {WhyAreaComponent} from './home-two/why-area/why-area.component';
 import {WhatAreaComponent} from './home-two/what-area/what-area.component';
 import {CounterAreaComponent} from './home-two/counter-area/counter-area.component';
 import {TestimonialAreaComponent} from './home-two/testimonial-area/testimonial-area.component';
-import {CtaAreaComponent} from './home-two/cta-area/cta-area.component';
 import {FooterTwoComponent} from './home-two/footer-two/footer-two.component';
-import {HomeThreeComponent} from './home-three/home-three-main/home-three.component';
-import {HeaderThreeComponent} from './home-three/header-three/header-three.component';
-import {HeroSliderComponent} from './home-three/hero-slider/hero-slider.component';
-import {BrandAreaComponent} from './common/brand-area/brand-area.component';
-import {HomeThreeCoursesComponent} from './home-three/home-three-courses/home-three-courses.component';
-import {PopularTeachersComponent} from './home-three/popular-teachers/popular-teachers.component';
-import {HomeThreeCtaComponent} from './home-three/home-three-cta/home-three-cta.component';
-import {HomeThreeTestimonialComponent} from './home-three/home-three-testimonial/home-three-testimonial.component';
 import {CoursesPageComponent} from './courses/courses-page/courses-page.component';
 import {BreadcrumbComponent} from './common/breadcrumb/breadcrumb.component';
 import {CourseGridComponent} from './common/course-grid/course-grid.component';
@@ -76,90 +64,91 @@ import {ContactInfoComponent} from './contact/contact-info/contact-info.componen
 import {BlogTwoComponent} from './home-two/blog-two/blog-two.component';
 import {SwiperModule} from 'swiper/angular';
 import {FormsModule} from '@angular/forms';
+import {BrandAreaComponent} from './common/brand-area/brand-area.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppRoutingModule} from '../../../app-routing.module';
+import {AppCodeModule} from '../../../app.code.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [
-    HomeComponent,
-    HeaderOneComponent,
-    HeroComponent,
-    CategoryComponent,
-    BannerAreaComponent,
-    CoursesComponent,
-    EventsComponent,
-    PricingComponent,
-    CtaComponent,
-    FooterComponent,
-    HomeTwoComponent,
-    HeaderTwoComponent,
-    HeroAreaComponent,
-    ServiceAreaComponent,
-    AboutAreaComponent,
-    WhyAreaComponent,
-    WhatAreaComponent,
-    CounterAreaComponent,
-    TestimonialAreaComponent,
-    CtaAreaComponent,
-    FooterTwoComponent,
-    HomeThreeComponent,
-    HeaderThreeComponent,
-    HeroSliderComponent,
-    BrandAreaComponent,
-    HomeThreeCoursesComponent,
-    PopularTeachersComponent,
-    HomeThreeCtaComponent,
-    HomeThreeTestimonialComponent,
-    CoursesPageComponent,
-    BreadcrumbComponent,
-    CourseGridComponent,
-    CourseListComponent,
-    CoursesPageCoursesAreaComponent,
-    PaginationComponent,
-    CoursesListPageComponent,
-    CoursesListAreaComponent,
-    CourseSidebarMainComponent,
-    CourseSidebarAreaComponent,
-    RelatedCourseComponent,
-    CourseDetailsComponent,
-    CourseDetailsAreaComponent,
-    BlogComponent,
-    BlogSidebarComponent,
-    BlogAreaComponent,
-    BlogDetailsMainComponent,
-    BlogDetailsTitleComponent,
-    BlogDetailsAreaComponent,
-    AboutMainComponent,
-    InstructorMainComponent,
-    InstructorAreaComponent,
-    InstructorDetailsComponent,
-    InstructorDetailsAreaComponent,
-    EventDetailsMainComponent,
-    EventDetailsAreaComponent,
-    EventDetailsTitleComponent,
-    CartComponent,
-    CartAreaComponent,
-    WishlistMainComponent,
-    WishlistAreaComponent,
-    CheckoutMainComponent,
-    CheckoutAreaComponent,
-    CouponAreaComponent,
-    SignInMainComponent,
-    SignInAreaComponent,
-    SignUpMainComponent,
-    SignUpAreaComponent,
-    ErrorPageComponent,
-    ContactMainComponent,
-    ContactAreaComponent,
-    ContactInfoComponent,
-    BlogTwoComponent,
-  ],
+    declarations: [
+        HomeComponent,
+        HeroComponent,
+        CategoryComponent,
+        BannerAreaComponent,
+        CoursesComponent,
+        EventsComponent,
+        PricingComponent,
+        HomeTwoComponent,
+        HeaderTwoComponent,
+        HeroAreaComponent,
+        ServiceAreaComponent,
+        AboutAreaComponent,
+        WhyAreaComponent,
+        WhatAreaComponent,
+        CounterAreaComponent,
+        TestimonialAreaComponent,
+        FooterTwoComponent,
+        CoursesPageComponent,
+        BreadcrumbComponent,
+        CourseGridComponent,
+        CourseListComponent,
+        CoursesPageCoursesAreaComponent,
+        PaginationComponent,
+        CoursesListPageComponent,
+        CoursesListAreaComponent,
+        CourseSidebarMainComponent,
+        CourseSidebarAreaComponent,
+        RelatedCourseComponent,
+        CourseDetailsComponent,
+        CourseDetailsAreaComponent,
+        BlogComponent,
+        BlogSidebarComponent,
+        BlogAreaComponent,
+        BlogDetailsMainComponent,
+        BlogDetailsTitleComponent,
+        BlogDetailsAreaComponent,
+        BrandAreaComponent,
+        AboutMainComponent,
+        InstructorMainComponent,
+        InstructorAreaComponent,
+        InstructorDetailsComponent,
+        InstructorDetailsAreaComponent,
+        EventDetailsMainComponent,
+        EventDetailsAreaComponent,
+        EventDetailsTitleComponent,
+        CartComponent,
+        CartAreaComponent,
+        WishlistMainComponent,
+        WishlistAreaComponent,
+        CheckoutMainComponent,
+        CheckoutAreaComponent,
+        CouponAreaComponent,
+        SignInMainComponent,
+        SignInAreaComponent,
+        SignUpMainComponent,
+        SignUpAreaComponent,
+        ErrorPageComponent,
+        ContactMainComponent,
+        ContactAreaComponent,
+        ContactInfoComponent,
+        BlogTwoComponent,
+    ],
     imports: [
         CommonModule,
         RouterModule,
         MatTabsModule,
         SwiperModule,
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule,
+        AppCodeModule,
+        CommonModule,
+        HttpClientModule,
         FormsModule
     ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class EducalModule { }
+export class EducalModule {
+}

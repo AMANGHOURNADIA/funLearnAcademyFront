@@ -49,4 +49,5 @@ export class ChapitreService {
     return this.http.post<Chapitre>(this.formateurUrl + 'chapitre/', chapitre);
   }
 
+
 }

@@ -63,7 +63,6 @@ import {CourseDetailsComponent} from './view/apprenant/educal/course-details/cou
 import {CourseSidebarMainComponent} from './view/apprenant/educal/course-sidebar/course-sidebar-main/course-sidebar-main.component';
 import {CoursesListPageComponent} from './view/apprenant/educal/courses-list-page/courses-list-main/courses-list-page.component';
 import {CoursesPageComponent} from './view/apprenant/educal/courses/courses-page/courses-page.component';
-import {HomeThreeComponent} from './view/apprenant/educal/home-three/home-three-main/home-three.component';
 import {HomeTwoComponent} from './view/apprenant/educal/home-two/home-two-main/home-two.component';
 import {HomeComponent} from './view/apprenant/educal/Home/Home/home.component';
 import {ManageFormtaeurComponent} from './view/admin/manage-formtaeur/manage-formtaeur.component';
@@ -72,15 +71,11 @@ import {ManageApprenantComponent} from './view/admin/manage-apprenant/manage-app
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            { path: '', component: HomeComponent },
-            { path: 'home', component: HomeComponent },
+            { path: '', component: HomeTwoComponent },
+            { path: 'home', component: HomeTwoComponent },
             {
                 path: 'home-two',
                 component: HomeTwoComponent
-            },
-            {
-                path: 'home-three',
-                component: HomeThreeComponent
             },
             {
                 path: 'courses',

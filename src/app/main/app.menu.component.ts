@@ -44,15 +44,13 @@ export class AppMenuComponent implements OnInit {
                     label: 'Admin profile', icon: 'pi pi-fw pi-home',
                     items: [
                         {label: 'Manage categories', icon: 'pi pi-fw pi-cog', routerLink: ['/admin/manage/categories']},
-                        {label: 'Formtaeur', icon: 'pi pi-fw pi-user-plus', routerLink: ['/admin/manage/formateur']},
-                        {label: 'Apprenant', icon: 'pi pi-fw pi-users', routerLink: ['/admin/manage/apprenant']},
+                        {label: 'Instructors', icon: 'pi pi-fw pi-user-plus', routerLink: ['/admin/manage/formateur']},
+                        {label: 'Learners', icon: 'pi pi-fw pi-users', routerLink: ['/admin/manage/apprenant']},
                     ]
                 },
                 {
                     label: 'consultation', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
                     items: [
-                        {label: 'instructors', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/instructors']},
-                        {label: 'Learners', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/Learners']},
                         {label: 'Formations', icon: 'pi pi-list', routerLink: ['/uikit/Formations']},
                         {label: 'Reclamation', icon: 'pi pi-comment', routerLink: ['/uikit/Reclamation']}
                     ]
