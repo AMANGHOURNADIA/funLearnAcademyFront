@@ -3,7 +3,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import {LocationStrategy, HashLocationStrategy, CommonModule} from '@angular/common';
 import {AppRoutingModule} from './app-routing.module';
 import {AccordionModule} from 'primeng/accordion';
 import {AutoCompleteModule} from 'primeng/autocomplete';
@@ -156,6 +156,9 @@ import { ManageApprenantComponent } from './view/admin/manage-apprenant/manage-a
 import { CreateFormateurComponent } from './view/admin/manage-formtaeur/create-formateur/create-formateur.component';
 import { FormateurDetailsComponent } from './view/admin/manage-formtaeur/formateur-details/formateur-details.component';
 import { CreateApprenantComponent } from './view/admin/manage-apprenant/create-apprenant/create-apprenant.component';
+import {ManageCourseComponent} from './view/formateur/manage-course/manage-course.component';
+import {ManageSectionComponent} from './view/formateur/manage-section/manage-section.component';
+import {ManageChapitreComponent} from './view/formateur/manage-chapitre/manage-chapitre.component';
 
 
 @NgModule({
@@ -167,6 +170,7 @@ import { CreateApprenantComponent } from './view/admin/manage-apprenant/create-a
         HttpClientModule,
         BrowserAnimationsModule,
         EducalModule,
+        CommonModule,
         AccordionModule,
         AutoCompleteModule,
         AvatarModule,
@@ -310,6 +314,9 @@ import { CreateApprenantComponent } from './view/admin/manage-apprenant/create-a
         CreateFormateurComponent,
         FormateurDetailsComponent,
         CreateApprenantComponent,
+        ManageCourseComponent,
+        ManageSectionComponent,
+        ManageChapitreComponent,
 
     ],
     providers: [

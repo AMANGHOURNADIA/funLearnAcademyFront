@@ -36,6 +36,7 @@ export class AppTopBarComponent implements OnInit {
 
     logOut() {
         this.authService.logOut();
+        this.user = new User();
     }
     Login(){
         this.authService.login(this.user);

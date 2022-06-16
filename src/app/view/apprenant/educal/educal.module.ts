@@ -65,6 +65,10 @@ import {BlogTwoComponent} from './home-two/blog-two/blog-two.component';
 import {SwiperModule} from 'swiper/angular';
 import {FormsModule} from '@angular/forms';
 import {BrandAreaComponent} from './common/brand-area/brand-area.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppRoutingModule} from '../../../app-routing.module';
+import {AppCodeModule} from '../../../app.code.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -136,6 +140,12 @@ import {BrandAreaComponent} from './common/brand-area/brand-area.component';
         RouterModule,
         MatTabsModule,
         SwiperModule,
+        BrowserModule,
+        FormsModule,
+        AppRoutingModule,
+        AppCodeModule,
+        CommonModule,
+        HttpClientModule,
         FormsModule
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

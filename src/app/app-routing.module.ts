@@ -71,8 +71,8 @@ import {ManageApprenantComponent} from './view/admin/manage-apprenant/manage-app
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            { path: '', component: HomeComponent },
-            { path: 'home', component: HomeComponent },
+            { path: '', component: HomeTwoComponent },
+            { path: 'home', component: HomeTwoComponent },
             {
                 path: 'home-two',
                 component: HomeTwoComponent
