@@ -6,12 +6,12 @@
                     <p-toolbar styleClass="p-mb-4 ">
                         <ng-template pTemplate="left">
                             <button class="p-button-success p-mr-2 p-mb-2"
-                                    (click)=" showCreatecoursDialog = true"
+                                    (click)=" showCreateCourseDialogFct()"
                                     icon="pi pi-plus" label="New" pButton
                                     pRipple style="width: 90px"></button>
 
 
-                            <button [disabled]="!cours || !courses.length" class="p-button-danger p-mb-2"
+                            <button [disabled]="!courses || !courses.length" class="p-button-danger p-mb-2"
                                     icon="pi pi-trash" label="Delete"
                                     pButton pRipple></button>
                         </ng-template>
@@ -26,13 +26,13 @@
                         </ng-template>
                     </p-toolbar>
 
-                    <p-table #dt [(selection)]="selectedcours" [columns]="cols"
+                    <p-table #dt [(selection)]="selectedCourses" [columns]="cols"
                              [globalFilterFields]="['Cat_name', 'Cat_code']" [paginator]="true"
                              [rowHover]="true"
                              [rows]="6" [value]="courses" dataKey="id">
                         <ng-template pTemplate="caption">
                             <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
-                                <h5 class="p-m-0">Manage Courses</h5>
+                                <h3 class="p-m-0">Manage Courses</h3>
                             </div>
                         </ng-template>
                         <ng-template pTemplate="header">
@@ -46,25 +46,25 @@
                                 <th>Actions</th>
                             </tr>
                         </ng-template>
-                        <ng-template let-cours pTemplate="body">
+                        <ng-template let-course pTemplate="body">
                             <tr>
                                 <td>
-                                    <p-tableCheckbox [value]="courses"></p-tableCheckbox>
+                                    <p-tableCheckbox [value]="course"></p-tableCheckbox>
                                 </td>
-                                <td style="cursor: pointer;" (click)="onSelectCour(cours)" [id]="cours.id" >{{cours?.name}}</td>
+                                <td [id]="course.id">{{course?.name}}</td>
 
 
                                 <td>
                                     <button class="p-button-rounded p-button-success p-mr-2"
-                                            (click)="updateCours(cours)"
+                                            (click)="updateCourse(course)"
                                             icon="pi pi-pencil" pButton
                                             pRipple></button>
                                     <button class="p-button-rounded p-button-info p-mr-2"
-                                            (click)="findByCoursId(cours.id)"
+                                            (click)="findByCourseId(course.id)"
                                             icon="pi pi-list" pButton
                                             pRipple></button>
                                     <button class="p-button-rounded p-button-danger"
-                                            (click)="deleteCours(cours.id)"
+                                            (click)="deleteCourse(course.id)"
                                             icon="pi pi-trash" pButton
                                             pRipple></button>
                                 </td>
@@ -81,66 +81,174 @@
         </div>
     </div>
 
+
+    <div class="p-col-4">
+        <div class="p-grid ">
+            <div class="p-col">
+                <div class="card" style="background-color: gainsboro;">
+                    <p-toolbar styleClass="p-mb-4 ">
+                        <ng-template pTemplate="left">
+                            <button class="p-button-success p-mr-2 p-mb-2"
+                                    (click)=" showCreateSectionDialog = true"
+                                    icon="pi pi-plus" label="New" pButton
+                                    pRipple style="width: 90px"></button>
+
+
+                            <button [disabled]="!selectedSections || !selectedSections.length" class="p-button-danger p-mb-2"
+                                    icon="pi pi-trash" label="Delete"
+                                    pButton pRipple></button>
+                        </ng-template>
+
+                        <ng-template pTemplate="right">
+                            <p-fileUpload [maxFileSize]="1000000" accept="" chooseLabel="Import"
+                                          class="p-mr-2 p-mb-2 p-d-inline-block"
+                                          label="Import" mode="basic"></p-fileUpload>
+                            <button (click)="dt.exportCSV()" class="p-button-info p-mb-2" icon="pi pi-upload"
+                                    label="Export" pButton
+                                    pRipple></button>
+                        </ng-template>
+                    </p-toolbar>
+
+                    <p-table #dt [(selection)]="selectedSections" [columns]="cols"
+                             [globalFilterFields]="['Cat_name', 'Cat_code']" [paginator]="true"
+                             [rowHover]="true"
+                             [rows]="6" [value]="sections" dataKey="id">
+                        <ng-template pTemplate="caption">
+                            <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                                <h3 class="p-m-0">Manage sections</h3>
+                            </div>
+                        </ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th style="width: 3rem">
+                                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                                </th>
+                                <th pSortableColumn="libelle">Title
+                                    <p-sortIcon field="libelle"></p-sortIcon>
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template let-section pTemplate="body">
+                            <tr>
+                                <td>
+                                    <p-tableCheckbox [value]="sections"></p-tableCheckbox>
+                                </td>
+                                <td [id]="section.id">{{section?.section_name}}</td>
+
+
+                                <td>
+                                    <button class="p-button-rounded p-button-success p-mr-2" icon="pi pi-pencil"
+                                            (click)="updateSection(section)"
+                                            pButton
+                                            pRipple></button>
+                                    <button class="p-button-rounded p-button-info p-mr-2"
+                                            icon="pi pi-list" pButton
+                                            (click)="findBySectionId(section.id)"
+                                            pRipple></button>
+                                    <!--  <button (click)="delete(categoryItem.id)" class="p-button-rounded p-button-danger" icon="pi pi-trash"
+                                              pButton
+                                              pRipple></button> -->
+                                    <button (click)="deleteSection(section.id)"
+                                            class="p-button-rounded p-button-danger"
+                                            icon="pi pi-trash" pButton
+                                            pTooltip="Remove categoryItem" tooltipPosition="top"
+                                            pRipple></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="summary">
+                            <div class="p-d-flex p-ai-center p-jc-between">
+                                In total there are {{sections ? sections.length : 0 }} items.
+                            </div>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-col-4">
+        <div class="p-grid ">
+            <div class="p-col">
+                <div class="card" style="background-color: gainsboro;">
+                    <p-toolbar styleClass="p-mb-4 ">
+                        <ng-template pTemplate="left">
+                            <button class="p-button-success p-mr-2 p-mb-2"
+                                    (click)=" showCreateChapDialog = true"
+                                    icon="pi pi-plus" label="New" pButton
+                                    pRipple style="width: 90px"></button>
+
+
+                            <button [disabled]="!selectedChapitres || !selectedChapitres.length" class="p-button-danger p-mb-2"
+                                    icon="pi pi-trash" label="Delete"
+                                    pButton pRipple></button>
+                        </ng-template>
+
+                        <ng-template pTemplate="right">
+                            <p-fileUpload [maxFileSize]="1000000" accept="" chooseLabel="Import"
+                                          class="p-mr-2 p-mb-2 p-d-inline-block"
+                                          label="Import" mode="basic"></p-fileUpload>
+                            <button (click)="dt.exportCSV()" class="p-button-info p-mb-2" icon="pi pi-upload"
+                                    label="Export" pButton
+                                    pRipple></button>
+                        </ng-template>
+                    </p-toolbar>
+
+                    <p-table #dt [(selection)]="selectedChapitres" [columns]="cols"
+                             [globalFilterFields]="['Cat_name', 'Cat_code']" [paginator]="true"
+                             [rowHover]="true"
+                             [rows]="6" [value]="chapitres" dataKey="id">
+                        <ng-template pTemplate="caption">
+                            <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between table-header">
+                                <h3 class="p-m-0">Manage chapters</h3>
+                            </div>
+                        </ng-template>
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th style="width: 3rem">
+                                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                                </th>
+                                <th pSortableColumn="libelle">Title
+                                    <p-sortIcon field="libelle"></p-sortIcon>
+                                </th>
+                                <th>Actions</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template let-chap pTemplate="body">
+                            <tr>
+                                <td>
+                                    <p-tableCheckbox [value]="chap"></p-tableCheckbox>
+                                </td>
+                                <td [id]="chap.id">{{chap?.libelle}}</td>
+
+
+                                <td>
+                                    <button class="p-button-rounded p-button-success p-mr-2" icon="pi pi-pencil"
+                                            (click)="updateChap(chap)"
+                                            pButton
+                                            pRipple></button>
+                                    <button class="p-button-rounded p-button-info p-mr-2"
+                                            icon="pi pi-list" pButton
+                                            pRipple></button>
+                                    <button class="p-button-rounded p-button-danger" icon="pi pi-trash"
+                                            (click)="deleteById(chap.id)"
+                                            pButton
+                                            pRipple></button>
+                                </td>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="summary">
+                            <div class="p-d-flex p-ai-center p-jc-between">
+                                In total there are {{chapitres ? chapitres.length : 0 }} items.
+                            </div>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </div>
 
 
-<!--- ------------------------------------ Create Course -------------------------------------------------- -->
-
-
-<p-dialog header="New Course" [(visible)]="showCreatecoursDialog" [style]="{width: '40vw'}">
-    <div class="p-grid">
-        <div class="p-col-6">
-            <span class="p-float-label">
-            <input [style]="{width: '100%'}" type="text" id="inputtext" pInputText [(ngModel)]="cours.name">
-            <label for="inputtext">Name</label>
-            </span>
-        </div>
-
-
-        <div class="p-col-6">
-             <span class="p-float-label">
-            <input [style]="{width: '100%'}" type="number" id="inputtext" pInputText [(ngModel)]="cours.price">
-            <label for="inputtext">price</label>
-        </span>
-        </div>
-
-        <div class="p-col-6">
-             <span class="p-float-label">
-                <select id="formateurSelect" name="formateur" id="cars" form="carform" [(ngModel)]="formateurId">
-                    <option *ngFor="let formateur of allFormateur" 
-                        [value]="formateur.id" >
-                        {{formateur.fullname}} {{formateur.username}} 
-                    </option>
-                </select>
-            <label for="formateurSelect">Formateur</label>
-        </span>
-        </div>
-
-        <div class="p-col-6">
-            <span class="p-float-label">
-            <select id="sujetSelect" name="sujet" form="carform" [(ngModel)]="sujetId">
-                <option *ngFor="let sujet of allSujet" 
-                    [value]="sujet.id" >
-                    {{sujet.name}}
-                </option>
-            </select>
-           <label for="sujetSelect">Sujet</label>
-       </span>
-       </div>
-
-
-        <div class="p-col-12">
-            <span class="p-float-label">
-                <textarea [style]="{width: '100%'}" id="float-input" rows="2" [(ngModel)]="cours.description"
-                    pInputTextarea></textarea>
-                <label for="float-input">Description</label>
-            </span>
-        </div>
-    </div>
-    <ng-template pTemplate="footer">
-        <p-button icon="pi pi-check" (click)="save()" label="Ok"
-                  styleClass="p-button-text"></p-button>
-
-    </ng-template>
-</p-dialog>
-
+<app-create-course></app-create-course>

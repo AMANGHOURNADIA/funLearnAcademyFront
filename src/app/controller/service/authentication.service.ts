@@ -4,6 +4,9 @@ import {environment} from '../../../environments/environment';
 import {Observable} from 'rxjs';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {User} from '../model/user.model';
+import {Formateur} from '../model/formateur.model';
+import {Apprenant} from '../model/apprenant.model';
+import {Admin} from '../model/admin.model';
 
 
 @Injectable({providedIn: 'root'})
@@ -47,6 +50,15 @@ export class AuthenticationService {
     }
 
     public getUserFromLocalCache(): User {
+        return JSON.parse(localStorage.getItem('user'));
+    }
+    public getFormateurFromLocalCache(): Formateur {
+        return JSON.parse(localStorage.getItem('user'));
+    }
+    public getApprenantFromLocalCache(): Apprenant {
+        return JSON.parse(localStorage.getItem('user'));
+    }
+    public getAdminFromLocalCache(): Admin {
         return JSON.parse(localStorage.getItem('user'));
     }
 

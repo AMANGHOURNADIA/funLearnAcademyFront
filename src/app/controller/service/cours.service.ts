@@ -12,7 +12,37 @@ export class CoursService {
   private _cours: Cours = new Cours();
   private _courses: Array<Cours> = new Array<Cours>();
   private formateurUrl = environment.formateurUrl;
+  private _showCreateSectionDialog: boolean;
+  private _showCreateChapDialog: boolean;
+  private _showCreateCourseDialog: boolean;
+
+
   constructor(private http: HttpClient) { }
+
+
+  get showCreateSectionDialog(): boolean {
+    return this._showCreateSectionDialog;
+  }
+
+  set showCreateSectionDialog(value: boolean) {
+    this._showCreateSectionDialog = value;
+  }
+
+  get showCreateChapDialog(): boolean {
+    return this._showCreateChapDialog;
+  }
+
+  set showCreateChapDialog(value: boolean) {
+    this._showCreateChapDialog = value;
+  }
+
+  get showCreateCourseDialog(): boolean {
+    return this._showCreateCourseDialog;
+  }
+
+  set showCreateCourseDialog(value: boolean) {
+    this._showCreateCourseDialog = value;
+  }
 
   get cours(): Cours {
     return this._cours;
@@ -46,4 +76,7 @@ export class CoursService {
   }
 
 
+  findAllByFormateurId(id: number): Observable<Cours[]> {
+    return this.http.get<Cours[]>(this.formateurUrl + 'cours/fourmateur/id/' + id);
+  }
 }
