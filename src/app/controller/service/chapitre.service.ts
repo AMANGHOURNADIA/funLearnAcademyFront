@@ -41,7 +41,7 @@ export class ChapitreService {
     return this.http.get<Chapitre[]>(this.formateurUrl + 'chapitre/section/id/' + id);
 
   }
-  public deleteById(id: number): Observable<any> {
+  public delete(id: number): Observable<any> {
     return this.http.delete<any>(this.formateurUrl + 'chapitre/id/' + id);
   }
 
@@ -49,5 +49,9 @@ export class ChapitreService {
     return this.http.post<Chapitre>(this.formateurUrl + 'chapitre/', chapitre);
   }
 
+
+    upload(formData: FormData) {
+        
+    }
 
 }

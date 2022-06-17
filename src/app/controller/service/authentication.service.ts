@@ -18,6 +18,7 @@ export class AuthenticationService {
     private loggedInUsername: string;
     private jwtHelper = new JwtHelperService();
 
+
     constructor(private http: HttpClient) {
     }
 

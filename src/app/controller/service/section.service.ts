@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import {CategorieItem} from '../model/categorie-item.true';
 import {environment} from '../../../environments/environment';
-import {Section} from '../model/section.true';
+import {Section} from '../model/section.model';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -12,7 +11,6 @@ export class SectionService {
   private _section: Section = new Section();
   private _sections: Array<Section> = new Array<Section>();
   private formateurUrl = environment.formateurUrl;
-
   constructor(private http: HttpClient) { }
 
   get section(): Section {
@@ -37,14 +35,23 @@ export class SectionService {
   public save(section: Section): Observable<Section> {
     return this.http.post<Section>(this.formateurUrl + 'section/', section);
   }
+  public update(section: Section): Observable<Section> {
+    return this.http.post<Section>(this.formateurUrl + 'section/', section);
+  }
 
   public findAll(): Observable<Array<Section>> {
     return this.http.get<Section[]>(this.formateurUrl + 'section/');
 
   }
 
-  public deleteSection(id: number): Observable<Array<Section>>{
+  public delete(id: number): Observable<Array<Section>>{
     return this.http.delete<Section[]>(this.formateurUrl + 'section/id/' + id);
 
   }
+
+  findById(id: number) {
+    return this.http.get<Section[]>(this.formateurUrl + 'section/id/' + id);
+  }
+
+
 }

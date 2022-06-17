@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Cours} from '../../../controller/model/cours.model';
 import {CoursService} from '../../../controller/service/cours.service';
-import {Sujet} from '../../../controller/model/sujet.true';
+import {Sujet} from '../../../controller/model/sujet.model';
 import {SujetService} from '../../../controller/service/sujet.service';
 import {AuthenticationService} from '../../../controller/service/authentication.service';
 import {MessageService} from 'primeng/api';
@@ -23,10 +23,6 @@ export class ManageCourseComponent implements OnInit {
     ngOnInit(): void {
         this.sujetService.findAll().subscribe(data => this.sujets = data);
         console.log(this.cours);
-    }
-
-    set showCreateChapDialog(value: boolean) {
-        this.courseService.showCreateChapDialog = value;
     }
 
     get showCreateCourseDialog(): boolean {

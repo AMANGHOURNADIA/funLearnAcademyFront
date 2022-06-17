@@ -57,4 +57,12 @@ export class FormateurService {
     deleteFormateur(formateur: Formateur) {
         return this.http.delete(this.hostAdmin + '/id/' + formateur.id);
     }
+
+    save(formateur: Formateur): Observable<Formateur> {
+        return this.http.post<Formateur>(this.hostAdmin + `/`, formateur);
+    }
+
+    findById(id: number) {
+        return this.http.get<Formateur>(this.hostAdmin + '/along/' + id);
+    }
 }

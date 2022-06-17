@@ -3,8 +3,8 @@ import {Categorie} from '../model/categorie.model';
 import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {CategorieItem} from '../model/categorie-item.true';
-import {Sujet} from '../model/sujet.true';
+import {CategorieItem} from '../model/categorie-item.model';
+import {Sujet} from '../model/sujet.model';
 
 @Injectable({
   providedIn: 'root'

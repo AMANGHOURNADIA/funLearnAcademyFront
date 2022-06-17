@@ -1,5 +1,5 @@
 import {Formateur} from './formateur.model';
-import {Sujet} from './sujet.true';
+import {Sujet} from './sujet.model';
 
 export class Cours {
     public  id: number;

@@ -23,28 +23,28 @@
                             <div class="sign__input-wrapper mb-25">
                                 <h5>Full Name</h5>
                                 <div class="sign__input">
-                                    <input type="text" [(ngModel)]="apprenant.fullname" name="fullname"  placeholder="Full name">
+                                    <input type="text" [(ngModel)]="apprenant.fullname" name="fullname"   maxlength="10" minlength="5" placeholder="Full name">
                                     <i class="fal fa-user"></i>
                                 </div>
                             </div>
                             <div class="sign__input-wrapper mb-25">
                                 <h5>Work email</h5>
                                 <div class="sign__input">
-                                    <input type="text" [(ngModel)]="apprenant.email" name="email"  placeholder="e-mail address">
+                                    <input type="email" [(ngModel)]="apprenant.email" name="email" minlength="15" maxlength="20"  [email]="true" placeholder="e-mail address">
                                     <i class="fal fa-envelope"></i>
                                 </div>
                             </div>
                             <div class="sign__input-wrapper mb-25">
                                 <h5>Username</h5>
                                 <div class="sign__input">
-                                    <input type="text" [(ngModel)]="apprenant.username" name="username" placeholder="Username">
+                                    <input type="text" [(ngModel)]="apprenant.username" name="username"  maxlength="10" minlength="5" placeholder="Username">
                                     <i class="fal fa-user"></i>
                                 </div>
                             </div>
                             <div class="sign__input-wrapper mb-25">
                                 <h5>Password</h5>
                                 <div class="sign__input">
-                                    <input type="password" [(ngModel)]="apprenant.password" name="password" placeholder="Password">
+                                    <input type="password" [(ngModel)]="apprenant.password" name="password"  minlength="5" maxlength="10" placeholder="Password">
                                     <i class="fal fa-lock"></i>
                                 </div>
                             </div>
