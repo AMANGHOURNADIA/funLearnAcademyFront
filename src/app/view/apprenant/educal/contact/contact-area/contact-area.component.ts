@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class ContactAreaComponent implements OnInit {
 
-  constructor(private messageService: MessageService ,private router: Router) { }
+  constructor(private messageService: MessageService , private router: Router) { }
 
   ngOnInit(): void {
   }

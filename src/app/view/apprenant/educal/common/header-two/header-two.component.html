@@ -21,7 +21,7 @@
                                             <div class="cat-dot-icon d-inline-block">
                                                 <svg viewBox="0 0 276.2 276.2">
                                                     <g>
-                                                        <g>
+                                                           <g>
                                                             <path class="cat-dot"
                                                                   d="M33.1,2.5C15.3,2.5,0.9,17,0.9,34.8s14.5,32.3,32.3,32.3s32.3-14.5,32.3-32.3S51,2.5,33.1,2.5z"/>
                                                             <path class="cat-dot"
@@ -83,7 +83,7 @@
                                             <li><a [routerLink]="['/wishlist']">My Wishlist</a></li>
                                         </ul>
                                     </li>
-                                    <li><a [routerLink]="['/checkout']">Contact</a></li>
+                                    <li><a [routerLink]="['/contact']">Contact</a></li>
                                     <li *ngIf="user.id!==0" class="has-dropdown">
                                         <img [src]="user?.image"
                                              style="    width: 60px;
@@ -172,7 +172,7 @@
                     </li>
 
                     <li>
-                        <a [routerLink]="['/contact']" class="border-0">Contact</a>
+                        <a [routerLink]="['/']" class="border-0">Contact</a>
                     </li>
 
                 </ul>

@@ -20,22 +20,22 @@
         </div>
         <div class="p-col-6">
             <span class="p-float-label">
-            <input [(ngModel)]="chapitre.contenu" [style]="{width: '100%'}" id="inputtext" name="contenu" pInputText
-                   type="file">
-            <label for="inputtext">contenu</label>
+            <textarea [style]="{width: '100%'}" id="float-input" rows="5" [(ngModel)]="chapitre.contenu"
+                      pInputTextarea></textarea>
+                <label for="float-input">Contenue</label>
         </span>
         </div>
             <div class="p-col-6">
             <span class="p-float-label">
-            <input [(ngModel)]="chapitre.urlImage" [style]="{width: '100%'}" id="inputtext" name="urlImage" pInputText
+            <input [(ngModel)]="chapitre.urlImage" [style]="{width: '100%'}"   (change)="onImageChange($event)" id="inputtext" name="urlImage" pInputText
                    type="file">
             <label for="inputtext">Image</label>
         </span>
             </div>
         <div class="p-col-6">
             <span class="p-float-label">
-            <input [(ngModel)]="chapitre.urlVideo" [style]="{width: '100%'}" id="inputtext" name="urlVideo" pInputText
-                   type="url">
+            <input [(ngModel)]="chapitre.urlVideo" [style]="{width: '100%'}" (change)="onVideoChange($event)" id="inputtext" name="urlVideo" pInputText
+                   type="file">
             <label for="inputtext">Video</label>
         </span>
         </div>

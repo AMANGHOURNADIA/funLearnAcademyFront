@@ -20,6 +20,8 @@ import {SujetService} from '../../../controller/service/sujet.service';
 export class ManageChapitreComponent implements OnInit {
   sections: Section[];
   section: Array<Section> = new Array<Section>();
+  imageFile: File = null;
+  videoFile: File = null;
 
   constructor(private courseService: CoursService, private sectionService: SectionService,
               private authService: AuthenticationService,
@@ -75,5 +77,14 @@ export class ManageChapitreComponent implements OnInit {
         }
     );
   }
+  onImageChange(event) {
+    this.imageFile = event.target.files[0];
 
+
+
+  }
+  onVideoChange(event) {
+    this.videoFile = event.target.files[0];
+
+  }
 }

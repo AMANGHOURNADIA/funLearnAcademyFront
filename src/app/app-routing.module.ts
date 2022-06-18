@@ -48,7 +48,6 @@ import {AppTopBarComponent} from './top-bar/app.topbar.component';
 import {ManageCoursesComponent} from './view/formateur/manage-courses/manage-courses.component';
 import {ErrorPageComponent} from './view/apprenant/educal/error-page/error-page.component';
 import {SignUpMainComponent} from './view/apprenant/educal/sign-up/sign-up-main/sign-up-main.component';
-import {ContactMainComponent} from './view/apprenant/educal/contact/contact-main/contact-main.component';
 import {SignInMainComponent} from './view/apprenant/educal/sign-in/sign-in-main/sign-in-main.component';
 import {CheckoutMainComponent} from './view/apprenant/educal/checkout/checkout-main/checkout-main.component';
 import {WishlistMainComponent} from './view/apprenant/educal/wishlist/wishlist-main/wishlist-main.component';
@@ -67,6 +66,7 @@ import {HomeTwoComponent} from './view/apprenant/educal/home-two/home-two-main/h
 import {HomeComponent} from './view/apprenant/educal/Home/Home/home.component';
 import {ManageFormtaeurComponent} from './view/admin/manage-formtaeur/manage-formtaeur.component';
 import {ManageApprenantComponent} from './view/admin/manage-apprenant/manage-apprenant.component';
+import {ManageQuizComponent} from './view/formateur/manage-quiz/manage-quiz.component';
 
 @NgModule({
     imports: [
@@ -143,7 +143,7 @@ import {ManageApprenantComponent} from './view/admin/manage-apprenant/manage-app
             },
             {
                 path: 'contact',
-                component: ContactMainComponent
+                component: CheckoutMainComponent
             },
             {
                 path: '', component: ApprenantComponent,
@@ -169,6 +169,7 @@ import {ManageApprenantComponent} from './view/admin/manage-apprenant/manage-app
                         children: [
                             {path: 'register', component: RegisterFormateurComponent},
                             {path: 'courses', component: ManageCoursesComponent},
+                            {path: 'quizes', component: ManageQuizComponent},
                         ]
                     },
                     {path: 'home', component: HomeComponent},
