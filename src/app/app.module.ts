@@ -159,8 +159,7 @@ import { CreateApprenantComponent } from './view/admin/manage-apprenant/create-a
 import {ManageCourseComponent} from './view/formateur/manage-course/manage-course.component';
 import {ManageSectionComponent} from './view/formateur/manage-section/manage-section.component';
 import {ManageChapitreComponent} from './view/formateur/manage-chapitre/manage-chapitre.component';
-import { ContactComponent } from './view/apprenant/contact/contact.component';
-import { UserProfileComponent } from './view/apprenant/user-profile/user-profile.component';
+
 
 
 @NgModule({
@@ -319,9 +318,6 @@ import { UserProfileComponent } from './view/apprenant/user-profile/user-profile
         ManageCourseComponent,
         ManageSectionComponent,
         ManageChapitreComponent,
-        ContactComponent,
-        UserProfileComponent,
-
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
