@@ -13,7 +13,7 @@ export class CoursService {
   private _courses: Array<Cours> = new Array<Cours>();
   private formateurUrl = environment.formateurUrl;
   private _showCreateSectionDialog: boolean;
-  private _showCreateChapitreDialog: boolean;
+  private _showCreateChapDialog: boolean;
   private _showCreateCourseDialog: boolean;
 
 
@@ -28,12 +28,12 @@ export class CoursService {
     this._showCreateSectionDialog = value;
   }
 
-  get showCreateChapitreDialog(): boolean {
-    return this._showCreateChapitreDialog;
+  get showCreateChapDialog(): boolean {
+    return this._showCreateChapDialog;
   }
 
-  set showCreateChapitreDialog(value: boolean) {
-    this._showCreateChapitreDialog = value;
+  set showCreateChapDialog(value: boolean) {
+    this._showCreateChapDialog = value;
   }
 
   get showCreateCourseDialog(): boolean {
@@ -71,16 +71,12 @@ export class CoursService {
     return this.http.delete<any>(this.formateurUrl + 'cours/id/' + id);
   }
 
-  public updateCourse(cours: Cours): Observable<Cours> {
+  public update(cours: Cours): Observable<Cours> {
     return this.http.post<Cours>(this.formateurUrl + 'cours/', cours);
   }
 
 
   findAllByFormateurId(id: number): Observable<Cours[]> {
     return this.http.get<Cours[]>(this.formateurUrl + 'cours/fourmateur/id/' + id);
-  }
-
-  findById(id: number) {
-    return this.http.get<Cours[]>(this.formateurUrl + 'cours/');
   }
 }

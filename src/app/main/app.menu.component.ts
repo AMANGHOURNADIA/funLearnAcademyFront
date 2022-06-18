@@ -51,8 +51,9 @@ export class AppMenuComponent implements OnInit {
                 {
                     label: 'consultation', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
                     items: [
-                        {label: 'Formations', icon: 'pi pi-list', routerLink: ['/uikit/Formations']}
-                        ]
+                        {label: 'Formations', icon: 'pi pi-list', routerLink: ['/uikit/Formations']},
+                        {label: 'Reclamation', icon: 'pi pi-comment', routerLink: ['/uikit/Reclamation']}
+                    ]
                 },
             ];
         } else if (user.role === Role.FORMATEUR) {
@@ -60,14 +61,16 @@ export class AppMenuComponent implements OnInit {
                 {
                     label: 'Formateur profile', icon: 'pi pi-fw pi-home',
                     items: [
-                        {label: 'Manage courses', icon: 'pi pi-fw pi-briefcase', routerLink: ['/formateur/courses']},
-                        {label: 'Manage quiz', icon: 'pi pi-fw pi-briefcase', routerLink: ['/formateur/quizes']},
+                        {label: 'Manage courses', icon: 'pi pi-fw pi-home', routerLink: ['/formateur/courses']}
                     ]
                 },
                 {
                     label: 'consultation', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
                     items: [
-                        {label: 'Update profile', icon: 'pi pi-pencil', routerLink: ['/uikit/Update']},
+                        {label: 'instructors', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/instructors']},
+                        {label: 'Learners', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/Learners']},
+                        {label: 'Formations', icon: 'pi pi-list', routerLink: ['/uikit/Formations']},
+                        {label: 'Reclamation', icon: 'pi pi-comment', routerLink: ['/uikit/Reclamation']}
                     ]
                 },
 

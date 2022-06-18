@@ -161,7 +161,6 @@ import {ManageSectionComponent} from './view/formateur/manage-section/manage-sec
 import {ManageChapitreComponent} from './view/formateur/manage-chapitre/manage-chapitre.component';
 
 
-
 @NgModule({
     imports: [
         BrowserModule,
@@ -318,6 +317,7 @@ import {ManageChapitreComponent} from './view/formateur/manage-chapitre/manage-c
         ManageCourseComponent,
         ManageSectionComponent,
         ManageChapitreComponent,
+
     ],
     providers: [
         {provide: LocationStrategy, useClass: HashLocationStrategy},
