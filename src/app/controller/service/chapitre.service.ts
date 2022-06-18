@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Cours} from '../model/cours.model';
 import {environment} from '../../../environments/environment';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpEvent} from '@angular/common/http';
 import {Chapitre} from '../model/chapitre.model';
 import {Observable} from 'rxjs';
 
@@ -12,6 +12,7 @@ export class ChapitreService {
   private _chapitre: Chapitre = new Chapitre();
   private _chapitres: Array<Chapitre> = new Array<Chapitre>();
   private formateurUrl = environment.formateurUrl;
+  private filename ;
   constructor(private http: HttpClient) { }
 
   get chapitre(): Chapitre {
@@ -41,7 +42,7 @@ export class ChapitreService {
     return this.http.get<Chapitre[]>(this.formateurUrl + 'chapitre/section/id/' + id);
 
   }
-  public deleteById(id: number): Observable<any> {
+  public delete(id: number): Observable<any> {
     return this.http.delete<any>(this.formateurUrl + 'chapitre/id/' + id);
   }
 
@@ -49,5 +50,16 @@ export class ChapitreService {
     return this.http.post<Chapitre>(this.formateurUrl + 'chapitre/', chapitre);
   }
 
+
+  upload(formData: FormData): Observable<HttpEvent<string[]>> {
+    return this.http.post<string[]>(this.formateurUrl + 'chapitre/file', formData, {
+      reportProgress: true,
+      observe: 'events'
+    });
+  }
+
+  public getFile() {
+    return this.http.get(this.formateurUrl + 'chapitre/file')
+  }
 
 }
