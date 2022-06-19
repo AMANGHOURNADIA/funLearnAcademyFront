@@ -1,16 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import {Cours} from '../../../controller/model/cours.model';
+import {Component, OnInit} from '@angular/core';
 import {CoursService} from '../../../controller/service/cours.service';
-import {ConfirmationService, MessageService} from 'primeng/api';
-import {Section} from '../../../controller/model/section.model';
+import {MessageService} from 'primeng/api';
 import {SectionService} from '../../../controller/service/section.service';
 import {Chapitre} from '../../../controller/model/chapitre.model';
 import {ChapitreService} from '../../../controller/service/chapitre.service';
-import {Formateur} from '../../../controller/model/formateur.model';
-import {FormateurService} from '../../../controller/service/formateur.service';
-import {Sujet} from '../../../controller/model/sujet.model';
 import {AuthenticationService} from '../../../controller/service/authentication.service';
-import {SujetService} from '../../../controller/service/sujet.service';
+import {Section} from '../../../controller/model/section.true';
 
 @Component({
   selector: 'app-manage-chapitre',
@@ -32,11 +27,11 @@ export class ManageChapitreComponent implements OnInit {
     console.log(this.chapitre);
   }
   get showCreateChapitreDialog(): boolean {
-    return this.courseService.showCreateChapitreDialog;
+    return this.courseService.showCreateChapDialog;
   }
 
   set showCreateChapitreDialog(value: boolean) {
-    this.courseService.showCreateChapitreDialog = value;
+    this.courseService.showCreateChapDialog = value;
   }
   get chapitre(): Chapitre {
     return this.chapitreService.chapitre;
@@ -54,7 +49,6 @@ export class ManageChapitreComponent implements OnInit {
     this.chapitreService.chapitres = value;
   }
   save() {
-    this.chapitre.formateur = this.authService.getFormateurFromLocalCache();
     this.chapitreService.save(this.chapitre).subscribe(
         data => {
           this.chapitres.push({...data});

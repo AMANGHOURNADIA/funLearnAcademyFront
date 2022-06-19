@@ -2,10 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {CategorieService} from '../../../controller/service/categorie.service';
 import {Categorie} from '../../../controller/model/categorie.model';
 import {ConfirmationService, MessageService} from 'primeng/api';
-import {CategorieItem} from '../../../controller/model/categorie-item.model';
+import {CategorieItem} from '../../../controller/model/categorie-item.true';
 import {CategorieItemService} from '../../../controller/service/categorie-item.service';
 import {SujetService} from '../../../controller/service/sujet.service';
-import {Sujet} from '../../../controller/model/sujet.model';
+import {Sujet} from '../../../controller/model/sujet.true';
 
 @Component({
     selector: 'app-manage-categorie',

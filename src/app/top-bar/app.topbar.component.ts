@@ -6,6 +6,7 @@ import {AuthenticationService} from '../controller/service/authentication.servic
 import {Role} from '../enum/role.enum';
 import {MenuItem} from 'primeng/api';
 import {Categorie} from '../controller/model/categorie.model';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-topbar',
@@ -18,7 +19,9 @@ export class AppTopBarComponent implements OnInit {
     items: MenuItem[];
     categories: Categorie[];
 
-    constructor(public app: AppComponent, private authService: AuthenticationService, public appMain: AppMainComponent) {
+    constructor(public app: AppComponent,
+                private router: Router,
+                private authService: AuthenticationService, public appMain: AppMainComponent) {
     }
 
     ngOnInit(): void {
@@ -29,16 +32,16 @@ export class AppTopBarComponent implements OnInit {
             {label: 'As fourmateur', icon: 'pi pi-cog', routerLink: ['/register/formateur']},
             {label: 'As apprenant', icon: 'pi pi-cog', routerLink: ['/register/apprenant']},
         ];
-        this.categories = [
-
-        ];
+        this.categories = [];
     }
 
     logOut() {
         this.authService.logOut();
         this.user = new User();
+        this.router.navigate(['/']);
     }
-    Login(){
+
+    Login() {
         this.authService.login(this.user);
     }
 }

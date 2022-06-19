@@ -46,8 +46,13 @@ export class AppMenuComponent implements OnInit {
                         {label: 'Manage categories', icon: 'pi pi-fw pi-cog', routerLink: ['/admin/manage/categories']},
                         {label: 'Instructors', icon: 'pi pi-fw pi-user-plus', routerLink: ['/admin/manage/formateur']},
                         {label: 'Learners', icon: 'pi pi-fw pi-users', routerLink: ['/admin/manage/apprenant']},
-                        { label: 'Formations', icon: 'pi pi-list', routerLink: ['/admin/consult/formations']},
-                        { label: 'Update Profile', icon: 'pi pi-pencil', routerLink: ['/admin/consult/updateprofile']},
+                    ]
+                },
+                {
+                    label: 'consultation', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
+                    items: [
+                        {label: 'Formations', icon: 'pi pi-list', routerLink: ['/uikit/Formations']},
+                        {label: 'Reclamation', icon: 'pi pi-comment', routerLink: ['/uikit/Reclamation']}
                     ]
                 },
             ];
@@ -56,12 +61,21 @@ export class AppMenuComponent implements OnInit {
                 {
                     label: 'Formateur profile', icon: 'pi pi-fw pi-home',
                     items: [
-                        {label: 'Manage courses', icon: 'pi pi-fw pi-briefcase', routerLink: ['/formateur/courses']},
-                        {label: 'Manage quiz', icon: 'pi pi-fw pi-briefcase', routerLink: ['/formateur/quizes']},
-                        {label: 'Update profile', icon: 'pi pi-pencil', routerLink: ['/consult/Update']},
+                        {label: 'Manage courses', icon: 'pi pi-fw pi-home', routerLink: ['/formateur/courses']}
                     ]
                 },
-        ];}
+                {
+                    label: 'consultation', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
+                    items: [
+                        {label: 'instructors', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/instructors']},
+                        {label: 'Learners', icon: 'pi pi-fw pi-list', routerLink: ['/uikit/Learners']},
+                        {label: 'Formations', icon: 'pi pi-list', routerLink: ['/uikit/Formations']},
+                        {label: 'Reclamation', icon: 'pi pi-comment', routerLink: ['/uikit/Reclamation']}
+                    ]
+                },
+
+            ];
+        }
 
     }
 

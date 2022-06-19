@@ -1,19 +1,25 @@
 import {Role} from './role.model';
 
 export class User {
-    public id = 0;
-    public email: string;
-    public fullname: string;
-    public username: string;
-    public password: string;
-    public phone: string;
-    public authorities: Array<Role>;
-    public role: string;
-    public accountNonExpired: boolean;
-    public credentialsNonExpired: boolean;
-    public accountNonLocked: boolean;
-    public enabled: boolean;
-    public image: string;
-    public token: string;
+    id = 0;
+    email: string;
+    fullname: string;
+    username: string;
+    password: string;
+
+    phone: string;
+    authorities: Array<Role>;
+    role: string;
+    accountNonExpired: boolean;
+    credentialsNonExpired: boolean;
+    accountNonLocked: boolean;
+    enabled: boolean;
+    image: string;
+    token: string;
+//    -----------
+    city: string;
+    country: string = String('Morocco');
+    address: string;
+    age: string;
 
 }
