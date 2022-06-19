@@ -1,39 +1,32 @@
-<!--- ------------------------------------ Create Category -------------------------------------------------- -->
+<!--- ------------------------------------ create section -------------------------------------------------- -->
 
 
-<p-dialog [(visible)]="showCreateCourseDialog" [style]="{width: '60vw'}" header="New course">
+<p-dialog [(visible)]="showCreateSectionDialog" [style]="{width: '60vw'}" header="New section">
     <div class="p-grid">
 
 
         <div class="p-col-6">
             <span class="p-float-label">
-            <input [(ngModel)]="cours.name" [style]="{width: '100%'}" id="inputtext" name="name" pInputText type="text">
-            <label for="inputtext">Name</label>
+                  <h5>Name</h5>
+            <input [(ngModel)]="section.section_name" [style]="{width: '100%'}" id="inputtext" name="name" pInputText type="text">
         </span>
         </div>
 
         <div class="p-col-6">
             <span class="p-float-label">
-            <input [(ngModel)]="cours.price" [style]="{width: '100%'}" id="inputtext" name="price" pInputText
+                  <h5>Id</h5>
+            <input [(ngModel)]="section.id" [style]="{width: '100%'}" id="inputtext" name="id" pInputText
                    type="number">
-            <label for="inputtext">Price</label>
         </span>
         </div>
 
         <div class="p-col-6">
-            <p-dropdown [(ngModel)]="cours.sujet" [options]="sujets" [showClear]="true"
-                        [style]="{width: '100%'}" optionLabel="name" placeholder="Select a subject"></p-dropdown>
+            <h5>Course</h5>
+            <p-dropdown [(ngModel)]="section.cours" [options]="courses" [showClear]="true"
+                        [style]="{width: '100%'}" optionLabel="name" placeholder="Select a course"></p-dropdown>
 
         </div>
 
-
-        <div class="p-col-12">
-            <span class="p-float-label">
-                <textarea [(ngModel)]="cours.description" [style]="{width: '100%'}" id="float-input" pInputTextarea
-                          rows="2"></textarea>
-                <label for="float-input">Description</label>
-            </span>
-        </div>
 
 
     </div>

@@ -7,16 +7,40 @@
 
         <div class="p-col-6">
             <span class="p-float-label">
+                <h5>Name</h5>
             <input [(ngModel)]="cours.name" [style]="{width: '100%'}" id="inputtext" name="name" pInputText type="text">
-            <label for="inputtext">Name</label>
         </span>
         </div>
 
         <div class="p-col-6">
             <span class="p-float-label">
+                <h5>Title</h5>
+            <input [(ngModel)]="cours.title" [style]="{width: '100%'}" id="inputtext" name="name" pInputText type="text">
+        </span>
+        </div>
+        <div class="p-col-6">
+            <span class="p-float-label">
+                <h5>Rating</h5>
+            <input [(ngModel)]="cours.rating" [style]="{width: '100%'}" id="inputtext" name="name" pInputText type="text">
+        </span>
+        </div>
+        <div class="p-col-6">
+            <span class="p-float-label">
+                <h5>Image</h5>
+            <input [(ngModel)]="cours.courseImage" [style]="{width: '100%'}" id="inputtext" name="name" pInputText type="text">
+        </span>
+        </div>
+        <div class="p-col-6">
+            <span class="p-float-label">
+                <h5>OldPrice</h5>
+            <input [(ngModel)]="cours.oldPrice" [style]="{width: '100%'}" id="inputtext" name="name" pInputText type="text">
+        </span>
+        </div>
+        <div class="p-col-6">
+            <span class="p-float-label">
+                <h5>Price</h5>
             <input [(ngModel)]="cours.price" [style]="{width: '100%'}" id="inputtext" name="price" pInputText
                    type="number">
-            <label for="inputtext">Price</label>
         </span>
         </div>
 
@@ -29,9 +53,9 @@
 
         <div class="p-col-12">
             <span class="p-float-label">
+                <h5>Description</h5>
                 <textarea [(ngModel)]="cours.description" [style]="{width: '100%'}" id="float-input" pInputTextarea
                           rows="2"></textarea>
-                <label for="float-input">Description</label>
             </span>
         </div>
 

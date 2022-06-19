@@ -1,48 +1,47 @@
-<!--- ------------------------------------ create chapter -------------------------------------------------- -->
-
 
 <p-dialog [(visible)]="showCreateChapitreDialog" [style]="{width: '60vw'}" header="New chapter">
     <div class="p-grid">
 
         <div class="p-col-6">
             <span class="p-float-label">
+                <h5>Title</h5>
             <input [(ngModel)]="chapitre.libelle" [style]="{width: '100%'}" id="inputtext" name="libelle" pInputText type="text">
-            <label for="inputtext">Title</label>
         </span>
         </div>
 
         <div class="p-col-6">
             <span class="p-float-label">
+                <h5>NumerOrder</h5>
             <input [(ngModel)]="chapitre.numeroOrder" [style]="{width: '100%'}" id="inputtext" name="numeroOrser" pInputText
                    type="number">
-            <label for="inputtext">numerOrder</label>
         </span>
         </div>
         <div class="p-col-6">
             <span class="p-float-label">
-            <textarea [style]="{width: '100%'}" id="float-input" rows="5" [(ngModel)]="chapitre.contenu"
-                      pInputTextarea></textarea>
-                <label for="float-input">Contenue</label>
-        </span>
-        </div>
-            <div class="p-col-6">
-            <span class="p-float-label">
-            <input [(ngModel)]="chapitre.urlImage" [style]="{width: '100%'}"   (change)="onImageChange($event)" id="inputtext" name="urlImage" pInputText
-                   type="file">
-            <label for="inputtext">Image</label>
-        </span>
-            </div>
-        <div class="p-col-6">
-            <span class="p-float-label">
-            <input [(ngModel)]="chapitre.urlVideo" [style]="{width: '100%'}" (change)="onVideoChange($event)" id="inputtext" name="urlVideo" pInputText
-                   type="file">
-            <label for="inputtext">Video</label>
+                 <h5>Image</h5>
+            <input [(ngModel)]="chapitre.urlImage" [style]="{width: '100%'}"    id="inputtext" name="urlImage" pInputText
+                   type="text">
         </span>
         </div>
         <div class="p-col-6">
+            <span class="p-float-label">
+                 <h5>Video</h5>
+            <input [(ngModel)]="chapitre.urlVideo" [style]="{width: '100%'}"  id="inputtext" name="urlVideo" pInputText
+                   type="text">
+        </span>
+        </div>
+        <div class="p-col-6">
+            <h5>Section</h5>
             <p-dropdown [(ngModel)]="chapitre.section" [options]="sections" [showClear]="true"
                         [style]="{width: '100%'}" optionLabel="name" placeholder="Select a section"></p-dropdown>
 
+        </div>
+        <div class="p-col-6">
+            <span class="p-float-label">
+                <h5>Contenu</h5>
+            <textarea [style]="{width: '100%'}" id="float-input" rows="5" [(ngModel)]="chapitre.contenu"
+                      pInputTextarea></textarea>
+        </span>
         </div>
     </div>
     <ng-template pTemplate="footer">

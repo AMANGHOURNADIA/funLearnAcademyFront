@@ -24,7 +24,7 @@ export class CourseDetailsAreaComponent implements OnInit {
       teacherName: "Jim Séchen",
       category: "Art & Design",
       price: "21.00",
-      oldPrice: "33.00"
+      oldPrice: "33.00" //1
     },
     {
       id: 2,

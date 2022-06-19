@@ -43,8 +43,10 @@ export class SectionService {
 
   }
 
-  public deleteSection(id: number): Observable<Array<Section>>{
+  public delete(id: number): Observable<Array<Section>>{
     return this.http.delete<Section[]>(this.formateurUrl + 'section/id/' + id);
 
   }
+
+
 }

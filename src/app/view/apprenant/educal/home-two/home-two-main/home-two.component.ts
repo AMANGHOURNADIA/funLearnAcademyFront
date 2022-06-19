@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {AuthenticationService} from '../../../../../controller/service/authentication.service';
+import {Role} from '../../../../../enum/role.enum';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home-two',
@@ -7,9 +10,16 @@ import {Component, OnInit} from '@angular/core';
 })
 export class HomeTwoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthenticationService, private router: Router) { }
 
   ngOnInit(): void {
+    if (this.authService.getUserFromLocalCache() !== null){
+      if (this.authService.getUserFromLocalCache().role === Role.ADMIN){
+        this.router.navigate(['/admin/manage/categories']);
+      } else if (this.authService.getUserFromLocalCache().role === Role.FORMATEUR){
+        this.router.navigate(['/formateur/courses']);
+      }
+    }
   }
 
 }
