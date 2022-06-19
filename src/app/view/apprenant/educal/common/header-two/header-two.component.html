@@ -71,16 +71,6 @@
                                         <a [routerLink]="['/courses']">Courses</a>
                                         <ul class="submenu">
                                             <li><a [routerLink]="['/courses']">Courses</a></li>
-                                            <li><a [routerLink]="['/courses-list']">Course List</a></li>
-                                            <li><a [routerLink]="['/courses-sidebar']">Course sidebar</a></li>
-                                            <li><a [routerLink]="['/course-details']">Course Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="has-dropdown">
-                                        <a [routerLink]="['/blog']">Blog</a>
-                                        <ul class="submenu">
-                                            <li><a [routerLink]="['/blog']">Blog</a></li>
-                                            <li><a [routerLink]="['/blog-details']">Blog Details</a></li>
                                         </ul>
                                     </li>
                                     <li class="has-dropdown">
@@ -88,7 +78,6 @@
                                         <ul class="submenu">
                                             <li><a [routerLink]="['/about']">About us</a></li>
                                             <li><a [routerLink]="['/instructor']">Instructor</a></li>
-                                            <li><a [routerLink]="['/instructor-details']">Instructor Details</a></li>
                                             <li><a [routerLink]="['/cart']">My Cart</a></li>
                                             <li><a [routerLink]="['/wishlist']">My Wishlist</a></li>
                                             <li><a [routerLink]="['/sign-in']">Sign In</a></li>
@@ -104,7 +93,6 @@
                                                          padding: 3px;">
                                         <ul class="submenu">
                                             <li><a [routerLink]="['/profile']">Profile</a></li>
-                                            <li><a [routerLink]="['/about']">Formations</a></li>
                                             <li><a (click)="logOut()">Logout</a></li>
                                         </ul>
                                     </li>
@@ -113,6 +101,10 @@
                         </div>
                         <div *ngIf="user.id===0" class="header__btn header__btn-2 ml-50 d-none d-sm-block">
                             <a [routerLink]="['/sign-in']" class="e-btn">Sign in</a>
+
+                        </div>
+                        <div *ngIf="user.id===0" class="header__btn header__btn-2 ml-50 d-none d-sm-block">
+                            <a [routerLink]="['/sign-up']" class="e-btn">Sign up</a>
 
                         </div>
                         <div class="sidebar__menu d-xl-none">
@@ -166,28 +158,9 @@
                             <li>
                                 <a [routerLink]="['/courses']">Courses</a>
                             </li>
-                            <li>
-                                <a [routerLink]="['/courses-list']">Course List</a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/courses-sidebar']">Course sidebar </a>
-                            </li>
-                            <li>
-                                <a [routerLink]="['/course-details']">Course Details</a>
-                            </li>
                         </ul>
                     </li>
 
-                    <li class="menu-item-has-children has-droupdown"
-                        [class.active]="showBlogDropdown">
-
-                        <a (click)="blogDropdown()">Blog</a>
-                        <ul class="sub-menu"
-                            [class.active]="showBlogDropdown">
-                            <li><a [routerLink]="['/blog']">Blog</a></li>
-                            <li><a [routerLink]="['/blog-details']">Blog Details</a></li>
-                        </ul>
-                    </li>
 
                     <li class="menu-item-has-children has-droupdown"
                         [class.active]="showPagesDropdown">
@@ -196,7 +169,6 @@
                             [class.active]="showPagesDropdown">
                             <li><a [routerLink]="['/about']">About us</a></li>
                             <li><a [routerLink]="['/instructor']">Instructor</a></li>
-                            <li><a [routerLink]="['/instructor-details']">Instructor Details</a></li>
                             <li><a [routerLink]="['/cart']">My Cart</a></li>
                             <li><a [routerLink]="['/wishlist']">My Wishlist</a></li>
                             <li><a [routerLink]="['/sign-in']">Sign In</a></li>

@@ -178,7 +178,7 @@ import {ApprenantProfileComponent} from './view/shared/apprenant-profile/apprena
                         children: [
                             {path: 'register', component: RegisterFormateurComponent},
                             {path: 'courses', component: ManageCoursesComponent},
-                            {path: 'quizes', component: ManageQuizComponent},
+                            {path: 'quizez', component: ManageQuizComponent},
                         ]
                     },
                 ]

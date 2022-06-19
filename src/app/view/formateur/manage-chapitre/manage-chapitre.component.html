@@ -1,5 +1,3 @@
-<!--- ------------------------------------ create chapter -------------------------------------------------- -->
-
 
 <p-dialog [(visible)]="showCreateChapitreDialog" [style]="{width: '60vw'}" header="New chapter">
     <div class="p-grid">
@@ -13,7 +11,7 @@
 
         <div class="p-col-6">
             <span class="p-float-label">
-                 <h5>Numer Order</h5>
+                <h5>NumerOrder</h5>
             <input [(ngModel)]="chapitre.numeroOrder" [style]="{width: '100%'}" id="inputtext" name="numeroOrser" pInputText
                    type="number">
         </span>
@@ -21,14 +19,14 @@
         <div class="p-col-6">
             <span class="p-float-label">
                  <h5>Image</h5>
-            <input [(ngModel)]="chapitre.urlImage" [style]="{width: '100%'}"   (change)="onImageChange($event)" id="inputtext" name="urlImage" pInputText
+            <input [(ngModel)]="chapitre.urlImage" [style]="{width: '100%'}"    id="inputtext" name="urlImage" pInputText
                    type="text">
         </span>
         </div>
         <div class="p-col-6">
             <span class="p-float-label">
                  <h5>Video</h5>
-            <input [(ngModel)]="chapitre.urlVideo" [style]="{width: '100%'}" (change)="onVideoChange($event)" id="inputtext" name="urlVideo" pInputText
+            <input [(ngModel)]="chapitre.urlVideo" [style]="{width: '100%'}"  id="inputtext" name="urlVideo" pInputText
                    type="text">
         </span>
         </div>
@@ -40,12 +38,11 @@
         </div>
         <div class="p-col-6">
             <span class="p-float-label">
-                 <h5>Contenu</h5>
+                <h5>Contenu</h5>
             <textarea [style]="{width: '100%'}" id="float-input" rows="5" [(ngModel)]="chapitre.contenu"
                       pInputTextarea></textarea>
         </span>
         </div>
-
     </div>
     <ng-template pTemplate="footer">
         <p-button (click)="save()" icon="pi pi-check" label="Ok"

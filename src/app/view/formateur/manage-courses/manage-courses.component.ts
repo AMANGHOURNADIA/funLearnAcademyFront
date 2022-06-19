@@ -4,6 +4,9 @@ import {CoursService} from '../../../controller/service/cours.service';
 import {Chapitre} from '../../../controller/model/chapitre.model';
 import {Section} from '../../../controller/model/section.true';
 import {AuthenticationService} from '../../../controller/service/authentication.service';
+import {ConfirmationService, MessageService} from 'primeng/api';
+import {SectionService} from '../../../controller/service/section.service';
+import {ChapitreService} from '../../../controller/service/chapitre.service';
 
 @Component({
     selector: 'app-manage-courses',
@@ -16,10 +19,12 @@ export class ManageCoursesComponent implements OnInit {
 
     selectedSections: Array<Section> = new Array<Section>();
     sections: Array<Section> = new Array<Section>();
+    section: Section;
     selectedChapitres: Array<Chapitre> = new Array<Chapitre>();
     chapitres: Array<Chapitre> = new Array<Chapitre>();
+    chapitre: Chapitre;
 
-    constructor(private courseService: CoursService, private authService: AuthenticationService) {
+    constructor(private courseService: CoursService, private chapitreService: ChapitreService, private sectionService: SectionService, private authService: AuthenticationService, private messageService: MessageService, private confirmationService: ConfirmationService) {
     }
 
     get showCreateSectionDialog(): boolean {
@@ -72,35 +77,154 @@ export class ManageCoursesComponent implements OnInit {
     }
 
     updateCourse(course: Cours) {
-
+        this.showCreateCourseDialog = true;
+        this.cours = course;
     }
 
     findByCourseId(id: number) {
-
+        console.log(id);
+        this.sectionService.findByCoursId(id).subscribe((data) => {
+            this.sections = data;
+            console.log(data);
+            if (data.length === 0) {
+                this.messageService.add({
+                    severity: 'success',
+                    summary: 'Successful',
+                    detail: 'course orgisd section ',
+                    life: 3000
+                });
+            }
+        }, error => {
+            this.messageService.add({
+                severity: 'error',
+                summary: 'error',
+                detail: error?.error?.message,
+                life: 4000
+            });
+        });
     }
 
     deleteCourse(id: number) {
-
+        this.confirmationService.confirm({
+            message: 'Are you sure you want to delete this.course ?',
+            header: 'Confirm',
+            icon: 'pi pi-exclamation-triangle',
+            accept: () => {
+                this.courseService.delete(id).subscribe((data) => {
+                    for (let i = 0; i < this.courses.length; i++) {
+                        if (id === this.courses[i].id) {
+                            this.courses.splice(i, 1);
+                        }
+                    }
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: 'Successful',
+                        detail: 'course deleted ',
+                        life: 3000
+                    });
+                }, error => {
+                    this.messageService.add({
+                        severity: 'error',
+                        summary: 'error',
+                        detail: error?.error?.message,
+                        life: 4000
+                    });
+                });
+            }
+        });
     }
 
     updateSection(section: Section) {
-
+        this.showCreateSectionDialog= true;
+        this.section = section;
     }
 
     findBySectionId(id: number) {
-
+        console.log(id);
+        this.chapitreService.findBySectionId(id).subscribe((data) => {
+            this.chapitres = data;
+            console.log(data);
+            if (data.length === 0) {
+                this.messageService.add({
+                    severity: 'success',
+                    summary: 'Successful',
+                    detail: 'section orgisd chapitre ',
+                    life: 3000
+                });
+            }
+        }, error => {
+            this.messageService.add({
+                severity: 'error',
+                summary: 'error',
+                detail: error?.error?.message,
+                life: 4000
+            });
+        });
     }
 
     deleteSection(id: number) {
-
+        this.confirmationService.confirm({
+            message: 'Are you sure you want to delete this section ?',
+            header: 'Confirm',
+            icon: 'pi pi-exclamation-triangle',
+            accept: () => {
+                this.sectionService.delete(id).subscribe((data) => {
+                    for (let i = 0; i < this.sections.length; i++) {
+                        if (id === this.sections[i].id) {
+                            this.sections.splice(i, 1);
+                        }
+                    }
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: 'Successful',
+                        detail: 'section deleted ',
+                        life: 3000
+                    });
+                }, error => {
+                    this.messageService.add({
+                        severity: 'error',
+                        summary: 'error',
+                        detail: error?.error?.message,
+                        life: 4000
+                    });
+                });
+            }
+        });
     }
 
     updateChap(chap: Chapitre) {
-
+        this.showCreateChapDialog= true;
+        this.chapitre = chap;
     }
 
     deleteById(id: number) {
-
+        this.confirmationService.confirm({
+            message: 'Are you sure you want to delete this chapter ?',
+            header: 'Confirm',
+            icon: 'pi pi-exclamation-triangle',
+            accept: () => {
+                this.chapitreService.delete(id).subscribe((data) => {
+                    for (let i = 0; i < this.chapitres.length; i++) {
+                        if (id === this.chapitres[i].id) {
+                            this.chapitres.splice(i, 1);
+                        }
+                    }
+                    this.messageService.add({
+                        severity: 'success',
+                        summary: 'Successful',
+                        detail: 'section chapter ',
+                        life: 3000
+                    });
+                }, error => {
+                    this.messageService.add({
+                        severity: 'error',
+                        summary: 'error',
+                        detail: error?.error?.message,
+                        life: 4000
+                    });
+                });
+            }
+        });
     }
 
     showCreateCourseDialogFct() {
