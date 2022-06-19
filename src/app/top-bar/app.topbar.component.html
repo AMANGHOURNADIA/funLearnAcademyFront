@@ -22,12 +22,12 @@
                 </a>
             <ul class="fadeInDown">
                 <li>
-                    <a href="#">
-                        <i class="pi pi-fw pi-user" ></i>
-                        <span >Profile</span>
+                    <a [routerLink]="['/profile']">
+                        <i class="pi pi-fw pi-user"></i>
+                        <span>Profile</span>
                     </a>
                 </li>
-                <li>
+                <li style="cursor: pointer">
                     <a (click)="logOut()">
                         <i class="pi pi-fw pi-power-off"></i>
                         <span>Log out</span>

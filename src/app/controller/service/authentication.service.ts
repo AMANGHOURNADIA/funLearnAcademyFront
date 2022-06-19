@@ -7,6 +7,7 @@ import {User} from '../model/user.model';
 import {Formateur} from '../model/formateur.model';
 import {Apprenant} from '../model/apprenant.model';
 import {Admin} from '../model/admin.model';
+import {Router} from '@angular/router';
 
 
 @Injectable({providedIn: 'root'})
@@ -18,7 +19,7 @@ export class AuthenticationService {
     private loggedInUsername: string;
     private jwtHelper = new JwtHelperService();
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private router: Router) {
     }
 
     public login(user: User): Observable<HttpResponse<User>> {
@@ -38,6 +39,7 @@ export class AuthenticationService {
         localStorage.removeItem('user');
         localStorage.removeItem('token');
         localStorage.removeItem('users');
+        this.router.navigate(['/']);
     }
 
     public saveToken(token: string): void {

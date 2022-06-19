@@ -8,7 +8,7 @@
                   <img src="{{course.listImg}}" alt="">
                 </a>
                 <div class="course__tag">
-                  <a href="#" [class]="course.color">{{course.category}}</a>
+                  <a href="#" [class]="course?.color">{{course?.sujet?.name}}</a>
                 </div>
              </div>
           </div>
@@ -17,23 +17,23 @@
                 <div class="course__content course__content-3">
                    <div class="course__meta d-flex align-items-center">
                       <div class="course__lesson mr-20">
-                         <span><i class="far fa-book-alt"></i>{{course.lesson}} Lesson</span>
+                         <span><i class="far fa-book-alt"></i>{{course?.lessonNumber}} Lesson</span>
                       </div>
                       <div class="course__rating">
-                         <span><i class="icon_star"></i>{{course.rating}} (44)</span>
+                         <span><i class="icon_star"></i>{{course?.rating}} (44)</span>
                       </div>
                    </div>
                    <h3 class="course__title course__title-3">
-                      <a [routerLink]="['/course-details']">{{course.title}}</a>
+                      <a [routerLink]="['/course-details']">{{course?.name}}</a>
                    </h3>
                    <div class="course__summary">
                       <p>Communia virtutes tutiorem declarat stoicorum sanabat oblivisci nostris tamquam iucunditatem</p>
                    </div>
                    <div class="course__teacher d-flex align-items-center">
                       <div class="course__teacher-thumb mr-15">
-                         <img src="{{course.teacherImg}}" alt="">
+                         <img src="{{course?.formateur?.image}}" alt="">
                       </div>
-                      <h6><a [routerLink]="['/instructor-details']">{{course.teacherName}}</a></h6>
+                      <h6><a [routerLink]="['/instructor-details']">{{course?.formateur?.fullname}}</a></h6>
                    </div>
                 </div>
                 <div class="course__more course__more-2 d-flex justify-content-between align-items-center">

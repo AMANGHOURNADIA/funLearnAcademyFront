@@ -38,7 +38,7 @@ export class BlogTwoComponent implements OnInit {
         date:'February 08, 2022',
         color:'green',
     },
-  ]
+  ];
 
   constructor() { }
 
