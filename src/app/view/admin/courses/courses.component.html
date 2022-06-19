@@ -1,0 +1,85 @@
+<div class="p-grid">
+    <div class="p-col-12">
+        <div class="p-grid topBar ">
+            <div class="p-col-3 ">
+                <h5>Categories</h5>
+                <p-dropdown [options]="categories" [(ngModel)]="selectedCategory"
+                            (ngModelChange)="getCategoryItems()"
+                            [style]="{'width': '100%'}"
+                            optionLabel="cat_name" [filter]="true" filterBy="cat_name" [showClear]="true"
+                            placeholder="Select a category">
+                </p-dropdown>
+
+            </div>
+
+            <div class="p-col-3 ">
+                <h5>category items</h5>
+                <p-dropdown [options]="categoriesItems" [(ngModel)]="selectedcategoriesItem"
+                            (ngModelChange)="getsujets()"
+                            [style]="{'width': '100%'}"
+                            optionLabel="name" [filter]="true" filterBy="name" [showClear]="true"
+                            placeholder="Select a category item">
+                </p-dropdown>
+            </div>
+
+            <div class="p-col-3 ">
+                <h5>Subjects</h5>
+                <p-dropdown [options]="sujets" [(ngModel)]="selectedSujet"
+                            (ngModelChange)="getCourses()"
+                            [style]="{'width': '100%'}"
+                            optionLabel="name" [filter]="true" filterBy="name" [showClear]="true"
+                            placeholder="Select a subject">
+                </p-dropdown>
+            </div>
+        </div>
+    </div>
+    <div class="p-col-12">
+        <div class="row">
+            <div *ngFor="let course of courses" class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                <div class="course__item white-bg mb-30 fix shadow-none">
+                    <div class="course__thumb w-img p-relative fix text-info">
+                        <a [routerLink]="['/course-details']">
+                            <img src="assets/img/course/course-1.jpg" alt="">
+                        </a>
+                        <div class="course__tag ">
+                            <a href="#" [class]="course?.color" >{{course?.sujet?.name}}</a>
+                        </div>
+                    </div>
+                    <div class="course__content">
+                        <div class="course__meta d-flex align-items-center justify-content-between">
+                            <div class="course__lesson">
+                                            <span><i class="far fa-book-alt"></i>
+                                                30 Lesson</span>
+                            </div>
+                            <div class="course__rating">
+                                <span><i class="icon_star"></i>{{course?.rating}} (44)</span>
+                            </div>
+                        </div>
+                        <h3 class="course__title"><a [routerLink]="['/course-details']">
+                            {{course.title}}</a></h3>
+                        <div class="course__teacher d-flex align-items-center">
+                            <div class="course__teacher-thumb mr-15">
+                                <img src="{{course?.formateur?.image}}" alt="">
+                            </div>
+                            <h6><a [routerLink]="['/instructor-details']">{{course?.formateur?.fullname}}</a></h6>
+                        </div>
+                    </div>
+                    <div class="course__more d-flex justify-content-between align-items-center ">
+                        <div class="course__status d-flex align-items-center ">
+                            <span [class]="course?.color" class="text-info">${{course?.price}}</span>
+                            <span class="old-price">${{course?.oldPrice}}</span>
+                        </div>
+                        <div class="course__btn">
+                            <a [routerLink]="['/course-details']" class="link-btn">
+                                Know Details
+                                <i class="far fa-arrow-right"></i>
+                                <i class="far fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

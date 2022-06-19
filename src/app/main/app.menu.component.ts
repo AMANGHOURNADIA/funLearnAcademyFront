@@ -46,13 +46,9 @@ export class AppMenuComponent implements OnInit {
                         {label: 'Manage categories', icon: 'pi pi-fw pi-cog', routerLink: ['/admin/manage/categories']},
                         {label: 'Instructors', icon: 'pi pi-fw pi-user-plus', routerLink: ['/admin/manage/formateur']},
                         {label: 'Learners', icon: 'pi pi-fw pi-users', routerLink: ['/admin/manage/apprenant']},
+                        { label: 'Formations', icon: 'pi pi-list', routerLink: ['/admin/consult/formations']},
+                        { label: 'Update Profile', icon: 'pi pi-pencil', routerLink: ['/admin/consult/updateprofile']},
                     ]
-                },
-                {
-                    label: 'consultation', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
-                    items: [
-                        {label: 'Formations', icon: 'pi pi-list', routerLink: ['/uikit/Formations']}
-                        ]
                 },
             ];
         } else if (user.role === Role.FORMATEUR) {
@@ -62,17 +58,10 @@ export class AppMenuComponent implements OnInit {
                     items: [
                         {label: 'Manage courses', icon: 'pi pi-fw pi-briefcase', routerLink: ['/formateur/courses']},
                         {label: 'Manage quiz', icon: 'pi pi-fw pi-briefcase', routerLink: ['/formateur/quizes']},
+                        {label: 'Update profile', icon: 'pi pi-pencil', routerLink: ['/consult/Update']},
                     ]
                 },
-                {
-                    label: 'consultation', icon: 'pi pi-fw pi-star', routerLink: ['/uikit'],
-                    items: [
-                        {label: 'Update profile', icon: 'pi pi-pencil', routerLink: ['/uikit/Update']},
-                    ]
-                },
-
-            ];
-        }
+        ];}
 
     }
 

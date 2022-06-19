@@ -258,25 +258,26 @@
     <div class="p-grid">
         <div class="p-col-6">
             <span class="p-float-label">
+                <h5>Name</h5>
             <input [style]="{width: '100%'}" type="text" id="inputtext" pInputText [(ngModel)]="categorie.cat_name">
-            <label for="inputtext">Name</label>
         </span>
         </div>
 
 
         <div class="p-col-6">
              <span class="p-float-label">
+                  <h5>Name</h5>
             <input [style]="{width: '100%'}" type="text" id="inputtext" pInputText [(ngModel)]="categorie.cat_code">
-            <label for="inputtext">Code</label>
+
         </span>
         </div>
 
 
         <div class="p-col-12">
             <span class="p-float-label">
+                 <h5>Description</h5>
     <textarea [style]="{width: '100%'}" id="float-input" rows="2" [(ngModel)]="categorie.description"
               pInputTextarea></textarea>
-    <label for="float-input">Description</label>
 </span>
         </div>
     </div>
@@ -295,13 +296,14 @@
     <div class="p-grid">
         <div class="p-col-6">
             <span class="p-float-label">
+                   <h5>Name</h5>
             <input [style]="{width: '100%'}" type="text" id="inputtext" pInputText [(ngModel)]="categoryItem.name">
-            <label for="inputtext">Name</label>
         </span>
         </div>
 
 
         <div class="p-col-6">
+            <h5>Category</h5>
             <p-dropdown [style]="{width: '100%'}" [options]="categories" [(ngModel)]="categoryItem.categorie" placeholder="Select a Category" optionLabel="cat_name" [showClear]="true"></p-dropdown>
 
         </div>
@@ -309,9 +311,9 @@
 
         <div class="p-col-12">
             <span class="p-float-label">
+                   <h5>Description</h5>
     <textarea [style]="{width: '100%'}" id="float-input" rows="2" [(ngModel)]="categoryItem.description"
               pInputTextarea></textarea>
-    <label for="float-input">Description</label>
 </span>
         </div>
     </div>
@@ -331,13 +333,14 @@
     <div class="p-grid">
         <div class="p-col-6">
             <span class="p-float-label">
+                   <h5>Name</h5>
            <input [style]="{width: '100%'}" type="text" id="inputtext" pInputText [(ngModel)]="sujet.name">
-            <label for="inputtext">Name</label>
         </span>
         </div>
 
 
         <div class="p-col-6">
+            <h5>Category Item</h5>
             <p-dropdown [style]="{width: '100%'}" [options]="categoryItems" [(ngModel)]="sujet.categorieItem" placeholder="Select a CategoryItem" optionLabel="name" [showClear]="true"></p-dropdown>
 
         </div>
@@ -345,9 +348,9 @@
 
         <div class="p-col-12">
             <span class="p-float-label">
+                <h5>Description</h5>
     <textarea [style]="{width: '100%'}" id="float-input" rows="2" [(ngModel)]="sujet.description"
               pInputTextarea></textarea>
-    <label for="float-input">Description</label>
 </span>
         </div>
     </div>

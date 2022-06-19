@@ -1,16 +1,7 @@
 <div class="layout-topbar">
-
-    <a class="layout-right-panel-button layout-topbar-icon" (click)="appMain.onRightMenuClick($event)" href="#">
-        <i class="pi pi-ellipsis-v"></i>
-    </a>
     <a href="#" class="layout-menu-button layout-topbar-icon" (click)="appMain.onMenuButtonClick($event)">
-        <i class="pi pi-bars"></i>
+        <i class="pi pi-bars">FunLearn</i>
     </a>
-
-    <span class="layout-topbar-search">
-        <i class="pi pi-search"></i>
-        <input type="text" placeholder="Enter your search ">
-    </span>
 
     <ul *ngIf="isUserLoggedIn"  class="topbar-menu" >
         <li class="user-profile" [ngClass]="{'active-topmenuitem fadeInDown': appMain.topbarUserMenuActive}">
@@ -46,14 +37,6 @@
         </li>
     </ul>
 
-    <ul *ngIf="!isUserLoggedIn"  class="topbar-menu" >
-
-        <p-splitButton label="Sign up" [model]="this.items" styleClass="p-button-text p-button-help mr-2 mb-2"></p-splitButton>
-    </ul>
-    <ul *ngIf="!isUserLoggedIn"  class="topbar-menu" style=" margin: 0 50px" >
-        <button pButton pRipple routerLink="/login" type="button" label="Sign in" class="p-button-help"></button>
-<!--        <p-splitButton label="Sign in" [model]="this.items" styleClass="p-button-text p-button-help mr-2 mb-2"></p-splitButton>-->
-    </ul>
 
 
 

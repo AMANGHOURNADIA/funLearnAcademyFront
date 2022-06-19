@@ -67,6 +67,7 @@ import {HomeComponent} from './view/apprenant/educal/Home/Home/home.component';
 import {ManageFormtaeurComponent} from './view/admin/manage-formtaeur/manage-formtaeur.component';
 import {ManageApprenantComponent} from './view/admin/manage-apprenant/manage-apprenant.component';
 import {ManageQuizComponent} from './view/formateur/manage-quiz/manage-quiz.component';
+import {CoursesComponent} from './view/admin/courses/courses.component';
 
 @NgModule({
     imports: [
@@ -162,6 +163,8 @@ import {ManageQuizComponent} from './view/formateur/manage-quiz/manage-quiz.comp
                             {path: 'manage/formateur', component: ManageFormtaeurComponent},
                             {path: 'manage/apprenant', component: ManageApprenantComponent},
                             {path: 'signup', component: AppTopBarComponent},
+                            {path: 'consult/formations', component: CoursesComponent},
+                            {path: 'consult/updateprofile', component: CoursesComponent},
                         ]
                     },
                     {
