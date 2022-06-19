@@ -44,7 +44,10 @@ export class ManageQuizComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.courseService.findAll().subscribe(data => this.courses = data);
+    this.questionService.findAll().subscribe(data => {
+      this.questions = data;
+      console.log(data);
+    });
     console.log(this.question);
   }
   saveQuestion() {

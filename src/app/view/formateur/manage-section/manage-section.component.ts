@@ -14,8 +14,7 @@ import {Chapitre} from '../../../controller/model/chapitre.model';
     styleUrls: ['./manage-section.component.scss']
 })
 export class ManageSectionComponent implements OnInit {
-    private course: Array<Cours> = new Array<Cours>() ;
-    private cours: Cours;
+
     courses: Cours[];
     constructor(private courseService: CoursService, private sectionService: SectionService,
                 private authService: AuthenticationService,

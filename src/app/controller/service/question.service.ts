@@ -55,8 +55,8 @@ export class QuestionService {
   set apprenantUrl(value: string) {
     this._apprenantUrl = value;
   }
-  public save(cours: Question): Observable<Question> {
-    return this.http.post<Question>(this.formateurUrl + 'question/', cours);
+  public save(qestion1: Question): Observable<Question> {
+    return this.http.post<Question>(this.formateurUrl + 'question/', qestion1);
   }
 
   public findAll(): Observable<Array<Question>> {

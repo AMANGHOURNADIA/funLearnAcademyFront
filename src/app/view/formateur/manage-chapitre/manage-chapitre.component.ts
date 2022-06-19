@@ -6,6 +6,7 @@ import {Chapitre} from '../../../controller/model/chapitre.model';
 import {ChapitreService} from '../../../controller/service/chapitre.service';
 import {AuthenticationService} from '../../../controller/service/authentication.service';
 import {Section} from '../../../controller/model/section.true';
+import {Cours} from '../../../controller/model/cours.model';
 
 @Component({
   selector: 'app-manage-chapitre',
@@ -14,7 +15,7 @@ import {Section} from '../../../controller/model/section.true';
 })
 export class ManageChapitreComponent implements OnInit {
   sections: Section[];
-  section: Array<Section> = new Array<Section>();
+
 
   constructor(private courseService: CoursService, private sectionService: SectionService,
               private authService: AuthenticationService,

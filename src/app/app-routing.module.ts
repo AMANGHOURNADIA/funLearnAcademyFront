@@ -69,6 +69,7 @@ import {ManageApprenantComponent} from './view/admin/manage-apprenant/manage-app
 import {ManageQuizComponent} from './view/formateur/manage-quiz/manage-quiz.component';
 import {CoursesComponent} from './view/admin/courses/courses.component';
 import {ApprenantProfileComponent} from './view/shared/apprenant-profile/apprenant-profile.component';
+import {AdminProfileComponent} from './view/shared/admin-profile/admin-profile.component';
 
 @NgModule({
     imports: [
@@ -170,7 +171,7 @@ import {ApprenantProfileComponent} from './view/shared/apprenant-profile/apprena
                             {path: 'manage/apprenant', component: ManageApprenantComponent},
                             {path: 'signup', component: AppTopBarComponent},
                             {path: 'consult/formations', component: CoursesComponent},
-                            {path: 'consult/updateprofile', component: CoursesComponent},
+                            {path: 'consult/updateprofile', component: AdminProfileComponent}
                         ]
                     },
                     {

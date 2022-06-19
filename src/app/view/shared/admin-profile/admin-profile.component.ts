@@ -28,7 +28,7 @@ export class AdminProfileComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authService.getFormateurFromLocalCache() !== null) {
-      this.user = this.authService.getApprenantFromLocalCache();
+      this.user = this.authService.getAdminFromLocalCache();
     }
   }
 

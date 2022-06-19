@@ -12,7 +12,7 @@ export class ChapitreService {
   private _chapitre: Chapitre = new Chapitre();
   private _chapitres: Array<Chapitre> = new Array<Chapitre>();
   private formateurUrl = environment.formateurUrl;
-  private filename ;
+
   constructor(private http: HttpClient) { }
 
   get chapitre(): Chapitre {
@@ -39,7 +39,7 @@ export class ChapitreService {
 
   }
   public findBySectionId(id: number): Observable<Array<Chapitre>> {
-    return this.http.get<Chapitre[]>(this.formateurUrl + 'chapitre/section/id/' + id);
+    return this.http.get<Chapitre[]>(this.formateurUrl + 'chapitre/Section/id/' + id);
 
   }
   public delete(id: number): Observable<any> {
@@ -50,16 +50,5 @@ export class ChapitreService {
     return this.http.post<Chapitre>(this.formateurUrl + 'chapitre/', chapitre);
   }
 
-
-  upload(formData: FormData): Observable<HttpEvent<string[]>> {
-    return this.http.post<string[]>(this.formateurUrl + 'chapitre/file', formData, {
-      reportProgress: true,
-      observe: 'events'
-    });
-  }
-
-  public getFile() {
-    return this.http.get(this.formateurUrl + 'chapitre/file')
-  }
 
 }
