@@ -4,7 +4,7 @@ import {User} from '../../../controller/model/user.model';
 import {Router} from '@angular/router';
 
 @Component({
-    selector: 'app-shared-home',
+    selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })

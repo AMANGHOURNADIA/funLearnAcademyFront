@@ -13,4 +13,5 @@ export class Cours {
     rating: string;
     price: string;
     oldPrice: string;
+    color = 'blue';
 }

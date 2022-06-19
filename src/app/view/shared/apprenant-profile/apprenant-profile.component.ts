@@ -4,6 +4,8 @@ import {AuthenticationService} from '../../../controller/service/authentication.
 import {Cours} from '../../../controller/model/cours.model';
 import {ApprenantService} from '../../../controller/service/apprenant.service';
 import {MessageService} from 'primeng/api';
+import {Role} from '../../../enum/role.enum';
+import {FormateurService} from '../../../controller/service/formateur.service';
 
 @Component({
     selector: 'app-apprenant-profile',
@@ -11,7 +13,7 @@ import {MessageService} from 'primeng/api';
     styleUrls: ['./apprenant-profile.component.scss']
 })
 export class ApprenantProfileComponent implements OnInit {
-    user: Apprenant = new Apprenant();
+    user: any = new Apprenant();
     selectedElement = 'PROFILE' || 'SET' || 'PASS' || 'INSCRIPTION';
     newPassword: string;
     newPasswordRepated: string;
@@ -20,7 +22,8 @@ export class ApprenantProfileComponent implements OnInit {
 
     constructor(private authService: AuthenticationService,
                 private messageService: MessageService,
-                private apprenantService: ApprenantService
+                private apprenantService: ApprenantService,
+                private formateurService: FormateurService,
     ) {
     }
 
@@ -36,26 +39,49 @@ export class ApprenantProfileComponent implements OnInit {
     }
 
     updateUser(user: Apprenant) {
-        this.apprenantService.update(user).subscribe(
-            data => {
-                this.user = data;
-                this.authService.addUserToLocalCache(data);
-                this.messageService.add({
-                    severity: 'info',
-                    summary: 'Successful',
-                    detail: 'information updated successfully',
-                    life: 3000
-                });
-            }, error => {
-                console.log(error);
-                this.messageService.add({
-                    severity: 'error',
-                    summary: 'error',
-                    detail: error?.error?.message,
-                    life: 4000
-                });
-            }
-        );
+        if (user.role === Role.APPRENANT) {
+            this.apprenantService.update(user).subscribe(
+                data => {
+                    this.user = data;
+                    this.authService.addUserToLocalCache(data);
+                    this.messageService.add({
+                        severity: 'info',
+                        summary: 'Successful',
+                        detail: 'information updated successfully',
+                        life: 3000
+                    });
+                }, error => {
+                    console.log(error);
+                    this.messageService.add({
+                        severity: 'error',
+                        summary: 'error',
+                        detail: error?.error?.message,
+                        life: 4000
+                    });
+                }
+            );
+        } else {
+            this.formateurService.update(user).subscribe(
+                data => {
+                    this.user = data;
+                    this.authService.addUserToLocalCache(data);
+                    this.messageService.add({
+                        severity: 'info',
+                        summary: 'Successful',
+                        detail: 'information updated successfully',
+                        life: 3000
+                    });
+                }, error => {
+                    console.log(error);
+                    this.messageService.add({
+                        severity: 'error',
+                        summary: 'error',
+                        detail: error?.error?.message,
+                        life: 4000
+                    });
+                }
+            );
+        }
     }
 
 

@@ -50,7 +50,7 @@ export class FormateurService {
         return this.http.get<Formateur[]>(this.host + '/');
     }
 
-    update(selectedFormateur: Formateur): Observable<Formateur> {
+    update(selectedFormateur: any): Observable<Formateur> {
         return this.http.post<Formateur>(this.hostAdmin + `/update`, selectedFormateur);
     }
 
