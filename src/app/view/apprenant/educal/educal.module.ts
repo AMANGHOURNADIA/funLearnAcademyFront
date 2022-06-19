@@ -148,6 +148,10 @@ import {HttpClientModule} from '@angular/common/http';
         HttpClientModule,
         FormsModule
     ],
+    exports: [
+        HeaderTwoComponent,
+        FooterTwoComponent
+    ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class EducalModule {

@@ -17,31 +17,5 @@ export class UserProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateProfileImage() {
-    
-  }
 
-  onUpdateProfileImage() {
-    
-  }
-
-  onProfileImageChange($event: Event) {
-    
-  }
-
-  updateUser(user: User) {
-    
-  }
-
-  deleteUser() {
-    
-  }
-
-  updateOtherUser(userInfo: any) {
-
-  }
-
-  addNewUser() {
-
-  }
 }

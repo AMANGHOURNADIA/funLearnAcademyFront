@@ -6,6 +6,7 @@ export class User {
     fullname: string;
     username: string;
     password: string;
+
     phone: string;
     authorities: Array<Role>;
     role: string;
@@ -15,4 +16,10 @@ export class User {
     enabled: boolean;
     image: string;
     token: string;
+//    -----------
+    city: string;
+    country: string = String('Morocco');
+    address: string;
+    age: string;
+
 }

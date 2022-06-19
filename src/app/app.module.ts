@@ -161,6 +161,8 @@ import {ManageSectionComponent} from './view/formateur/manage-section/manage-sec
 import {ManageChapitreComponent} from './view/formateur/manage-chapitre/manage-chapitre.component';
 import { UserProfileComponent } from './view/apprenant/user-profile/user-profile.component';
 import { ManageQuizComponent } from './view/formateur/manage-quiz/manage-quiz.component';
+import { ApprenantProfileComponent } from './view/shared/apprenant-profile/apprenant-profile.component';
+import { FormateurProfileComponent } from './view/shared/formateur-profile/formateur-profile.component';
 
 
 @NgModule({
@@ -320,7 +322,9 @@ import { ManageQuizComponent } from './view/formateur/manage-quiz/manage-quiz.co
         ManageSectionComponent,
         ManageChapitreComponent,
         UserProfileComponent,
-        ManageQuizComponent
+        ManageQuizComponent,
+        ApprenantProfileComponent,
+        FormateurProfileComponent
 
     ],
     providers: [

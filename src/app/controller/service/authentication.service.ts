@@ -87,4 +87,8 @@ export class AuthenticationService {
         }
     }
 
+    resetPass(user: User): Observable<User> {
+        return this.http.post<User>(`${this.host}user/resetPass`, user);
+
+    }
 }
