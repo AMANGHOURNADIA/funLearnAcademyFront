@@ -2,10 +2,15 @@ import {Formateur} from './formateur.model';
 import {Sujet} from './sujet.true';
 
 export class Cours {
-    public  id: number;
-    public  name: string;
-    public  description: string;
-    public  price: number;
-    public  formateur: Formateur;
-    public  sujet: Sujet;
+    id: number;
+    name: string;
+    description: string;
+    formateur: Formateur;
+    sujet: Sujet;
+    courseImage: string;
+    listImg: string;
+    lessonNumber: string;
+    rating: string;
+    price: string;
+    oldPrice: string;
 }
