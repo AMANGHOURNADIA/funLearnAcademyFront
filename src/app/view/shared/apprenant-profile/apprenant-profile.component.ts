@@ -18,6 +18,7 @@ export class ApprenantProfileComponent implements OnInit {
     newPassword: string;
     newPasswordRepated: string;
     courses: Array<Cours> = new Array<Cours>();
+    public role = Role;
 
 
     constructor(private authService: AuthenticationService,

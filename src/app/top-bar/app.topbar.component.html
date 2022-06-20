@@ -9,7 +9,7 @@
                 <img [src]="user?.image" alt="roma-layout" />
                 <div class="layout-profile-userinfo">
                     <span class="layout-profile-name">{{user?.fullname}}</span>
-                    <span *ngIf="user?.role === role.ADMIN" class="layout-profile-role">Admin</span>
+                    <span *ngIf="user?.role === role.ADMIN" class="layout-profile-role" >Admin</span>
                     <span *ngIf="user?.role === role.FORMATEUR" class="layout-profile-role">Formateur</span>
                     <span *ngIf="user?.role === role.APPRENANT" class="layout-profile-role">Apprenant</span>
                 </div>

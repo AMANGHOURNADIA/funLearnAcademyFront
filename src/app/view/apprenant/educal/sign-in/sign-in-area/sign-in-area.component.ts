@@ -72,4 +72,8 @@ export class SignInAreaComponent implements OnInit {
   ngOnDestroy(): void {
     this.subscriptions.forEach(sub => sub.unsubscribe());
   }
+
+    goToForgetPass() {
+        this.router.navigate(['/password']);
+    }
 }

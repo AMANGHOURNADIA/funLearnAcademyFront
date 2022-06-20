@@ -242,7 +242,7 @@ export class ManageCategorieComponent implements OnInit {
                 this.messageService.add({
                     severity: 'success',
                     summary: 'Successful',
-                    detail: 'Category orgisd category items ',
+                    detail: 'Category is empty ',
                     life: 3000
                 });
             }
@@ -266,7 +266,7 @@ export class ManageCategorieComponent implements OnInit {
                 this.messageService.add({
                     severity: 'success',
                     summary: 'Successful',
-                    detail: 'CategoryItem orgisd sujet ',
+                    detail: 'CategoryItem is empty',
                     life: 3000
                 });
             }

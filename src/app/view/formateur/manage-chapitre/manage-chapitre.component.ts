@@ -9,65 +9,74 @@ import {Section} from '../../../controller/model/section.true';
 import {Cours} from '../../../controller/model/cours.model';
 
 @Component({
-  selector: 'app-manage-chapitre',
-  templateUrl: './manage-chapitre.component.html',
-  styleUrls: ['./manage-chapitre.component.scss']
+    selector: 'app-manage-chapitre',
+    templateUrl: './manage-chapitre.component.html',
+    styleUrls: ['./manage-chapitre.component.scss']
 })
 export class ManageChapitreComponent implements OnInit {
-  sections: Section[];
 
 
-  constructor(private courseService: CoursService, private sectionService: SectionService,
-              private authService: AuthenticationService,
-              private messageService: MessageService,
-              private chapitreService: ChapitreService) { }
-  ngOnInit(): void {
-    this.sectionService.findAll().subscribe(data => this.sections = data);
-    console.log(this.chapitre);
-  }
-  get showCreateChapitreDialog(): boolean {
-    return this.courseService.showCreateChapDialog;
-  }
+    constructor(private courseService: CoursService, private sectionService: SectionService,
+                private authService: AuthenticationService,
+                private messageService: MessageService,
+                private chapitreService: ChapitreService) {
+    }
 
-  set showCreateChapitreDialog(value: boolean) {
-    this.courseService.showCreateChapDialog = value;
-  }
-  get chapitre(): Chapitre {
-    return this.chapitreService.chapitre;
-  }
+    ngOnInit(): void {
+        console.log(this.chapitre);
+    }
 
-  set chapitre(value: Chapitre) {
-    this.chapitreService.chapitre = value;
-  }
+    get showCreateChapitreDialog(): boolean {
+        return this.courseService.showCreateChapDialog;
+    }
 
-  get chapitres(): Array<Chapitre> {
-    return this.chapitreService.chapitres;
-  }
+    set showCreateChapitreDialog(value: boolean) {
+        this.courseService.showCreateChapDialog = value;
+    }
 
-  set chapitres(value: Array<Chapitre>) {
-    this.chapitreService.chapitres = value;
-  }
-  save() {
-    this.chapitreService.save(this.chapitre).subscribe(
-        data => {
-          this.chapitres.push({...data});
-          this.messageService.add({
-            severity: 'success',
-            summary: 'Successful',
-            detail: 'chapter added',
-            life: 3000
-          });
-          this.showCreateChapitreDialog = false;
-          this.chapitre = new Chapitre();
-        }, error => {
-          console.log(error);
-          this.messageService.add({
-            severity: 'error',
-            summary: 'error',
-            detail: error?.error?.message,
-            life: 4000
-          });
-        }
-    );
-  }
+    get chapitre(): Chapitre {
+        return this.chapitreService.chapitre;
+    }
+
+    set chapitre(value: Chapitre) {
+        this.chapitreService.chapitre = value;
+    }
+
+    get chapitres(): Array<Chapitre> {
+        return this.chapitreService.chapitres;
+    }
+
+
+    get sections(): Array<Section> {
+        return this.sectionService.sections;
+    }
+
+    set chapitres(value: Array<Chapitre>) {
+        this.chapitreService.chapitres = value;
+    }
+
+
+    save() {
+        this.chapitreService.save(this.chapitre).subscribe(
+            data => {
+                this.chapitres.push({...data});
+                this.messageService.add({
+                    severity: 'success',
+                    summary: 'Successful',
+                    detail: 'chapter added',
+                    life: 3000
+                });
+                this.showCreateChapitreDialog = false;
+                this.chapitre = new Chapitre();
+            }, error => {
+                console.log(error);
+                this.messageService.add({
+                    severity: 'error',
+                    summary: 'error',
+                    detail: error?.error?.message,
+                    life: 4000
+                });
+            }
+        );
+    }
 }

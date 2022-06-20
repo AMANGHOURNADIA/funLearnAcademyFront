@@ -165,6 +165,8 @@ import { CoursesComponent } from './view/admin/courses/courses.component';
 import { ApprenantProfileComponent } from './view/shared/apprenant-profile/apprenant-profile.component';
 import { FormateurProfileComponent } from './view/shared/formateur-profile/formateur-profile.component';
 import { AdminProfileComponent } from './view/shared/admin-profile/admin-profile.component';
+import { ForgetPasswordComponent } from './view/shared/forget-password/forget-password.component';
+import { NewAdminComponent } from './view/admin/new-admin/new-admin.component';
 
 
 @NgModule({
@@ -329,7 +331,9 @@ import { AdminProfileComponent } from './view/shared/admin-profile/admin-profile
         ManageQuizComponent,
         ApprenantProfileComponent,
         FormateurProfileComponent,
-        AdminProfileComponent
+        AdminProfileComponent,
+        ForgetPasswordComponent,
+        NewAdminComponent
 
     ],
     providers: [

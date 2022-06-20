@@ -47,7 +47,8 @@ export class AppMenuComponent implements OnInit {
                         {label: 'Instructors', icon: 'pi pi-fw pi-user-plus', routerLink: ['/admin/manage/formateur']},
                         {label: 'Learners', icon: 'pi pi-fw pi-users', routerLink: ['/admin/manage/apprenant']},
                         {label: 'Formations', icon: 'pi pi-list', routerLink: ['/admin/consult/formations']},
-                        {label: 'Updateprofile', icon: 'pi pi-pencil', routerLink: ['/admin/consult/updateprofile']}
+                        {label: 'Update Profile', icon: 'pi pi-pencil', routerLink: ['/admin/consult/updateprofile']},
+                        {label: 'New Admin', icon: 'pi pi-plus', routerLink: ['/admin/newadmin']}
                     ]
                 },
             ];
@@ -57,8 +58,7 @@ export class AppMenuComponent implements OnInit {
                     label: 'Instructor profile', icon: 'pi pi-fw pi-home',
                     items: [
                         {label: 'Manage courses', icon: 'pi pi-fw pi-home', routerLink: ['/formateur/courses']},
-                        {label: 'Manage quiz', icon: 'pi pi-fw pi-list', routerLink: ['/formateur/quizez']},
-                        {label: 'Updateprofile', icon: 'pi pi-fw pi-pencil', routerLink: ['/formateur/profile']}
+                        {label: 'Manage quiz', icon: 'pi pi-fw pi-list', routerLink: ['/formateur/quizez']}
 
                     ]
                 },

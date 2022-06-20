@@ -39,7 +39,7 @@
                 <div class="course__item white-bg mb-30 fix shadow-none">
                     <div class="course__thumb w-img p-relative fix text-info">
                         <a [routerLink]="['/course-details']">
-                            <img src="assets/img/course/course-1.jpg" alt="">
+                            <img [src]="course.courseImage" alt="">
                         </a>
                         <div class="course__tag ">
                             <a href="#" [class]="course?.color" >{{course?.sujet?.name}}</a>
@@ -49,10 +49,10 @@
                         <div class="course__meta d-flex align-items-center justify-content-between">
                             <div class="course__lesson">
                                             <span><i class="far fa-book-alt"></i>
-                                                30 Lesson</span>
+                                                {{course?.lessonNumber}} lesson</span>
                             </div>
                             <div class="course__rating">
-                                <span><i class="icon_star"></i>{{course?.rating}} (44)</span>
+                                <span><i class="icon_star"></i>{{course?.rating}} </span>
                             </div>
                         </div>
                         <h3 class="course__title"><a [routerLink]="['/course-details']">

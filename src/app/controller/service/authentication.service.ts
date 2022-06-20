@@ -93,4 +93,8 @@ export class AuthenticationService {
         return this.http.post<User>(`${this.host}user/resetPass`, user);
 
     }
+    forgetPass(email: string): Observable<any> {
+        return this.http.get<any>(`${this.host}user/resetpassword/` + email);
+
+    }
 }

@@ -18,13 +18,23 @@ export class ManageCoursesComponent implements OnInit {
     cols: any[];
 
     selectedSections: Array<Section> = new Array<Section>();
-    sections: Array<Section> = new Array<Section>();
+
     section: Section;
     selectedChapitres: Array<Chapitre> = new Array<Chapitre>();
     chapitres: Array<Chapitre> = new Array<Chapitre>();
     chapitre: Chapitre;
 
+
     constructor(private courseService: CoursService, private chapitreService: ChapitreService, private sectionService: SectionService, private authService: AuthenticationService, private messageService: MessageService, private confirmationService: ConfirmationService) {
+    }
+
+
+    get sections(): Array<Section> {
+        return this.sectionService.sections;
+    }
+
+    set sections(value: Array<Section>) {
+        this.sectionService.sections = value;
     }
 
     get showCreateSectionDialog(): boolean {
@@ -146,9 +156,9 @@ export class ManageCoursesComponent implements OnInit {
             console.log(data);
             if (data.length === 0) {
                 this.messageService.add({
-                    severity: 'success',
-                    summary: 'Successful',
-                    detail: 'section orgisd chapitre ',
+                    severity: 'info',
+                    summary: 'Something wrong',
+                    detail: 'section is empty ',
                     life: 3000
                 });
             }

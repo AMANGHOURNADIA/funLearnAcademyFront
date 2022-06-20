@@ -21,11 +21,18 @@
              class=" menuElement p-grid">Security
         </div>
 
-        <div [style.background]="(selectedElement === 'INSCRIPTION')? '#b8dde3': 'white'"
+        <div *ngIf="user?.role === role.APPRENANT"  [style.background]="(selectedElement === 'INSCRIPTION')? '#b8dde3': 'white'"
              [style.borderLeft]="(selectedElement === 'INSCRIPTION')? '5px solid #b8dde3': 'none'"
              [style.color]="(selectedElement === 'INSCRIPTION')? 'black': '#666666'"
              (click)="showMenuElemnt('INSCRIPTION')"
              class=" menuElement p-grid">My learning
+        </div>
+
+        <div *ngIf="user?.role === role.FORMATEUR" [style.background]="(selectedElement === 'INSCRIPTION')? '#b8dde3': 'white'"
+             [style.borderLeft]="(selectedElement === 'INSCRIPTION')? '5px solid #b8dde3': 'none'"
+             [style.color]="(selectedElement === 'INSCRIPTION')? 'black': '#666666'"
+             (click)="showMenuElemnt('INSCRIPTION')"
+             class=" menuElement p-grid">My courses
         </div>
 
 

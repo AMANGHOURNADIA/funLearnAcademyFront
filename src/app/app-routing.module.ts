@@ -70,12 +70,15 @@ import {ManageQuizComponent} from './view/formateur/manage-quiz/manage-quiz.comp
 import {CoursesComponent} from './view/admin/courses/courses.component';
 import {ApprenantProfileComponent} from './view/shared/apprenant-profile/apprenant-profile.component';
 import {AdminProfileComponent} from './view/shared/admin-profile/admin-profile.component';
+import {ForgetPasswordComponent} from './view/shared/forget-password/forget-password.component';
+import {NewAdminComponent} from './view/admin/new-admin/new-admin.component';
+import {SignInAreaComponent} from './view/apprenant/educal/sign-in/sign-in-area/sign-in-area.component';
 
 @NgModule({
     imports: [
         RouterModule.forRoot([
-            { path: '', component: HomeTwoComponent },
-            { path: 'home', component: HomeTwoComponent },
+            {path: '', component: HomeTwoComponent},
+            {path: 'home', component: HomeTwoComponent},
             {
                 path: 'home-two',
                 component: HomeTwoComponent
@@ -100,6 +103,11 @@ import {AdminProfileComponent} from './view/shared/admin-profile/admin-profile.c
                 path: 'blog',
                 component: BlogComponent
             },
+            {
+                path: 'password',
+                component: ForgetPasswordComponent
+            },
+
             {
                 path: 'blog-details',
                 component: BlogDetailsMainComponent
@@ -171,7 +179,8 @@ import {AdminProfileComponent} from './view/shared/admin-profile/admin-profile.c
                             {path: 'manage/apprenant', component: ManageApprenantComponent},
                             {path: 'signup', component: AppTopBarComponent},
                             {path: 'consult/formations', component: CoursesComponent},
-                            {path: 'consult/updateprofile', component: AdminProfileComponent}
+                            {path: 'consult/updateprofile', component: AdminProfileComponent},
+                            {path: 'newadmin', component: SignInAreaComponent}
                         ]
                     },
                     {

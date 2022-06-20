@@ -40,7 +40,7 @@
                              </label>
                        </div>
                        <div class="sign__forgot">
-                          <a href="#">Forgot your password?</a>
+                          <a (click)="goToForgetPass()" [routerLink]="['/password']">Forgot your password?</a>
                        </div>
                     </div>
                     <button (click)="onLogin(user)" class="e-btn  w-100"> <span></span> Sign In</button>

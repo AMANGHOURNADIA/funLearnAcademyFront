@@ -20,7 +20,7 @@
                                 <div class="course__item white-bg mb-30 fix shadow-none">
                                    <div class="course__thumb w-img p-relative fix">
                                       <a [routerLink]="['/course-details']">
-                                         <img src="{{course?.courseImage}}" alt="">
+                                         <img src="{{course.courseImage}}" alt="">
                                       </a>
                                       <div class="course__tag">
                                          <a href="#" [class]="course?.color">{{course?.sujet?.name}}</a>
@@ -74,7 +74,7 @@
                             <div class="course__item white-bg mb-30 fix shadow-none">
                                <div class="course__thumb w-img p-relative fix">
                                   <a [routerLink]="['/course-details']">
-                                     <img src="{{course.courseImage}}" alt="">
+                                     <img src="{{course?.courseImage}}" alt="">
                                   </a>
                                   <div class="course__tag">
                                      <a href="#" [class]="course?.color">{{course?.sujet?.name}}</a>
