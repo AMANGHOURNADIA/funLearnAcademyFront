@@ -29,14 +29,14 @@
                     <a [routerLink]="['/courses']">Courses</a>
                   </li>
                   <li class="breadcrumb-item active" aria-current="page">
-                    The business Intelligence analyst Course 2022
+                    {{selectedCourse?.name}}
                   </li>
                 </ol>
               </nav>
             </div>
-            <span class="page__title-pre">Development</span>
+            <span class="page__title-pre">{{selectedCourse?.sujet?.name}}</span>
             <h5 class="page__title-3">
-              The business Intelligence analyst Course 2022
+              {{selectedCourse?.name}}
             </h5>
           </div>
           <div class="course__meta-2 d-sm-flex mb-30">
@@ -44,11 +44,11 @@
               class="course__teacher-3 d-flex align-items-center mr-70 mb-30"
             >
               <div class="course__teacher-thumb-3 mr-15">
-                <img src="assets/img/course/teacher/teacher-1.jpg" alt="" />
+                <img [src]="selectedCourse?.formateur?.image" alt="" />
               </div>
               <div class="course__teacher-info-3">
                 <h5>Teacher</h5>
-                <p><a href="#">Elon Gated</a></p>
+                <p><a href="#">{{selectedCourse?.formateur?.fullname}}</a></p>
               </div>
             </div>
             <div class="course__update mr-80 mb-30">
@@ -75,12 +75,12 @@
                     <a href="#"> <i class="icon_star"></i> </a>
                   </li>
                 </ul>
-                <p>4.5</p>
+                <p>{{selectedCourse?.rating}}</p>
               </div>
             </div>
           </div>
           <div class="course__img w-img mb-30">
-            <img src="assets/img/course/details/course-details-1.jpg" alt="" />
+            <img [src]="selectedCourse?.courseImage" alt="" />
           </div>
           <div class="course__tab-2 mb-45">
             <ul class="nav nav-tabs" id="courseTab" role="tablist">
@@ -178,9 +178,9 @@
 
                   <div class="course__tag-2 mb-35 mt-35">
                     <i class="fal fa-tag"></i>
-                    <a href="#">Big data,</a>
-                    <a href="#">Data analysis,</a>
-                    <a href="#">Data modeling</a>
+                    <a href="#">{{selectedCourse?.sujet?.name}}, </a>
+                    <a href="#"> {{selectedCourse?.sujet?.categorieItem?.name}}, </a>
+                    <a href="#"> {{selectedCourse?.sujet?.categorieItem?.categorie?.cat_name}}</a>
                   </div>
                   <div class="course__description-list mb-45">
                     <h4>What is the Target Audience?</h4>
@@ -208,12 +208,12 @@
                       >
                         <div class="course__instructor-thumb mr-20">
                           <img
-                            src="assets/img/course/teacher/teacher-3.jpg"
+                            [src]="selectedCourse?.formateur?.image"
                             alt=""
                           />
                         </div>
                         <div class="course__instructor-content">
-                          <h3>Eleanor Fant</h3>
+                          <h3>{{selectedCourse?.formateur?.fullname}}</h3>
                           <p>Instructor</p>
                         </div>
                       </div>
@@ -1269,7 +1269,7 @@
                 </a>
               </div>
               <div class="course__enroll-btn">
-                <a [routerLink]="['/sign-in']" class="e-btn e-btn-7 w-100"
+                <a  (click)="goTo()" class="e-btn e-btn-7 w-100"
                   >Enroll <i class="far fa-arrow-right"></i
                 ></a>
               </div>

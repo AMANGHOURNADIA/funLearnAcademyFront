@@ -7,6 +7,7 @@ import {CategorieItem} from '../../../controller/model/categorie-item.model';
 import {Sujet} from '../../../controller/model/sujet.model';
 import {CategorieItemService} from '../../../controller/service/categorie-item.service';
 import {SujetService} from '../../../controller/service/sujet.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-courses',
@@ -23,6 +24,7 @@ export class CoursesComponent implements OnInit {
     selectedcategoriesItem: CategorieItem = new CategorieItem();
 
     constructor(private coursService: CoursService,
+                private router: Router,
                 private categoriesItemService: CategorieItemService,
                 private sujetService: SujetService,
                 private categoryService: CategorieService) {
@@ -38,6 +40,19 @@ export class CoursesComponent implements OnInit {
         this.categoriesItemService.findAll().subscribe(data => this.categoriesItems = data);
         this.sujetService.findAll().subscribe(data => this.sujets = data);
 
+    }
+
+    get selectedCourse(): Cours {
+        return this.coursService.selectedCourse;
+    }
+
+    set selectedCourse(value: Cours) {
+        this.coursService.selectedCourse = value;
+    }
+
+    selectedCourseFct(course: Cours) {
+        this.selectedCourse = course;
+        this.router.navigate(['/course-details']);
     }
 
     getCategoryItems() {

@@ -98,9 +98,9 @@ export class ManageCoursesComponent implements OnInit {
             console.log(data);
             if (data.length === 0) {
                 this.messageService.add({
-                    severity: 'success',
-                    summary: 'Successful',
-                    detail: 'course orgisd section ',
+                    severity: 'info',
+                    summary: '',
+                    detail: 'course is empty ',
                     life: 3000
                 });
             }

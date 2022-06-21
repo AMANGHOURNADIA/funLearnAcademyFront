@@ -73,6 +73,7 @@ import {AdminProfileComponent} from './view/shared/admin-profile/admin-profile.c
 import {ForgetPasswordComponent} from './view/shared/forget-password/forget-password.component';
 import {NewAdminComponent} from './view/admin/new-admin/new-admin.component';
 import {SignInAreaComponent} from './view/apprenant/educal/sign-in/sign-in-area/sign-in-area.component';
+import {PayementComponent} from './view/apprenant/educal/course-details/payement/payement.component';
 
 @NgModule({
     imports: [
@@ -98,6 +99,10 @@ import {SignInAreaComponent} from './view/apprenant/educal/sign-in/sign-in-area/
             {
                 path: 'course-details',
                 component: CourseDetailsComponent
+            },
+            {
+                path: 'payment',
+                component: PayementComponent
             },
             {
                 path: 'blog',
