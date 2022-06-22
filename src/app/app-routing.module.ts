@@ -180,7 +180,7 @@ import {SignInAreaComponent} from './view/apprenant/educal/sign-in/sign-in-area/
                             {path: 'signup', component: AppTopBarComponent},
                             {path: 'consult/formations', component: CoursesComponent},
                             {path: 'consult/updateprofile', component: AdminProfileComponent},
-                            {path: 'newadmin', component: SignInAreaComponent}
+                            {path: 'newadmin', component: RegisterAdminComponent}
                         ]
                     },
                     {
