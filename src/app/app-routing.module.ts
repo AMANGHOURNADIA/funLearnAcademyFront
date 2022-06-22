@@ -186,7 +186,7 @@ import {ContactMainComponent} from './view/apprenant/educal/contact/contact-main
                             {path: 'signup', component: AppTopBarComponent},
                             {path: 'consult/formations', component: CoursesComponent},
                             {path: 'consult/updateprofile', component: AdminProfileComponent},
-                            {path: 'newadmin', component: SignInAreaComponent}
+                            {path: 'newadmin', component: RegisterAdminComponent}
                         ]
                     },
                     {
