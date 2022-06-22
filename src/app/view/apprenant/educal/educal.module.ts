@@ -69,6 +69,10 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from '../../../app-routing.module';
 import {AppCodeModule} from '../../../app.code.component';
 import {HttpClientModule} from '@angular/common/http';
+import { PayementComponent } from './course-details/payement/payement.component';
+import {MessageModule} from 'primeng/message';
+import {KeyFilterModule} from 'primeng/keyfilter';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 @NgModule({
@@ -134,6 +138,7 @@ import {HttpClientModule} from '@angular/common/http';
         ContactAreaComponent,
         ContactInfoComponent,
         BlogTwoComponent,
+        PayementComponent,
     ],
     imports: [
         CommonModule,
@@ -146,7 +151,10 @@ import {HttpClientModule} from '@angular/common/http';
         AppCodeModule,
         CommonModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        MessageModule,
+        KeyFilterModule,
+        InputTextModule
     ],
     exports: [
         HeaderTwoComponent,

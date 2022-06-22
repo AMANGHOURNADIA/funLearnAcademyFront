@@ -1,5 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import SwiperCore, {Autoplay, Pagination} from 'swiper';
+import {Router} from '@angular/router';
+import {AuthenticationService} from '../../../../../controller/service/authentication.service';
+import {CoursService} from '../../../../../controller/service/cours.service';
+import {Cours} from '../../../../../controller/model/cours.model';
 // import Swiper core and required modules
 
 // install Swiper modules
@@ -82,11 +86,30 @@ export class CourseDetailsAreaComponent implements OnInit {
       oldPrice: "36.00",
       color: "orange"
     },
-  ]
+  ];
 
-  constructor() { }
+  constructor(private router: Router,
+              private courseService: CoursService,
+              private authService: AuthenticationService) { }
 
   ngOnInit(): void {
+    console.log(this.selectedCourse);
   }
 
+  get selectedCourse(): Cours {
+    return this.courseService.selectedCourse;
+  }
+
+  set selectedCourse(value: Cours) {
+    this.courseService.selectedCourse = value;
+  }
+
+  goTo() {
+    if (this.authService.isUserLoggedIn()){
+      this.router.navigate(['/payment']);
+    } else {
+      this.router.navigate(['/sign-in']);
+
+    }
+  }
 }

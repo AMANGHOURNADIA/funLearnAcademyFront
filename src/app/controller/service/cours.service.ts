@@ -11,6 +11,7 @@ import {Observable} from 'rxjs';
 export class CoursService {
   private _cours: Cours = new Cours();
   private _courses: Array<Cours> = new Array<Cours>();
+  private _selectedCourse: Cours = new Cours();
   private formateurUrl = environment.formateurUrl;
   private _showCreateSectionDialog: boolean;
   private _showCreateChapDialog: boolean;
@@ -19,6 +20,14 @@ export class CoursService {
 
   constructor(private http: HttpClient) { }
 
+
+  get selectedCourse(): Cours {
+    return this._selectedCourse;
+  }
+
+  set selectedCourse(value: Cours) {
+    this._selectedCourse = value;
+  }
 
   get showCreateSectionDialog(): boolean {
     return this._showCreateSectionDialog;

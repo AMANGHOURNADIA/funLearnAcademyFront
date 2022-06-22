@@ -21,21 +21,21 @@
              class=" menuElement p-grid">Security
         </div>
 
-        <div *ngIf="user?.role === role.APPRENANT"  [style.background]="(selectedElement === 'INSCRIPTION')? '#b8dde3': 'white'"
+        <div *ngIf="user?.role === role.APPRENANT"
+             [style.background]="(selectedElement === 'INSCRIPTION')? '#b8dde3': 'white'"
              [style.borderLeft]="(selectedElement === 'INSCRIPTION')? '5px solid #b8dde3': 'none'"
              [style.color]="(selectedElement === 'INSCRIPTION')? 'black': '#666666'"
              (click)="showMenuElemnt('INSCRIPTION')"
              class=" menuElement p-grid">My learning
         </div>
 
-        <div *ngIf="user?.role === role.FORMATEUR" [style.background]="(selectedElement === 'INSCRIPTION')? '#b8dde3': 'white'"
+        <div *ngIf="user?.role === role.FORMATEUR"
+             [style.background]="(selectedElement === 'INSCRIPTION')? '#b8dde3': 'white'"
              [style.borderLeft]="(selectedElement === 'INSCRIPTION')? '5px solid #b8dde3': 'none'"
              [style.color]="(selectedElement === 'INSCRIPTION')? 'black': '#666666'"
              (click)="showMenuElemnt('INSCRIPTION')"
              class=" menuElement p-grid">My courses
         </div>
-
-
 
 
     </div>
@@ -53,7 +53,8 @@
                         <h4 style="color: #0102ff; font-weight: 500;">Full name</h4>
                         <div class="p-inputgroup">
                             <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                            <input [style]="{ background: '#e9ecef'}" class="user-input-group" [(ngModel)]="user.fullname" name="prenom" type="text"
+                            <input [style]="{ background: '#e9ecef'}" class="user-input-group"
+                                   [(ngModel)]="user.fullname" name="prenom" type="text"
                                    pInputText placeholder="full name">
                         </div>
                     </div>
@@ -62,7 +63,8 @@
                         <h4 style="color: #0102ff; font-weight: 500;">Username</h4>
                         <div class="p-inputgroup">
                             <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
-                            <input [style]="{ background: '#e9ecef'}" class="user-input-group" [(ngModel)]="user.username" name="username" type="text"
+                            <input [style]="{ background: '#e9ecef'}" class="user-input-group"
+                                   [(ngModel)]="user.username" name="username" type="text"
                                    pInputText placeholder="email">
                         </div>
                     </div>
@@ -71,7 +73,8 @@
                         <h4 style="color: #0102ff; font-weight: 500;">Email</h4>
                         <div class="p-inputgroup">
                             <span class="p-inputgroup-addon"><i class="pi pi-envelope"></i></span>
-                            <input [style]="{ background: '#e9ecef'}" class="user-input-group" [(ngModel)]="user.email" name="username" type="text"
+                            <input [style]="{ background: '#e9ecef'}" class="user-input-group" [(ngModel)]="user.email"
+                                   name="username" type="text"
                                    pInputText placeholder="email">
                         </div>
                     </div>
@@ -80,7 +83,8 @@
                         <h4 style="color: #0102ff; font-weight: 500;">Country</h4>
                         <div class="p-inputgroup">
                             <span class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></span>
-                            <input [style]="{ background: '#e9ecef'}" class="user-input-group" [(ngModel)]="user.country" name="country" type="text"
+                            <input [style]="{ background: '#e9ecef'}" class="user-input-group"
+                                   [(ngModel)]="user.country" name="country" type="text"
                                    pInputText placeholder="Country">
                         </div>
                     </div>
@@ -89,7 +93,8 @@
                         <h4 style="color: #0102ff; font-weight: 500;">City</h4>
                         <div class="p-inputgroup">
                             <span class="p-inputgroup-addon"><i class="pi pi-map-marker"></i></span>
-                            <input [style]="{ background: '#e9ecef'}" class="user-input-group" [(ngModel)]="user.city" name="city" type="text" pInputText
+                            <input [style]="{ background: '#e9ecef'}" class="user-input-group" [(ngModel)]="user.city"
+                                   name="city" type="text" pInputText
                                    placeholder="City">
                         </div>
                     </div>
@@ -98,7 +103,8 @@
                         <h4 style="color: #0102ff; font-weight: 500;">Address</h4>
                         <div class="p-inputgroup">
                             <span class="p-inputgroup-addon"><i class="pi pi-home"></i></span>
-                            <input  [style]="{ background: '#e9ecef'}" class="user-input-group" [(ngModel)]="user.address" name="addresse" type="text"
+                            <input [style]="{ background: '#e9ecef'}" class="user-input-group"
+                                   [(ngModel)]="user.address" name="addresse" type="text"
                                    pInputText placeholder="Address">
                         </div>
                     </div>
@@ -107,18 +113,19 @@
                         <h4 style="color: #0102ff; font-weight: 500;">Age</h4>
                         <div class="p-inputgroup">
                             <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                            <input [style]="{ background: '#e9ecef'}" class="user-input-group" [(ngModel)]="user.age" name="age" type="number" pInputText
+                            <input [style]="{ background: '#e9ecef'}" class="user-input-group" [(ngModel)]="user.age"
+                                   name="age" type="number" pInputText
                                    placeholder="Age">
                         </div>
                     </div>
-
 
 
                     <div class="p-col-6">
                         <h4 style="color: #0102ff; font-weight: 500;">Phone</h4>
                         <div class="p-inputgroup">
                             <span class="p-inputgroup-addon"><i class="pi pi-phone"></i></span>
-                            <input [style]="{ background: '#e9ecef'}" class="user-input-group" [(ngModel)]="user.phone" name="numero" type="text"
+                            <input [style]="{ background: '#e9ecef'}" class="user-input-group" [(ngModel)]="user.phone"
+                                   name="numero" type="text"
                                    pInputText placeholder="Phone">
                         </div>
                     </div>
@@ -162,7 +169,8 @@
                             <span style="cursor: pointer" *ngIf="newPass.type === 'text'" (click)="showPass(newPass)"
                                   class="p-inputgroup-addon"><i class="pi pi-eye-slash"></i></span>
 
-                            <input  [style]="{ background: '#e9ecef'}" #newPass class="user-input-group" [(ngModel)]="newPassword" name="newPassword"
+                            <input [style]="{ background: '#e9ecef'}" #newPass class="user-input-group"
+                                   [(ngModel)]="newPassword" name="newPassword"
                                    type="password"
                                    pPassword
                                    placeholder="new password">
@@ -177,7 +185,8 @@
                             <span style="cursor: pointer" *ngIf="Rep.type === 'text'" (click)="showPass(Rep)"
                                   class="p-inputgroup-addon"><i class="pi pi-eye-slash"></i></span>
 
-                            <input  [style]="{ background: '#e9ecef'}" #Rep class="user-input-group" [(ngModel)]="newPasswordRepated"
+                            <input [style]="{ background: '#e9ecef'}" #Rep class="user-input-group"
+                                   [(ngModel)]="newPasswordRepated"
                                    name="newPasswordRepated" type="password"
                                    pPassword
                                    placeholder="Repeat password">
@@ -200,38 +209,133 @@
     <!--  Registration  -->
 
 
-    <div *ngIf="selectedElement === 'INSCRIPTION'" class="p-col-10">
-        <div class="p-grid">
-            <div class="p-col-10 grandTitle">My learning
-            </div>
+<!--    <div *ngIf="selectedElement === 'INSCRIPTION' && user.role === role.APPRENANT" class="p-col-10">-->
+<!--        <div class="p-grid">-->
+<!--            <div class="p-col-10 grandTitle">My learning-->
+<!--            </div>-->
+
+
+<!--            <ng-container>-->
+
+<!--                <div *ngFor="let insc of inscriptions" class="p-col-4">-->
+<!--                    <p-card  [header]="insc?.cours?.name" [subheader]="insc?.cours?.formateur?.fullname"-->
+<!--                            [style]="{width: '100%', borderRadius: '10px', cursor: 'pointer',   background: '#263238' , color: 'white'}"-->
+<!--                            styleClass="p-card-shadow">-->
+<!--                        <ng-template pTemplate="header">-->
+<!--                            <img alt="Card"-->
+<!--                                 [src]="insc?.cours?.courseImage">-->
+<!--                        </ng-template>-->
+<!--                        <p>{{insc?.cours?.price}}</p>-->
+<!--                        <div class="course__tag-2 mb-35 mt-35">-->
+<!--                            <i class="fal fa-tag"></i>-->
+<!--                            <a href="#">{{insc?.cours?.name}}, </a>-->
+<!--                            <a href="#"> {{insc?.cours?.sujet?.categorieItem?.name}} </a>-->
+<!--                        </div>-->
+<!--                        <ng-template pTemplate="footer">-->
+<!--                            <p><i style="font-weight: bold;" class="pi pi-angle-right"></i>30-->
+<!--                                courses</p>-->
+<!--                        </ng-template>-->
+<!--                    </p-card>-->
+<!--                </div>-->
+<!--            </ng-container>-->
+<!--        </div>-->
+<!--    </div>-->
 
 
 
-            <ng-container >
-
-                <div  class="p-col-4">
-                    <p-card header="Course1" subheader="Youssef elmoudene"
-                            [style]="{width: '100%', borderRadius: '10px', cursor: 'pointer',   background: '#263238' , color: 'white'}"
-                            styleClass="p-card-shadow">
-                        <ng-template pTemplate="header">
-                            <img  alt="Card"
-                                 src="assets/img/course/course-2.jpg">
-                        </ng-template>
-                        <p>paragraph. Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields</p>
-                        <ng-template pTemplate="footer">
-                            <p><i style="font-weight: bold;" class="pi pi-angle-right"></i>30
-                                courses</p>
-                        </ng-template>
-                    </p-card>
+    <div class="p-col-10">
+        <div *ngIf="selectedElement === 'INSCRIPTION' && user.role === role.APPRENANT" class="row">
+            <div *ngFor="let inscription of inscriptions" class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                <div style="background: #b8dde3;" class="course__item white-bg mb-30 fix shadow-none">
+                    <div class="course__thumb w-img p-relative fix">
+                        <a [routerLink]="['/course-details']">
+                            <img src="{{inscription?.cours?.courseImage}}" alt="">
+                        </a>
+                        <div class="course__tag">
+                            <a href="#" [class]="inscription?.cours?.color">{{inscription?.cours?.sujet?.name}}</a>
+                        </div>
+                    </div>
+                    <div class="course__content">
+                        <div class="course__meta d-flex align-items-center justify-content-between">
+                            <div class="course__lesson">
+                                        <span><i class="far fa-book-alt"></i>
+                                            {{inscription?.cours?.lessonNumber}} Lesson</span>
+                            </div>
+                            <div class="course__rating">
+                                <span><i class="icon_star"></i>{{inscription?.cours?.rating}} (44)</span>
+                            </div>
+                        </div>
+                        <h3 class="course__title"><a [routerLink]="['/course-details']">
+                            {{inscription?.cours?.name}}</a></h3>
+                        <div class="course__teacher d-flex align-items-center">
+                            <div class="course__teacher-thumb mr-15">
+                                <img src="{{inscription?.cours?.formateur?.image}}" alt="">
+                            </div>
+                            <h6><a [routerLink]="['/instructor-details']">{{inscription?.cours?.formateur?.fullname}}</a></h6>
+                        </div>
+                    </div>
+                    <div class="course__more d-flex justify-content-between align-items-center">
+                        <div class="course__btn">
+                            <a style="cursor: pointer" class="link-btn">
+                                Start learning
+                                <i class="far fa-arrow-right"></i>
+                                <i class="far fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-            </ng-container>
-
-
-
+            </div>
         </div>
     </div>
 
-
+    <div class="p-col-10">
+        <div *ngIf="selectedElement === 'INSCRIPTION' && user.role === role.FORMATEUR" class="row">
+            <div *ngFor="let course of courseData.slice(4,6)" class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+                <div style="background: #b8dde3;" class="course__item white-bg mb-30 fix shadow-none">
+                    <div class="course__thumb w-img p-relative fix">
+                        <a [routerLink]="['/course-details']">
+                            <img src="{{course.courseImage}}" alt="">
+                        </a>
+                        <div class="course__tag">
+                            <a href="#" [class]="course.color">{{course.sujet?.name}}</a>
+                        </div>
+                    </div>
+                    <div class="course__content">
+                        <div class="course__meta d-flex align-items-center justify-content-between">
+                            <div class="course__lesson">
+                                        <span><i class="far fa-book-alt"></i>
+                                            {{course?.lessonNumber}} Lesson</span>
+                            </div>
+                            <div class="course__rating">
+                                <span><i class="icon_star"></i>{{course?.rating}} (44)</span>
+                            </div>
+                        </div>
+                        <h3 class="course__title"><a [routerLink]="['/course-details']">
+                            {{course.name}}</a></h3>
+                        <div class="course__teacher d-flex align-items-center">
+                            <div class="course__teacher-thumb mr-15">
+                                <img src="{{course.formateur?.image}}" alt="">
+                            </div>
+                            <h6><a [routerLink]="['/instructor-details']">{{course.formateur?.fullname}}</a></h6>
+                        </div>
+                    </div>
+                    <div class="course__more d-flex justify-content-between align-items-center">
+                        <div class="course__status d-flex align-items-center">
+                            <span [class]="course?.color">${{course?.price}}</span>
+                            <span class="old-price">${{course?.oldPrice}}</span>
+                        </div>
+                        <div class="course__btn">
+                            <a [routerLink]="['/course-details']" class="link-btn">
+                                Know Details
+                                <i class="far fa-arrow-right"></i>
+                                <i class="far fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </div>

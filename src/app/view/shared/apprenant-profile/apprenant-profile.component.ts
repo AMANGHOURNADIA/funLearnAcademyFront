@@ -6,6 +6,9 @@ import {ApprenantService} from '../../../controller/service/apprenant.service';
 import {MessageService} from 'primeng/api';
 import {Role} from '../../../enum/role.enum';
 import {FormateurService} from '../../../controller/service/formateur.service';
+import {CoursService} from '../../../controller/service/cours.service';
+import {InscriptionService} from '../../../controller/service/inscription.service';
+import {Inscription} from '../../../controller/model/inscription.model';
 
 @Component({
     selector: 'app-apprenant-profile',
@@ -18,11 +21,14 @@ export class ApprenantProfileComponent implements OnInit {
     newPassword: string;
     newPasswordRepated: string;
     courses: Array<Cours> = new Array<Cours>();
+    inscriptions: Array<Inscription> = new Array<Inscription>();
     public role = Role;
-
+    courseData: Array<Cours> = new Array<Cours>();
 
     constructor(private authService: AuthenticationService,
                 private messageService: MessageService,
+                private courseService: CoursService,
+                private inscriptionService: InscriptionService,
                 private apprenantService: ApprenantService,
                 private formateurService: FormateurService,
     ) {
@@ -31,6 +37,21 @@ export class ApprenantProfileComponent implements OnInit {
     ngOnInit(): void {
         if (this.authService.getFormateurFromLocalCache() !== null) {
             this.user = this.authService.getApprenantFromLocalCache();
+            if (this.user.role === this.role.FORMATEUR){
+                this.courseService.findAllByFormateurId(this.user.id).subscribe(
+                    data => {
+                        this.courseData = data;
+                    }
+                );
+            } else if (this.user.role === this.role.APPRENANT) {
+                this.inscriptionService.findAllByApprenantId(this.authService.getApprenantFromLocalCache().id).subscribe(
+                    (data) => {
+                        this.inscriptions = data;
+                    }, error => {
+                        console.log(error);
+                    }
+                );
+            }
         }
     }
 
