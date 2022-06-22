@@ -74,6 +74,7 @@ import {ForgetPasswordComponent} from './view/shared/forget-password/forget-pass
 import {NewAdminComponent} from './view/admin/new-admin/new-admin.component';
 import {SignInAreaComponent} from './view/apprenant/educal/sign-in/sign-in-area/sign-in-area.component';
 import {PayementComponent} from './view/apprenant/educal/course-details/payement/payement.component';
+import {ContactMainComponent} from './view/apprenant/educal/contact/contact-main/contact-main.component';
 
 @NgModule({
     imports: [
@@ -159,7 +160,7 @@ import {PayementComponent} from './view/apprenant/educal/course-details/payement
             },
             {
                 path: 'contact',
-                component: CheckoutMainComponent
+                component: ContactMainComponent
             },
             {
                 path: 'profile',
